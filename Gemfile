@@ -42,3 +42,5 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+gem 'dotenv-rails', groups: [:development, :test]
+
