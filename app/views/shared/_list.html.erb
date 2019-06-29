@@ -1,0 +1,21 @@
+<section class="products-grid">
+        <div class="container">
+          <div class="row products-container">
+          <% @products.each do |product| %>
+          <% if product.id <= 3 %>
+            <div class="col-md-4 col-sm-6 col-xs-12 product">
+              <div class="thumbnail" style="background-image: url(<%= product.photo %>);">
+                <div class="product-details text-center">
+                  <div class="align-vertical">
+                    <h3><%= product.title %> </h3>
+                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                    <p class="product-price"><%= number_to_currency product.price %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% end %>
+            <% end %>
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </section>
