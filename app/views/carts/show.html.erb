@@ -19,13 +19,15 @@
       <div class="col-md-12">
        <h2>Cart Details</h2>
        <br>
-       <% @cart.product_items.each do|item| %>
-       <ul>
-        <li>
-         <%= item.quantity %>&times;<% item.product.title %>
-        </li>
-       </ul>
-       <% end %>
+      <%= render 'carts/cart' %>
+      <br>
+      <h5>Total: <%= number_to_currency @cart.total_price %></h5>
+      <br>
+      <%= link_to 'Back to store', shop_path %>
+      <br>
+      <%= link_to 'Empty your cart', @cart, method: :delete, data: {confirm: 'Are you sure?'} %>
       </div>
     </div>
 </section>
+
+

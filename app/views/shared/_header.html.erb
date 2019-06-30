@@ -62,7 +62,18 @@
                 <i class="fa fa-paper-plane"></i> Contact
               <% end %>
             </li>
-              <li><a href="#" class="menu-cart"><i class="fa fa-shopping-cart"></i> $0.00</a></li>
+
+              <li>
+            <% if @cart.total_price > 0 %>
+              <%= link_to @cart, class: 'menu-cart' do  %>
+                <i class="fa fa-shopping-cart"></i>
+                <%= number_to_currency @cart.total_price %>
+              <% end %>
+            <% else %>
+              <a href="#" class="menu-cart"><i class="fa fa-shopping-cart"></i> $0.00</a>
+            <% end %>
+          </li>
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li>
