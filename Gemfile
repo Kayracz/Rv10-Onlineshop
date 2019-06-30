@@ -15,19 +15,21 @@ gem 'bootstrap-sass'
 
 gem 'font-awesome-rails'
 
+gem 'jbuilder', '~> 2.0'
+
 gem 'sass-rails', '~> 5.0'
 
 gem 'uglifier', '>= 1.3.0'
 
 gem 'turbolinks', '~> 5'
 
+gem 'country_select'
+
 gem 'toastr-rails'
 
-gem 'activeadmin', github: 'activeadmin/activeadmin'
+# gem 'activeadmin', github: 'activeadmin/activeadmin'
 
-gem "devise"
-
-gem 'jbuilder', '~> 2.5'
+gem 'devise', '~> 4.6.2'
 
 gem 'cloudinary', '~> 1.9.1'
 
