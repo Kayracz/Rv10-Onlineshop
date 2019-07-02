@@ -13,6 +13,10 @@ gem 'jquery-rails'
 
 gem 'bootstrap-sass'
 
+gem 'coffee-rails'
+
+gem 'sdoc'
+
 gem 'font-awesome-rails'
 
 gem 'jbuilder', '~> 2.0'
@@ -27,7 +31,7 @@ gem 'country_select'
 
 gem 'toastr-rails'
 
-# gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'activeadmin', github: 'activeadmin/activeadmin'
 
 gem 'devise', '~> 4.6.2'
 

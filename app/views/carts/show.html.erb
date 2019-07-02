@@ -1,35 +1,32 @@
 <header class="secondary">
-        <div class="background-image-holder parallax-background overlay" data-stellar-background-ratio="0.9">
-          <%= image_tag('cover2.png', class: 'background-image', alt:'Background') %>
-        </div>
+  <div class="background-image-holder parallax-background overlay">
+    <%= image_tag('bg-5.jpg', class: 'background-image', alt:'Background') %>
+  </div>
 
-        <div class="container align-vertical hero">
-          <div class="row">
-            <div class="col-md-5 text-left">
-              <h1>Your Cart</h1>
-              <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates depudiandae sint et molestiae.</p>
-            </div>
-          </div><!--end of row-->
-        </div><!--end of container-->
-      </header>
-
+  <div class="container align-vertical hero">
+    <div class="row">
+      <div class="col-md-5 text-left">
+        <h1>Your Cart</h1>
+        <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates depudiandae sint et molestiae.</p>
+      </div>
+    </div><!--end of row-->
+  </div><!--end of container-->
+</header>
 
 <section class="product-list">
-    <div class="container">
-      <div class="col-md-12">
-       <h2>Cart Details</h2>
-       <br>
+  <div class="container">
+    <div class="col-md-12">
+      <h2>Cart Details</h2>
+      <br>
       <%= render 'carts/cart' %>
       <br>
       <h5>Total: <%= number_to_currency @cart.total_price %></h5>
       <br>
-      <%= button_to 'Checkout', new_order_path, method: :get %>
+      <!-- <#%= button_to 'Checkout', new_order_path, method: :get %> -->
       <br>
-      <%= link_to 'Back to store', shop_path %>
+      <%= link_to 'Back to Store', shop_path %>
       <br>
-      <%= link_to 'Empty your cart', @cart, method: :delete, data: {confirm: 'Are you sure?'} %>
-      </div>
+      <%= link_to 'Empty Your Cart', @cart, method: :delete, data: {confirm: 'You sure?'} %>
     </div>
+  </div>
 </section>
-
-
