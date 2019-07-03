@@ -4,13 +4,14 @@ class ProductItemsController < ApplicationController
   before_action :set_cart, only: [:create]
   before_action :set_product_item, only: [:show, :destroy]
 
+
   def create
     product = Product.find(params[:product_id])
     @product_item = @cart.add_product(product.id)
     if @product_item.save
       redirect_to shop_url, notice: 'Product added to Cart'
     else
-    render :new
+    render template: "carts/show"
     end
   end
 
