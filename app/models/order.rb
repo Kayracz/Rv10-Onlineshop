@@ -15,4 +15,7 @@ def total_price
  product_items.map(&:total_price).sum
 end
 
+def new
+end
+
 end

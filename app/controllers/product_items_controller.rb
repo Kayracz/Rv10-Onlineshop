@@ -11,7 +11,7 @@ class ProductItemsController < ApplicationController
     if @product_item.save
       redirect_to shop_url, notice: 'Product added to Cart'
     else
-    render template: "carts/show"
+    render :new
     end
   end
 

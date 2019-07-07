@@ -33,6 +33,23 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+  # Doesnt actually send emails
+  config.action_mailer.delivery_method = :test
+
+
+  # Alternate configuration example, using gmail:
+  #   config.action_mailer.delivery_method = :smtp
+  #   config.action_mailer.smtp_settings = {
+  #     address:        "smtp.gmail.com",
+  #     port:           587,
+  #     domain:         "your.domain",
+  #     authentication: "plain",
+  #     user_name:      "your_user",
+  #     password:       "your_password",
+  #     enable_starttls_auto: true
+  #   }
+
+
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
@@ -58,4 +75,16 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+# gateway = Braintree::Gateway.new(
+#   :environment = :sandbox
+#   :merchant_id = ENV['merchant_id']
+#   :public_key = ENV['public_key']
+#   :private_key = ENV['private_key']
+# )
+
+  Braintree::Configuration.environment = :sandbox
+  Braintree::Configuration.merchant_id = ENV['merchant_id']
+  Braintree::Configuration.public_key =  ENV['public_key']
+  Braintree::Configuration.private_key = ENV['private_key']
 end

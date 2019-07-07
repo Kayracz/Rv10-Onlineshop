@@ -17,6 +17,10 @@ gem 'coffee-rails'
 
 gem 'sdoc'
 
+gem "braintree", "~> 2.97.0"
+
+gem "figaro"
+
 gem 'font-awesome-rails'
 
 gem 'jbuilder', '~> 2.0'

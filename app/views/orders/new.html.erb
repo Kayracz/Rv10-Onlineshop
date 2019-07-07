@@ -14,8 +14,13 @@
 
 <br>
 
-<%= render 'form' %>
+<%= render 'orders/form' %>
 
 <br>
 
+<!--Script for Braintree -->
+<script>
+braintree.setup(<%= @client_token %>, 'dropin', {
+  container: 'payment-form'
+}); </script>
 

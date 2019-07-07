@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-before_action :set_cart, only: [:show, :destroy]
+before_action :set_cart, only: [:show, :create, :destroy]
 rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
 def new
@@ -8,6 +8,7 @@ end
 
 def show
 end
+
 
 def destroy
  @cart.destroy if @cart.id == session[:cart_id]
@@ -26,7 +27,7 @@ def cart_params
 end
 
 def invalid_cart
- logger_error 'You are trying to access an invalid cart'
+ logger_error = 'You are trying to access an invalid cart'
  redirect_to shop_url,  notice:'Invalid Cart'
 end
 

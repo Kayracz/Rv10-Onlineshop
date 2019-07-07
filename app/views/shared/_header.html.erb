@@ -51,17 +51,15 @@
 
               <li><%= link_to 'Home', root_path %></li>
 
-              <li><%= link_to 'About', root_path %></li>
-              <li><%= link_to 'Shop', shop_path %></li>
-
-               <li><%= link_to 'Blog', shop_path %></li>
+              <li><%= link_to 'About', about_path %></li>
+              <li><%= link_to 'Store', shop_path %></li>
 
               </li>
-                 <li>
-              <%= link_to root_path do  %>
-                <i class="fa fa-paper-plane"></i> Contact
-              <% end %>
-            </li>
+               <li>
+            <%= link_to new_contact_path do  %>
+              <i class="fa fa-paper-plane"></i> Contact
+            <% end %>
+          </li>
 
               <li>
             <% if @cart.total_price > 0 %>
