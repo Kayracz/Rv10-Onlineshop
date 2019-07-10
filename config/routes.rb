@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :product_items
   resources :orders
   resources :contacts, only: [:new, :create]
+  resources :products
+
 end

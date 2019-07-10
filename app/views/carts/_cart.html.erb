@@ -2,7 +2,12 @@
        <ul>
         <li>
          <%= item.quantity %>&times;<%= item.product.title %> =
-         <%= number_to_currency item.total_price %>
+         <%= number_to_currency item.total_price %>,
+         <%= item.product.size %>, <%= item.product.size2 %>
+        </li>
+
+        <li>
+         <%= item.product.title %>, <%= item.product.size %>, <%= item.product.size2 %>
         </li>
        </ul>
   <% end %>

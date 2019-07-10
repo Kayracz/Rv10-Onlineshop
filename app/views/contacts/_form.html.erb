@@ -1,28 +1,40 @@
 <form class="contact-form">
 
 <%= form_for @contact do |f| %>
-<% render 'shared/contact_errors' %>
+  <%= render 'shared/contact_errors' %>
+  <div class="container">
+    <div class="col-md-10">
+      <h3>Please Enter Your Details</h3>
+    </div>
 
-<form class="contact-form">
- <div>
-  <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-name validate', placeholder: 'Brad Pitt' %>
- </div>
+    <div class="form-group">
+      <div class="col-md-10">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-name validate', placeholder: 'Brad Pitt' %>
+      </div>
+    </div>
 
-  <div>
-  <%= f.label :email %>
-  <%= f.email_field :email, class: 'form-email validate validate-email', placeholder: 'Brad@gmail.com' %>
- </div>
+    <div class="form-group">
+      <div class="col-md-10">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-email validate validate-email', placeholder: 'Brad@gmail.com' %>
+      </div>
+    </div>
 
-  <div>
-  <%= f.label :message %>
-  <%= f.text_area :message, class: 'form-message validate', placeholder: 'Tu Mensaje' %>
- </div>
+      <div>
 
- <div>
-  <%= f.submit 'Enviar' %>
- </div>
+    <div class="form-group">
+      <div class="col-md-10">
+        <%= f.label :message %>
+        <%= f.text_area :message, class: 'form-message validate', placeholder: 'Tu Mensaje'  %>
+      </div>
+    </div>
 
-</form>
+    <div class="form-group">
+      <div class="col-md-10">
+        <%= f.submit 'Enviar' %>
+      </div>
+    </div>
 
+</div>
 <% end %>

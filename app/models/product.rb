@@ -5,10 +5,11 @@ class Product < ApplicationRecord
 
   has_many :product_items
 
-  validates :title, :description, presence: true
+  validates :title, :size, :description, presence: true
   validates :price, numericality: {greater_than_or_equal_to: 0.01}
   validates :title, uniqueness: true
 
+  SIZE = %w{ XS S M L }
 
   def ensure_not_product_item
     if product_items.empty?

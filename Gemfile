@@ -17,6 +17,8 @@ gem 'coffee-rails'
 
 gem 'sdoc'
 
+gem 'simple_form'
+
 gem "braintree", "~> 2.97.0"
 
 gem "figaro"

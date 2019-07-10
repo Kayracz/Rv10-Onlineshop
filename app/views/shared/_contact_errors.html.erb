@@ -1,7 +1,7 @@
 <% unless @contact.errors.empty? %>
   <script type="text/javascript">
     <% @contact.errors.full_messages.each do |msg| %>
-      toastr.error('<%= msg %>')
+      toastr.error('<%= contact_errors %>')
     <% end %>
   </script>
 <% end %>

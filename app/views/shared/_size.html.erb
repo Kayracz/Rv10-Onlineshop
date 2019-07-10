@@ -1,0 +1,16 @@
+<!--  <%= form_for @products do |s| %>
+  <%= render 'shared/message', :product => s.product %>
+  <div class="field">
+    <%= s.label :size %><br />
+    <%= s.text_field :size, :size => 57 %>
+  </div>
+
+  <div class="field">
+    <%= s.label :size %><br />
+    <%= s.collection_select(:product_id, @products, :title, :size, :include_blank => "Please select") %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
+ -->

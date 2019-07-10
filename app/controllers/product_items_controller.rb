@@ -2,7 +2,7 @@ class ProductItemsController < ApplicationController
 
   include CurrentCart
   before_action :set_cart, only: [:create]
-  before_action :set_product_item, only: [:show, :destroy]
+  before_action :set_product_item, only: [:show, :index, :new, :destroy]
 
 
   def create
@@ -14,6 +14,12 @@ class ProductItemsController < ApplicationController
     render :new
     end
   end
+
+   def new
+    @product = Product.all
+    @product = Product.new
+  end
+
 
   private
 

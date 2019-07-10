@@ -31,6 +31,10 @@ permit_params :shipped
         column 'Price' do |item|
           number_to_currency item.total_price
         end
+         column 'Size' do |item|
+          item.product.size
+          item.product.size2
+        end
       end
     end
 
