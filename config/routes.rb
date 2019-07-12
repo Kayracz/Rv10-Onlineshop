@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resources :orders
   resources :contacts, only: [:new, :create]
   resources :products
+  resources :photos
 
 end

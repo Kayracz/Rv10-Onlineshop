@@ -5,6 +5,8 @@ ruby '2.4.4'
 
 gem 'rails', '~> 5.2.3'
 
+gem 'mini_magick'
+
 gem 'pg', '>= 0.18', '< 2.0'
 
 gem 'puma', '~> 3.11'
@@ -47,9 +49,13 @@ gem 'carrierwave', '~> 1.2'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'kramdown'
+
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -65,4 +71,5 @@ group :test do
 end
 
 gem 'dotenv-rails', groups: [:development, :test]
+
 

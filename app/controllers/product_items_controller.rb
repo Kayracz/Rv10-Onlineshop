@@ -4,7 +4,6 @@ class ProductItemsController < ApplicationController
   before_action :set_cart, only: [:create]
   before_action :set_product_item, only: [:show, :index, :new, :destroy]
 
-
   def create
     product = Product.find(params[:product_id])
     @product_item = @cart.add_product(product.id)

@@ -16,8 +16,8 @@
                       <h2 class="product-title"> <a href=""><%= link_to product.title, product %></h2>
                       <p class="product-price"><%= number_to_currency product.price %></p>
                       <p><%= product.description %></p>
-                      <p><%= product.size %></p>
-
+                      <p><%= @size_choices %></p>
+                      <!-- <#%= render 'products/form' %> -->
                       <%= button_to product_items_path(product_id: product.id), class: 'btn btn-default' do %>
                       <i class="fa fa-shopping-cart"></i> Add to cart
                       <% end %>
