@@ -2,10 +2,6 @@
        <ul>
         <li>
          <%= item.quantity %> <%= item.product.title %>
-         <%= item.select :quantity, options_for_select(
-    ) %>
-
-    f.select :country_id, @countries.map{ |c| [c.name, c.id] }
         </li>
        </ul>
   <% end %>

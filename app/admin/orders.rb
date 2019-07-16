@@ -9,7 +9,7 @@ permit_params :shipped
   show do |order|
 
     panel 'Customer Details' do
-      attributes_table_for order, :name, :email, :address, :city, :country
+      attributes_table_for order, :name, :email, :phone, :address, :city, :Nit, :Notas
     end
 
     panel 'Created' do
