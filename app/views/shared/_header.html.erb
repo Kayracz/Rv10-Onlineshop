@@ -4,9 +4,14 @@
         <li><a class="side-logo" href="index.html">Rv10<span class="logo-dot accent-bg"></span></a></li>
 
         <li class="active"><a href="#">Tu Tienda Online</a></li>
-        <li> <%=link_to 'Mujeres', women_path %></li>
-        <li> <%=link_to 'Hombres', men_path %></li>
-        <li> <%=link_to 'Ninos', kids_path %></li>
+        <li><%= link_to 'Inicio', root_path %></li>
+        <li><%= link_to 'Sobre Nosotros', about_path %></li>
+        <li><%= link_to 'Tienda', products_path %></li>
+         <li>
+            <%= link_to new_contact_path do  %>
+              <i class="fa fa-paper-plane"></i> Contact
+            <% end %>
+          </li>
         <li class="divider"><span></span></li>
         <li> <%=link_to 'Terms & conditions', root_path %></li>
         <li> <%=link_to 'Privacy', root_path %></li>
@@ -51,18 +56,7 @@
               <li><%= link_to 'Mujer', women_path %></li>
               <li><%= link_to 'Hombre', men_path %></li>
               <li><%= link_to 'Ninos', kids_path %></li>
-
-              <li><%= link_to 'Home', root_path %></li>
-              <li><%= link_to 'About', about_path %></li>
-              <li><%= link_to 'Store', products_path %></li>
-
-
-
-               <li>
-            <%= link_to new_contact_path do  %>
-              <i class="fa fa-paper-plane"></i> Contact
-            <% end %>
-          </li>
+              <li><%= link_to 'Sale', products_path %></li>
 
               <li>
             <% if @cart.total_price > 0 %>
