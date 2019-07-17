@@ -12,6 +12,9 @@ class Product < ApplicationRecord
   validates :price, numericality: {greater_than_or_equal_to: 0.01}
   validates :title, uniqueness: true
 
+  def total_price
+   product.price * quantity
+  end
 
   def ensure_not_product_item
     if product_items.empty?
@@ -22,6 +25,17 @@ class Product < ApplicationRecord
     end
   end
 
+ def self.women
+   where(category: 'women')
+ end
+
+ def self.men
+   where(category: 'men')
+ end
+
+  def self.kids
+   where(category: 'kids')
+ end
 
 end
 

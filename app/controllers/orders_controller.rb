@@ -11,7 +11,7 @@ end
 
 def new
   if @cart.product_items.empty?
-    redirect_to shop_url, notice: 'Your Cart is Empty'
+    redirect_to product_url, notice: 'Your Cart is Empty'
     return
   end
   @order = Order.new

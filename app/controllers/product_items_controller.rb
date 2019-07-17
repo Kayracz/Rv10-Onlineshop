@@ -8,7 +8,7 @@ class ProductItemsController < ApplicationController
     product = Product.find(params[:product_id])
     @product_item = @cart.add_product(product.id)
     if @product_item.save
-      redirect_to shop_url, notice: 'Product added to Cart'
+      redirect_to product_url, notice: 'Product added to Cart'
     else
     render :new
     end

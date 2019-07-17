@@ -18,7 +18,23 @@
  * 15. Colors
  * 16. Lightbox */
 /* GENERAL STYLES */
-
+select {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0;
+    height: 40px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Square Market", Helvetica, Arial, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+    font-weight: 300;
+    background-color: white;
+    color: #3e4348;
+    outline: none;
+    border: 1px solid #7a7e82;
+    border-radius: 3px;
+  }
 
 a,
 button span {

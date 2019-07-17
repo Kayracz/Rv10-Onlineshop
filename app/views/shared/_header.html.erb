@@ -4,10 +4,9 @@
         <li><a class="side-logo" href="index.html">Rv10<span class="logo-dot accent-bg"></span></a></li>
 
         <li class="active"><a href="#">Tu Tienda Online</a></li>
-        <li> <%=link_to 'Mujeres', shop_path %></li>
-        <li> <%=link_to 'Hombres', root_path %></li>
-        <li> <%=link_to 'Ninos', root_path %></li>
-        <li> <%=link_to 'Plus size', root_path %></li>
+        <li> <%=link_to 'Mujeres', women_path %></li>
+        <li> <%=link_to 'Hombres', men_path %></li>
+        <li> <%=link_to 'Ninos', kids_path %></li>
         <li class="divider"><span></span></li>
         <li> <%=link_to 'Terms & conditions', root_path %></li>
         <li> <%=link_to 'Privacy', root_path %></li>
@@ -49,12 +48,16 @@
           <div class="collapse navbar-collapse" id="collapse-navigation">
             <ul class="nav navbar-nav">
 
-              <li><%= link_to 'Home', root_path %></li>
+              <li><%= link_to 'Mujer', women_path %></li>
+              <li><%= link_to 'Hombre', men_path %></li>
+              <li><%= link_to 'Ninos', kids_path %></li>
 
+              <li><%= link_to 'Home', root_path %></li>
               <li><%= link_to 'About', about_path %></li>
               <li><%= link_to 'Store', products_path %></li>
 
-              </li>
+
+
                <li>
             <%= link_to new_contact_path do  %>
               <i class="fa fa-paper-plane"></i> Contact

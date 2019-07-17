@@ -1,7 +1,8 @@
+<h1> Mujer Deportiva </h1>
 
 <section class="product-list">
         <div class="container">
-          <% @product.each do |product| %>
+          <% @women_product_items.each do |product| %>
           <div class="row">
             <div class="col-md-12">
               <div class="product">
@@ -15,26 +16,7 @@
                     <div class="product-details">
                       <h2 class="product-title"> <a href=""><%= link_to product.title, product %></h2>
                       <p class="product-price"><%= number_to_currency product.price %></p>
-                      <p> <%= product.size %> </p>
 
-                      <!-- Size testing -->
-
-
-                     <select name="product_items[][quantity]" id="product-item-quantity"><option value="0">0</option>
-                       <option selected="selected" value="1">1</option>
-                       <option value="2">2</option>
-                       <option value="3">3</option>
-                       <option value="1">4</option>
-                       <option value="5">5</option>
-                       <option value="6">6</option>
-                       <option value="7">7</option>
-                       <option value="8">8</option>
-                       <option value="9">9</option></select>
-
-
-                      <!-- end -->
-
-                      <%= render 'products/form' %>
                       <%= button_to product_items_path(product_id: product.id), class: 'btn btn-default' do %>
                       <i class="fa fa-shopping-cart"></i> Add to cart
                       <% end %>
@@ -47,4 +29,3 @@
           <% end %>
         </div>
       </section>
-
