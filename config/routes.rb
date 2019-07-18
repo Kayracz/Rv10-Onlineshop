@@ -13,8 +13,9 @@ Rails.application.routes.draw do
   resources :carts
   resources :product_items
   resources :orders
-  resources :contacts, only: [:new, :create]
+  resources :contacts
   resources :products
   resources :photos
+  resources :quantity, only: :create
 
 end

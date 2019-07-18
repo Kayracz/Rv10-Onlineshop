@@ -1,14 +1,14 @@
 class ProductItemsController < ApplicationController
 
   include CurrentCart
-  before_action :set_cart, only: [:create]
-  before_action :set_product_item, only: [:show, :index, :new, :destroy]
+  before_action :set_cart, only: [:create, :edit]
+  before_action :set_product_item, only: [:show, :index, :new, :destroy, :edit]
 
   def create
     product = Product.find(params[:product_id])
     @product_item = @cart.add_product(product.id)
     if @product_item.save
-      redirect_to product_url, notice: 'Product added to Cart'
+      redirect_to products_url, notice: 'Product added to Cart'
     else
     render :new
     end
@@ -19,6 +19,14 @@ class ProductItemsController < ApplicationController
     @product = Product.new
   end
 
+  def destroy
+    @product_item = ProductItem.find(params[:id])
+    @product_item.destroy
+    redirect_to root_url, notice: 'Order deleted'
+  end
+
+  def edit
+  end
 
   private
 
