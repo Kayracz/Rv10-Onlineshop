@@ -33,6 +33,8 @@ permit_params :shipped
         end
          column 'Size' do |item|
           item.product.size
+        end
+         column 'Size2' do |item|
           item.product.size2
         end
       end

@@ -11,7 +11,6 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @photos = Photo.all
-    @product = Product.new
   end
 
 
@@ -40,13 +39,13 @@ class ProductsController < ApplicationController
   def create
     product = Product.find(params[:product_id])
     @product_item = @cart.add_product(product.id)
+    @product.size = product_params[:size]
     if @product_item.save
       redirect_to product_url, notice: 'Product added to Cart'
     else
     render :new
     end
   end
-
 
   private
 

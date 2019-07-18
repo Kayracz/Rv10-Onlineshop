@@ -41,6 +41,13 @@ end
   end
 
 
+
+ def orders_params
+    params.require(:order).permit(:pick_up_time_hs, :delivery_time_hs, :service_type, :pick_up_time, :delivery_time, :number_of_bags, :address, :status)
+  end
+
+
+
 def show
 end
 
@@ -56,7 +63,7 @@ private
   end
 
   def order_params
-    params.require(:order).permit(:name, :email, :address, :city, :country, :Nit, :Notas)
+    params.require(:order).permit(:name, :email, :phone, :address, :city, :country, :Nit, :Notas)
   end
 
   def charge

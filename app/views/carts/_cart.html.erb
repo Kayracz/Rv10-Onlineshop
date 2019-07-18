@@ -2,7 +2,7 @@
        <ul>
         <li>
          <%= item.quantity %>&times;<%= item.product.title %> =
-         <%= number_to_currency item.total_price %> -
+         <%= number_to_currency item.total_price %> - <%=item.product.size %>.
 
          <%= link_to 'Delete', @product_items, method: :delete, data: {confirm: 'You sure?'} %>
 
