@@ -19,6 +19,9 @@
 
                       <!-- Size testing -->
 
+                      <%= render 'products/form' %>
+
+                    </br>
 
                      <select name="product_items[][:quantity]" id="product-item-quantity"><option value="0">0</option>
                        <option selected="selected" value="1">1</option>
@@ -42,7 +45,6 @@
 
                       <!-- end -->
 
-                      <%= render 'products/form' %>
                       <%= button_to product_items_path(product_id: product.id), class: 'btn btn-default' do %>
                       <i class="fa fa-shopping-cart"></i> Add to cart
                       <% end %>

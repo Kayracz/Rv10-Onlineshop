@@ -1,41 +1,17 @@
-<div class="container">
-<form class="contact-form">
-<%= form_for @contact do |f| %>
-  <%= render 'shared/contact_errors' %>
-  <div class="container">
-    <div class="col-md-10">
-      <h3>Please Enter Your Details</h3>
-    </div>
+<div class="container inbox">
 
-    <div class="form-group">
-      <div class="col-md-10">
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-name validate', placeholder: 'Brad Pitt' %>
-      </div>
-    </div>
+<%= simple_form_for(@contact) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-group">
-      <div class="col-md-10">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-email validate validate-email', placeholder: 'Brad@gmail.com' %>
-      </div>
-    </div>
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :email %> (Numero de obra)
+    <%= f.input :message %>
+  </div>
 
-      <div>
-
-    <div class="form-group">
-      <div class="col-md-10">
-        <%= f.label :message %>
-        <%= f.text_area :message, class: 'form-message validate', placeholder: 'Tu Mensaje'  %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="col-md-6" style="margin-top: 2%;">
-        <%= f.submit 'Enviar' %>
-      </div>
-    </div>
-
-</div>
-</div>
+  <div class="form-actions">
+    <%= f.button :submit, 'Enviar' %>
+  </div>
 <% end %>
+</div>

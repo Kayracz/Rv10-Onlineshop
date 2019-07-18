@@ -1,1 +1,13 @@
 
+      <div class="col-xs-12 col-md-6">
+        <div class="bag-holder">
+          <h2>Quantity</h2>
+          <div>
+            <select name="product_items[quantity]" id="product_items_quantity" class="custom-select quantity-choose">
+              <% 5.times do |quantity| %>
+              <option value="<%= quantity + 1 %>">&#160;&#160;&#160;&#160;&#160;&#160;<%= quantity + 1 %></option>
+              <% end %>
+            </select>
+          </div>
+        </div>
+      </div>
