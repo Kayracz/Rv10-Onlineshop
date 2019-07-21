@@ -21,6 +21,22 @@ class ProductItemsController < ApplicationController
     # redirect_to root_url, notice: 'Order deleted'
   end
 
+  def add_quantity
+  @current_item.quantity += 1
+  @product_item.save
+  redirect_to cart_path(@current_cart)
+ end
+
+
+def reduce_quantity
+  @product_item = ProductItem.find(params[:id])
+  if @product_item.quantity > 1
+    @product_item.quantity -= 1
+  end
+  @product_item.save
+  redirect_to cart_path(@current_cart)
+end
+
   private
 
   def set_product_item

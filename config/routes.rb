@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'kids', to: 'products#kids'
   get 'shop' => 'pages#shop'
   get 'about' => 'pages#about'
+  post 'product_items/:id/add' => "product_items#add_quantity", as: "product_items_add"
+  post 'product_items/:id/reduce' => "product_items#reduce_quantity", as: "product_items_reduce"
 
   resources :carts
   resources :product_items
@@ -16,6 +18,8 @@ Rails.application.routes.draw do
   resources :contacts
   resources :products
   resources :photos
-  resources :quantity, only: :create
+  resources :quantity
 
 end
+
+

@@ -3,6 +3,14 @@ class ProductsController < ApplicationController
   before_action :set_cart, only: [:index, :shop, :show, :about, :women, :kids, :men]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  def new
+    @product = Product.new
+  end
+
+  def create
+    @product = Product.create(product_params)
+    redirect_to products_path
+  end
 
   def index
     @product = Product.all
@@ -24,11 +32,6 @@ class ProductsController < ApplicationController
 
   def kids
     @kids_product_items = Product.kids
-  end
-
-
-  def new
-    @product = Product.new
   end
 
 
