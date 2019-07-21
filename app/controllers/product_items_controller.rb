@@ -14,18 +14,11 @@ class ProductItemsController < ApplicationController
     end
   end
 
-   def new
-    @product = Product.all
-    @product = Product.new
-  end
-
   def destroy
     @product_item = ProductItem.find(params[:id])
     @product_item.destroy
-    redirect_to root_url, notice: 'Order deleted'
-  end
-
-  def edit
+    redirect_to cart_path(@current_cart)
+    # redirect_to root_url, notice: 'Order deleted'
   end
 
   private
