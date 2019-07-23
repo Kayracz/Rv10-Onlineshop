@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
   include CurrentCart
-  before_action :set_cart, only: [:new, :create]
+  before_action :set_cart, only: [:new, :create, :show, :contraentrega]
   before_action :set_order, only: [:show, :edit, :destroy, :contraentrega]
 
 
@@ -28,7 +28,7 @@ end
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifierMailer.recieved(@order).deliver
-        redirect_to root_url, notice: 'Thank You for Your Order!'
+        redirect_to @order, notice: 'Thank You for Your Order!'
       else
         flash[:error] = 'Check Your Cart'
         redirect_to root_url, alert: @result.message
@@ -40,14 +40,13 @@ end
     end
   end
 
-  def contraentrega
+    def contraentrega
     @order = Order.new(order_params)
     if @order.save
         @order.add_product_items_from_cart(@cart)
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        OrderNotifierMailer.recieved(@order).deliver
-        redirect_to root_url, notice: 'Gracias por su pedido!'
+        redirect_to contraentrega_path, notice: 'Thank You for Your Order!'
       else
         flash[:error] = 'Check Your Cart'
         redirect_to root_url, alert: @result.message
@@ -56,7 +55,6 @@ end
     else
       render :new
     end
-  end
 
 
 def show
@@ -74,7 +72,7 @@ private
   end
 
   def order_params
-    params.require(:order).permit(:name, :email, :address, :city, :country, :Nit, :Notas, :phone)
+    params.require(:order).permit(:name, :email, :phone, :address, :city, :country, :Nit, :Notas)
   end
 
   def charge
@@ -85,4 +83,3 @@ private
 
 
 end
-

@@ -10,12 +10,9 @@ Rails.application.routes.draw do
   get 'kids', to: 'products#kids'
   get 'shop' => 'pages#shop'
   get 'about' => 'pages#about'
-
-
   post 'product_items/:id/add' => "product_items#add_quantity", as: "product_items_add"
   post 'product_items/:id/reduce' => "product_items#reduce_quantity", as: "product_items_reduce"
-
-
+  get 'contraentrega' => 'orders#contraentrega'
   resources :carts
   resources :product_items
   resources :orders
@@ -25,3 +22,5 @@ Rails.application.routes.draw do
   resources :quantity
 
 end
+
+
