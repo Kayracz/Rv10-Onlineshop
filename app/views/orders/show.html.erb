@@ -1,1 +1,11 @@
-Thank you for your order
+<h1>Thank you for your order</h1>
+
+<h3><%= @order.name %>, Gracias por tu pedido! </h3>
+<%= @order.address %>
+<%= @order.city %>
+
+<!--   if @order.save
+      authorize @order
+      redirect_to new_order_payment_path(@order)
+ -->
+

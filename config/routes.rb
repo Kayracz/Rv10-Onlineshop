@@ -4,13 +4,17 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'pages#index'
 
+  get 'orderunit', to: 'orders#show'
   get 'women', to: 'products#women'
   get 'men', to: 'products#men'
   get 'kids', to: 'products#kids'
   get 'shop' => 'pages#shop'
   get 'about' => 'pages#about'
+
+
   post 'product_items/:id/add' => "product_items#add_quantity", as: "product_items_add"
   post 'product_items/:id/reduce' => "product_items#reduce_quantity", as: "product_items_reduce"
+
 
   resources :carts
   resources :product_items
@@ -21,5 +25,3 @@ Rails.application.routes.draw do
   resources :quantity
 
 end
-
-
