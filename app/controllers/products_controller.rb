@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:index, :shop, :show, :about, :women, :kids, :men]
+  before_action :set_cart, only: [:index, :shop, :show, :about, :women, :kids, :men, :new]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -21,6 +21,10 @@ class ProductsController < ApplicationController
     @photos = Photo.all
   end
 
+  def update
+    @product.update(product_params)
+    redirect_to products_path
+  end
 
   def women
     @women_product_items = Product.women

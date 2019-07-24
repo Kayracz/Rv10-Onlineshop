@@ -1,0 +1,6 @@
+
+<%= form_for @product do |f| %>
+    <%= f.label "Size", class: 'control-label' %>
+    <%= f.select(:size, options_for_select([['xs','xs'],['s','s']])) %>
+    <%= f.submit 'Submit', class: 'btn-default' %>
+<% end %>
