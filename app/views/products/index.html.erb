@@ -1,20 +1,22 @@
 
 <section class="product-list">
         <div class="container">
-          <% @product.each do |product| %>
+          <% @products.each do |product| %>
           <div class="row">
             <div class="col-md-12">
               <div class="product">
                 <div class="row">
                   <div class="col-md-6 col-xs-12">
                     <div class="thumbnail">
-                       <%= cl_image_tag product.photo %>
+                      <%= cl_image_tag product.photo %>
                     </div>
                   </div>
                   <div class="col-md-5 col-md-offset-1">
                     <div class="product-details">
-                      <h2 class="product-title"> <a href=""><%= link_to product.title, product %></h2>
-                      <p class="product-price"><%= number_to_currency product.price %></p>
+                      <h2 class="product-title">
+                        <a href=""><%= link_to product.title, product %></h2>
+                        <p class="product-price">
+                        <%= number_to_currency product.price %></p>
                       <p> <%= product.size %> </p>
                       <hr>
 
