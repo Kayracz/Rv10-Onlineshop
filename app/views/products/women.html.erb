@@ -18,9 +18,9 @@
                       <p class="product-price"><%= number_to_currency product.price %></p>
 
                       <div>
-                        <!-- This way we can also pass size. -->
+                        <!-- This way we can also pass size_id as an argument. -->
                         <%= form_tag product_items_path(product_id: product.id) do %>
-                        <%= select_tag :size, options_for_select(sizes, product.size) %>
+                        <%= select_tag :size_id, options_for_select(sizes, product.size) %>
                           <button class="btn btn-default">
                             <i class="fa fa-shopping-cart"></i>
                             Add to cart
