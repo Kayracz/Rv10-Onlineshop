@@ -1,0 +1,172 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+AddCategoryToProducts	db/migrate/20190717183349_add_category_to_products.rb	/^class AddCategoryToProducts < ActiveRecord::Migration[5.2]$/;"	c
+AddNitToOrders	db/migrate/20190715193028_add_nit_to_orders.rb	/^class AddNitToOrders < ActiveRecord::Migration[5.2]$/;"	c
+AddOrderToProductItems	db/migrate/20190702173027_add_order_to_product_items.rb	/^class AddOrderToProductItems < ActiveRecord::Migration[5.2]$/;"	c
+AddPhoneToOrders	db/migrate/20190715200707_add_phone_to_orders.rb	/^class AddPhoneToOrders < ActiveRecord::Migration[5.2]$/;"	c
+AddProductreferencesToPhotos	db/migrate/20190711225750_add_productreferences_to_photos.rb	/^class AddProductreferencesToPhotos < ActiveRecord::Migration[5.2]$/;"	c
+AddQuantityToProductItems	db/migrate/20190629211542_add_quantity_to_product_items.rb	/^class AddQuantityToProductItems < ActiveRecord::Migration[5.2]$/;"	c
+AddSize2ToProducts	db/migrate/20190710014056_add_size2_to_products.rb	/^class AddSize2ToProducts < ActiveRecord::Migration[5.2]$/;"	c
+AddSizeIdToProductItems	db/migrate/20190725000359_add_size_id_to_product_items.rb	/^class AddSizeIdToProductItems < ActiveRecord::Migration[5.2]$/;"	c
+AddSizeToProducts	db/migrate/20190708225355_add_size_to_products.rb	/^class AddSizeToProducts < ActiveRecord::Migration[5.2]$/;"	c
+AddStateToOrders	db/migrate/20190706232742_add_state_to_orders.rb	/^class AddStateToOrders < ActiveRecord::Migration[5.2]$/;"	c
+AdminUser	app/models/admin_user.rb	/^class AdminUser < ApplicationRecord$/;"	c
+AdminUserTest	test/models/admin_user_test.rb	/^class AdminUserTest < ActiveSupport::TestCase$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Mystore2
+ApplicationCable	app/channels/application_cable/channel.rb	/^module ApplicationCable$/;"	m
+ApplicationCable	app/channels/application_cable/connection.rb	/^module ApplicationCable$/;"	m
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+ApplicationJob	app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
+ApplicationMailer	app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
+ApplicationRecord	app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c
+ApplicationSystemTestCase	test/application_system_test_case.rb	/^class ApplicationSystemTestCase < ActionDispatch::SystemTestCase$/;"	c
+Cart	app/models/cart.rb	/^class Cart < ApplicationRecord$/;"	c
+CartTest	test/models/cart_test.rb	/^class CartTest < ActiveSupport::TestCase$/;"	c
+CartsController	app/controllers/carts_controller.rb	/^class CartsController < ApplicationController$/;"	c
+CartsControllerTest	test/controllers/carts_controller_test.rb	/^class CartsControllerTest < ActionDispatch::IntegrationTest$/;"	c
+CartsHelper	app/helpers/carts_helper.rb	/^module CartsHelper$/;"	m
+Channel	app/channels/application_cable/channel.rb	/^  class Channel < ActionCable::Channel::Base$/;"	c	class:ApplicationCable
+Connection	app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	class:ApplicationCable
+Contact	app/models/contact.rb	/^class Contact < ApplicationRecord$/;"	c
+ContactTest	test/models/contact_test.rb	/^class ContactTest < ActiveSupport::TestCase$/;"	c
+ContactsController	app/controllers/contacts_controller.rb	/^class ContactsController < ApplicationController$/;"	c
+CreateActiveAdminComments	db/migrate/20190629040958_create_active_admin_comments.rb	/^class CreateActiveAdminComments < ActiveRecord::Migration[5.2]$/;"	c
+CreateActiveStorageTables	db/migrate/20190711215814_create_active_storage_tables.active_storage.rb	/^class CreateActiveStorageTables < ActiveRecord::Migration[5.2]$/;"	c
+CreateCarts	db/migrate/20190629171413_create_carts.rb	/^class CreateCarts < ActiveRecord::Migration[5.2]$/;"	c
+CreateContacts	db/migrate/20190707003835_create_contacts.rb	/^class CreateContacts < ActiveRecord::Migration[5.2]$/;"	c
+CreateOrders	db/migrate/20190702172925_create_orders.rb	/^class CreateOrders < ActiveRecord::Migration[5.2]$/;"	c
+CreatePhotos	db/migrate/20190711224747_create_photos.rb	/^class CreatePhotos < ActiveRecord::Migration[5.2]$/;"	c
+CreateProductItems	db/migrate/20190629205052_create_product_items.rb	/^class CreateProductItems < ActiveRecord::Migration[5.2]$/;"	c
+CreateProducts	db/migrate/20190629035129_create_products.rb	/^class CreateProducts < ActiveRecord::Migration[5.2]$/;"	c
+CreateSizes	db/migrate/20190724220429_create_sizes.rb	/^class CreateSizes < ActiveRecord::Migration[5.2]$/;"	c
+CreateStocks	db/migrate/20190724232635_create_stocks.rb	/^class CreateStocks < ActiveRecord::Migration[5.2]$/;"	c
+CurrentCart	app/controllers/concerns/current_cart.rb	/^module CurrentCart$/;"	m
+CurrentCart	app/models/concerns/current_cart.rb	/^module CurrentCart$/;"	m
+DeviseCreateAdminUsers	db/migrate/20190629040954_devise_create_admin_users.rb	/^class DeviseCreateAdminUsers < ActiveRecord::Migration[5.2]$/;"	c
+Mystore2	config/application.rb	/^module Mystore2$/;"	m
+Order	app/models/order.rb	/^class Order < ApplicationRecord$/;"	c
+OrderNotifierMailer	app/mailers/order_notifier_mailer.rb	/^class OrderNotifierMailer < ApplicationMailer$/;"	c
+OrderNotifierMailerPreview	test/mailers/previews/order_notifier_mailer_preview.rb	/^class OrderNotifierMailerPreview < ActionMailer::Preview$/;"	c
+OrderNotifierMailerTest	test/mailers/order_notifier_mailer_test.rb	/^class OrderNotifierMailerTest < ActionMailer::TestCase$/;"	c
+OrderTest	test/models/order_test.rb	/^class OrderTest < ActiveSupport::TestCase$/;"	c
+OrdersController	app/controllers/orders_controller.rb	/^class OrdersController < ApplicationController$/;"	c
+PagesController	app/controllers/pages_controller.rb	/^class PagesController < ApplicationController$/;"	c
+PagesControllerTest	test/controllers/pages_controller_test.rb	/^class PagesControllerTest < ActionDispatch::IntegrationTest$/;"	c
+PagesHelper	app/helpers/pages_helper.rb	/^module PagesHelper$/;"	m
+Photo	app/models/photo.rb	/^class Photo < ApplicationRecord$/;"	c
+PhotoTest	test/models/photo_test.rb	/^class PhotoTest < ActiveSupport::TestCase$/;"	c
+PhotoUploader	app/uploaders/photo_uploader.rb	/^class PhotoUploader < CarrierWave::Uploader::Base$/;"	c
+PhotosController	app/controllers/photos_controller.rb	/^class PhotosController < ApplicationController$/;"	c
+Product	app/models/product.rb	/^class Product < ApplicationRecord$/;"	c
+ProductItem	app/models/product_item.rb	/^class ProductItem < ApplicationRecord$/;"	c
+ProductItemTest	test/models/product_item_test.rb	/^class ProductItemTest < ActiveSupport::TestCase$/;"	c
+ProductItemsController	app/controllers/product_items_controller.rb	/^class ProductItemsController < ApplicationController$/;"	c
+ProductTest	test/models/product_test.rb	/^class ProductTest < ActiveSupport::TestCase$/;"	c
+ProductsController	app/controllers/products_controller.rb	/^class ProductsController < ApplicationController$/;"	c
+Size	app/models/size.rb	/^class Size < ApplicationRecord$/;"	c
+SizeTest	test/models/size_test.rb	/^class SizeTest < ActiveSupport::TestCase$/;"	c
+Stock	app/models/stock.rb	/^class Stock < ApplicationRecord$/;"	c
+StockTest	test/models/stock_test.rb	/^class StockTest < ActiveSupport::TestCase$/;"	c
+about	app/controllers/pages_controller.rb	/^  def about$/;"	f	class:PagesController
+add_product	app/models/cart.rb	/^  def add_product(product_id, size_id)$/;"	f	class:Cart
+add_product_items_from_cart	app/models/order.rb	/^def add_product_items_from_cart(cart)$/;"	f	class:Order
+add_quantity	app/controllers/product_items_controller.rb	/^  def add_quantity$/;"	f	class:ProductItemsController
+by_size	app/models/stock.rb	/^  def self.by_size product_id, size_id$/;"	F	class:Stock
+cart_params	app/controllers/carts_controller.rb	/^def cart_params$/;"	f	class:CartsController
+change	db/migrate/20190629035129_create_products.rb	/^  def change$/;"	f	class:CreateProducts
+change	db/migrate/20190629040954_devise_create_admin_users.rb	/^  def change$/;"	f	class:DeviseCreateAdminUsers
+change	db/migrate/20190629171413_create_carts.rb	/^  def change$/;"	f	class:CreateCarts
+change	db/migrate/20190629205052_create_product_items.rb	/^  def change$/;"	f	class:CreateProductItems
+change	db/migrate/20190629211542_add_quantity_to_product_items.rb	/^  def change$/;"	f	class:AddQuantityToProductItems
+change	db/migrate/20190702172925_create_orders.rb	/^  def change$/;"	f	class:CreateOrders
+change	db/migrate/20190702173027_add_order_to_product_items.rb	/^  def change$/;"	f	class:AddOrderToProductItems
+change	db/migrate/20190706232742_add_state_to_orders.rb	/^  def change$/;"	f	class:AddStateToOrders
+change	db/migrate/20190707003835_create_contacts.rb	/^  def change$/;"	f	class:CreateContacts
+change	db/migrate/20190708225355_add_size_to_products.rb	/^  def change$/;"	f	class:AddSizeToProducts
+change	db/migrate/20190710014056_add_size2_to_products.rb	/^  def change$/;"	f	class:AddSize2ToProducts
+change	db/migrate/20190711215814_create_active_storage_tables.active_storage.rb	/^  def change$/;"	f	class:CreateActiveStorageTables
+change	db/migrate/20190711224747_create_photos.rb	/^  def change$/;"	f	class:CreatePhotos
+change	db/migrate/20190711225750_add_productreferences_to_photos.rb	/^  def change$/;"	f	class:AddProductreferencesToPhotos
+change	db/migrate/20190715193028_add_nit_to_orders.rb	/^  def change$/;"	f	class:AddNitToOrders
+change	db/migrate/20190715200707_add_phone_to_orders.rb	/^  def change$/;"	f	class:AddPhoneToOrders
+change	db/migrate/20190717183349_add_category_to_products.rb	/^  def change$/;"	f	class:AddCategoryToProducts
+change	db/migrate/20190724220429_create_sizes.rb	/^  def change$/;"	f	class:CreateSizes
+change	db/migrate/20190724232635_create_stocks.rb	/^  def change$/;"	f	class:CreateStocks
+change	db/migrate/20190725000359_add_size_id_to_product_items.rb	/^  def change$/;"	f	class:AddSizeIdToProductItems
+charge	app/controllers/orders_controller.rb	/^  def charge$/;"	f	class:OrdersController
+contact_params	app/controllers/contacts_controller.rb	/^  def contact_params$/;"	f	class:ContactsController
+contraentrega	app/controllers/orders_controller.rb	/^    def contraentrega$/;"	f	class:OrdersController
+create	app/controllers/contacts_controller.rb	/^  def create$/;"	f	class:ContactsController
+create	app/controllers/orders_controller.rb	/^  def create$/;"	f	class:OrdersController
+create	app/controllers/photos_controller.rb	/^  def create$/;"	f	class:PhotosController
+create	app/controllers/product_items_controller.rb	/^  def create$/;"	f	class:ProductItemsController
+create	app/controllers/products_controller.rb	/^  def create$/;"	f	class:ProductsController
+decrease	app/models/stock.rb	/^  def self.decrease product_id, size_id, units$/;"	F	class:Stock
+destroy	app/controllers/carts_controller.rb	/^def destroy$/;"	f	class:CartsController
+destroy	app/controllers/orders_controller.rb	/^def destroy$/;"	f	class:OrdersController
+destroy	app/controllers/photos_controller.rb	/^  def destroy$/;"	f	class:PhotosController
+destroy	app/controllers/product_items_controller.rb	/^  def destroy$/;"	f	class:ProductItemsController
+display_format	app/models/size.rb	/^  def self.display_format size_name, product_id$/;"	F	class:Size
+down	db/migrate/20190629040958_create_active_admin_comments.rb	/^  def self.down$/;"	F	class:CreateActiveAdminComments
+edit	app/controllers/photos_controller.rb	/^  def edit$/;"	f	class:PhotosController
+ensure_not_product_item	app/models/product.rb	/^  def ensure_not_product_item$/;"	f	class:Product
+increase	app/models/stock.rb	/^  def self.increase product_id, size_id, units$/;"	F	class:Stock
+index	app/controllers/contacts_controller.rb	/^  def index$/;"	f	class:ContactsController
+index	app/controllers/orders_controller.rb	/^def index$/;"	f	class:OrdersController
+index	app/controllers/pages_controller.rb	/^  def index$/;"	f	class:PagesController
+index	app/controllers/photos_controller.rb	/^  def index$/;"	f	class:PhotosController
+index	app/controllers/products_controller.rb	/^  def index$/;"	f	class:ProductsController
+invalid_cart	app/controllers/carts_controller.rb	/^def invalid_cart$/;"	f	class:CartsController
+kids	app/controllers/products_controller.rb	/^  def kids$/;"	f	class:ProductsController
+kids	app/models/product.rb	/^  def self.kids$/;"	F	class:Product
+men	app/controllers/products_controller.rb	/^  def men$/;"	f	class:ProductsController
+men	app/models/product.rb	/^ def self.men$/;"	F	class:Product
+new	app/controllers/carts_controller.rb	/^def new$/;"	f	class:CartsController
+new	app/controllers/contacts_controller.rb	/^  def new$/;"	f	class:ContactsController
+new	app/controllers/orders_controller.rb	/^def new$/;"	f	class:OrdersController
+new	app/controllers/photos_controller.rb	/^  def new$/;"	f	class:PhotosController
+new	app/controllers/products_controller.rb	/^  def new$/;"	f	class:ProductsController
+new	app/models/order.rb	/^def new$/;"	f	class:Order
+options_for	app/models/size.rb	/^  def self.options_for product_id$/;"	F	class:Size
+order_params	app/controllers/orders_controller.rb	/^  def order_params$/;"	f	class:OrdersController
+photo_params	app/controllers/photos_controller.rb	/^      def photo_params$/;"	f	class:PhotosController
+product_item_params	app/controllers/product_items_controller.rb	/^  def product_item_params$/;"	f	class:ProductItemsController
+product_params	app/controllers/products_controller.rb	/^    def product_params$/;"	f	class:ProductsController
+recieved	app/mailers/order_notifier_mailer.rb	/^  def recieved(order)$/;"	f	class:OrderNotifierMailer
+recieved	test/mailers/previews/order_notifier_mailer_preview.rb	/^  def recieved$/;"	f	class:OrderNotifierMailerPreview
+reduce_quantity	app/controllers/product_items_controller.rb	/^  def reduce_quantity$/;"	f	class:ProductItemsController
+set_cart	app/controllers/carts_controller.rb	/^def set_cart$/;"	f	class:CartsController
+set_cart	app/controllers/concerns/current_cart.rb	/^  def set_cart$/;"	f	class:CurrentCart
+set_cart	app/models/concerns/current_cart.rb	/^  def set_cart$/;"	f	class:CurrentCart
+set_contact	app/controllers/contacts_controller.rb	/^  def set_contact$/;"	f	class:ContactsController
+set_order	app/controllers/orders_controller.rb	/^  def set_order$/;"	f	class:OrdersController
+set_product	app/controllers/photos_controller.rb	/^    def set_product$/;"	f	class:PhotosController
+set_product	app/controllers/products_controller.rb	/^    def set_product$/;"	f	class:ProductsController
+set_product_item	app/controllers/product_items_controller.rb	/^  def set_product_item$/;"	f	class:ProductItemsController
+shipped	app/mailers/order_notifier_mailer.rb	/^  def shipped(order)$/;"	f	class:OrderNotifierMailer
+shipped	test/mailers/previews/order_notifier_mailer_preview.rb	/^  def shipped$/;"	f	class:OrderNotifierMailerPreview
+shop	app/controllers/pages_controller.rb	/^  def shop$/;"	f	class:PagesController
+show	app/controllers/carts_controller.rb	/^def show$/;"	f	class:CartsController
+show	app/controllers/orders_controller.rb	/^def show$/;"	f	class:OrdersController
+show	app/controllers/photos_controller.rb	/^  def show$/;"	f	class:PhotosController
+show	app/controllers/products_controller.rb	/^  def show$/;"	f	class:ProductsController
+size	app/models/product_item.rb	/^  def size$/;"	f	class:ProductItem
+sizes_for	app/controllers/application_controller.rb	/^  def sizes_for product_id$/;"	f	class:ApplicationController
+system!	bin/setup	/^def system!(*args)$/;"	f
+system!	bin/update	/^def system!(*args)$/;"	f
+to_jq_upload	app/models/photo.rb	/^   def to_jq_upload$/;"	f	class:Photo
+total_price	app/models/cart.rb	/^  def total_price$/;"	f	class:Cart
+total_price	app/models/order.rb	/^def total_price$/;"	f	class:Order
+total_price	app/models/product.rb	/^  def total_price$/;"	f	class:Product
+total_price	app/models/product_item.rb	/^  def total_price$/;"	f	class:ProductItem
+up	db/migrate/20190629040958_create_active_admin_comments.rb	/^  def self.up$/;"	F	class:CreateActiveAdminComments
+update	app/controllers/photos_controller.rb	/^  def update$/;"	f	class:PhotosController
+update	app/controllers/products_controller.rb	/^  def update$/;"	f	class:ProductsController
+women	app/controllers/products_controller.rb	/^  def women$/;"	f	class:ProductsController
+women	app/models/product.rb	/^ def self.women$/;"	F	class:Product
