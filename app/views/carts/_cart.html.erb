@@ -5,18 +5,15 @@
      <%= number_to_currency item.total_price %> - <%=item.product.size %>.
 
       <li>
-      <!-- Seguir desde aca. Ya ajuste product_id, ver como hacemos
-        para pasar cart_it, que es el campo que necesitamos para poder
-        hacer el redirect. -->
-        <%= link_to "Add one", product_items_add_path(item.product), method: :post %>
+        <%= link_to "Add one", product_items_add_path(item.id), method: :post %>
        </li>
 
        <li>
-        <%= link_to "Reduce one", product_items_reduce_path(item.product), method: :post %>
+        <%= link_to "Reduce one", product_items_reduce_path(item.id), method: :post %>
       </li>
 
        <li>
-         <%= link_to 'Delete', item, method: :delete, data: {confirm: 'You sure?'} %>
+         <%= link_to 'Delete', item, method: :delete, data: { confirm: 'You sure?' } %>
       </li>
 
     </li>

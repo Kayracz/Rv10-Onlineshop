@@ -11,10 +11,10 @@ Rails.application.routes.draw do
   get 'shop' => 'pages#shop'
   get 'about' => 'pages#about'
 
-  post 'product_items/:product_id/add'    => "product_items#add_quantity", 
+  post 'product_items/:item_id/add'    => "product_items#add_quantity", 
     as: "product_items_add"
 
-  post 'product_items/:product_id/reduce' => "product_items#reduce_quantity", 
+  post 'product_items/:item_id/reduce' => "product_items#reduce_quantity", 
     as: "product_items_reduce"
 
   get 'contraentrega' => 'orders#contraentrega'
