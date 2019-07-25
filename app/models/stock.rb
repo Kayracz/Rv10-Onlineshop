@@ -14,6 +14,11 @@ class Stock < ApplicationRecord
   # +------------+---------+-------+
   # And so on....
 
+  def self.adjust product_id, size_id, units
+    stock = Stock.where(product_id: product_id, size_id: size_id).first
+    stock&.update_attributes units: units
+  end
+
   def self.by_size product_id, size_id
     stock = Stock.where(product_id: product_id, size_id: size_id).first
     return stock ? stock.units : 0

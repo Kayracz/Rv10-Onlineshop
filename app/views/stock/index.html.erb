@@ -1,0 +1,27 @@
+<link href="/style.css" rel="stylesheet" type="text/css" media="all"/>
+
+<h2>
+  Stock
+</h2>
+<div class="container">
+<% @products.each do |p| %>
+  <hr/>
+    <% Size.all.each_with_index do |s, i| %>
+      <%= form_tag stock_update_path do %>
+        <% if i == 0 %>
+          <%= label_tag p.title, nil, class: "stk-label" %>
+        <% else %>
+          <%= label_tag nil, nil, class: "stk-label" %>
+        <% end %>
+        <%= hidden_field_tag :product_id, p.id %>
+        <%= hidden_field_tag :size_id, s.id %>
+        <%= text_field_tag :size, s.name %>
+        <%= number_field_tag :units, units_in_stock(p.id, s.id), 
+              min: "0",
+              class: "stk-units" %>
+      <%= submit_tag "Update" %>
+    <% end %>
+  <% end %>
+<% end %>
+</div>
+
