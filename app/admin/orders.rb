@@ -32,7 +32,7 @@ permit_params :shipped
           number_to_currency item.total_price
         end
          column 'Size' do |item|
-          item.product.size
+          item.size.name
         end
          column 'Size2' do |item|
           item.product.size2

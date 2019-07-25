@@ -4,7 +4,6 @@ class Product < ApplicationRecord
   before_destroy :ensure_not_product_item
 
   has_many :product_items
-
   has_many :photos, :inverse_of => :product, :dependent => :destroy
   accepts_nested_attributes_for :photos, allow_destroy: true
 
