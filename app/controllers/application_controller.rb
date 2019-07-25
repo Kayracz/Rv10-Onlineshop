@@ -6,4 +6,5 @@ class ApplicationController < ActionController::Base
   def sizes_for product_id
     Size.options_for product_id
   end
+
 end

@@ -1,0 +1,13 @@
+.stk-label {
+    width: 100px;
+    display: inline-block;
+}
+
+.stk-size {
+    width: 60px;
+}
+
+.stk-units {
+    width: 40px;
+    text-align: right;
+}
