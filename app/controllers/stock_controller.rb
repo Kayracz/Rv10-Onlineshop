@@ -7,8 +7,9 @@ class StockController < ApplicationController
   end
 
   def update
+    Stock.adjust params[:product_id], params[:size_id], params[:units]
+    redirect_to action: :index
   end
-
 
   private
   def units_in_stock product_id, size_id
