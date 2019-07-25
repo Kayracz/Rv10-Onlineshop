@@ -20,7 +20,7 @@ a single one. Or at least, move huge chucks of them to a
 partial view (easy maintenace).
 
 ### Open questions
-* Why not use a category object instead of a string?
+#### Why not use a category object instead of a string?
 
 Something like
 class Product
@@ -31,9 +31,14 @@ This variant could allow the admin to add/rename categories
 without changing the code *and* without updatig the products
 table.
 
-* On the nav menu, sales points to a view that shows all products.
+#### On the nav menu, sales points to a view that shows all products.
 
 Is that by design?
 
-* Why products have two different sizes?
+#### Why products have two different sizes?
+A more flexible approach would be to use the sizes table. That way
+admins can add/remove/rename sizes without changing the schema or
+the data in the products table.
+
+
 
