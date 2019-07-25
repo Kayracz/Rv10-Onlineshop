@@ -34,6 +34,16 @@ if Rails.env.development?
       title: "Scarf", description: "Colorful scarf!", price: 67.89,
       photo: "/coolcloud/scarf",
       size: "XS", size2: "S", category: "women")
+
+    Product.create!(
+      title: "Kid Shirt", description: "Cool shirt!", price: 56.78,
+      photo: "/coolcloud/shirt",
+      size: "XS", size2: "S", category: "kids")
+
+    Product.create!(
+      title: "Hat", description: "Cool hat!", price: 56.78,
+      photo: "/coolcloud/shirt",
+      size: "XS", size2: "S", category: "kids")
     # =====
   end
 end

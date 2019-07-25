@@ -16,7 +16,7 @@
 
 Maybe I'm missing something obvious, but at first glance,
 it seems that all of these views can be combined into 
-a single one. Or at least, move huge chucks of them to a 
+a single one; or at least, move huge chucks of them to a 
 partial view (easy maintenace).
 
 ### Open questions
