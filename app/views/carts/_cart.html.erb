@@ -2,7 +2,7 @@
    <ul>
     <li>
      <%= item.quantity %>&times;<%= item.product.title %> =
-     <%= number_to_currency item.total_price %> - <%=item.product.size %>.
+     <%= number_to_currency item.total_price %> - <%=item.size.name %>.
 
       <li>
         <%= link_to "Add one", product_items_add_path(item.id), method: :post %>
