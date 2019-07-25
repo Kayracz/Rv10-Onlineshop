@@ -1,31 +1,37 @@
 
 <section class="product-list">
         <div class="container">
-          <% @product.each do |product| %>
+          <% @products.each do |product| %>
           <div class="row">
             <div class="col-md-12">
               <div class="product">
                 <div class="row">
                   <div class="col-md-6 col-xs-12">
                     <div class="thumbnail">
-                       <%= cl_image_tag product.photo %>
+                      <%= cl_image_tag product.photo %>
                     </div>
                   </div>
                   <div class="col-md-5 col-md-offset-1">
                     <div class="product-details">
-                      <h2 class="product-title"> <a href=""><%= link_to product.title, product %></h2>
-                      <p class="product-price"><%= number_to_currency product.price %></p>
-                      <p> <%= product.size %> </p>
-                      <hr>
-
-                      <hr>
-                    </br>
-
+                      <h2 class="product-title">
+                        <a href=""><%= link_to product.title, product %></h2>
+                        <p class="product-price">
+                        <%= number_to_currency product.price %></p>
                       <!-- end -->
-
-                      <%= button_to product_items_path(product_id: product.id), class: 'btn btn-default' do %>
-                      <i class="fa fa-shopping-cart"></i> Add to cart
-                      <% end %>
+                      <div>
+                        <!-- This way we can also pass size_id as an argument. -->
+                        <%= form_tag product_items_path(product_id: product.id) do %>
+                          <%= select_tag :size_id, 
+                            options_for_select(
+                              sizes_for(product.id)),
+                            prompt: "TALLE"
+                            %>
+                          <button class="btn btn-default">
+                            <i class="fa fa-shopping-cart"></i>
+                            Add to cart
+                          </button>
+                       <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>

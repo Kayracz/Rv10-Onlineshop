@@ -2,18 +2,18 @@
    <ul>
     <li>
      <%= item.quantity %>&times;<%= item.product.title %> =
-     <%= number_to_currency item.total_price %> - <%=item.product.size %>.
+     <%= number_to_currency item.total_price %> - <%=item.size.name %>.
 
       <li>
-        <%= link_to "Add one", product_items_add_path, method: :post %>
+        <%= link_to "Add one", product_items_add_path(item.id), method: :post %>
        </li>
 
        <li>
-        <%= link_to "Reduce one", product_items_reduce_path, method: :post %>
+        <%= link_to "Reduce one", product_items_reduce_path(item.id), method: :post %>
       </li>
 
        <li>
-         <%= link_to 'Delete', item, method: :delete, data: {confirm: 'You sure?'} %>
+         <%= link_to 'Delete', item, method: :delete, data: { confirm: 'You sure?' } %>
       </li>
 
     </li>

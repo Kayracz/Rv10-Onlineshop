@@ -1,0 +1,5 @@
+development: 
+  cloud_name: "test"
+
+production:
+  cloud_name: "TODO"

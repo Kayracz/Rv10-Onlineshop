@@ -10,10 +10,16 @@ Rails.application.routes.draw do
   get 'kids', to: 'products#kids'
   get 'shop' => 'pages#shop'
   get 'about' => 'pages#about'
-  post 'product_items/:id/add' => "product_items#add_quantity", as: "product_items_add"
-  post 'product_items/:id/reduce' => "product_items#reduce_quantity", as: "product_items_reduce"
+
+  post 'product_items/:item_id/add'    => "product_items#add_quantity", 
+    as: "product_items_add"
+
+  post 'product_items/:item_id/reduce' => "product_items#reduce_quantity", 
+    as: "product_items_reduce"
+
   get 'contraentrega' => 'orders#contraentrega'
-  resources :carts, :product_items, :orders, :contacts, :products, :photos, :quantity
+  resources :carts, :product_items, :orders, :contacts, 
+    :products, :photos, :quantity
 end
 
 
