@@ -1,4 +1,6 @@
-<% @cart.product_items.each do|item| %>
+<!-- To avoid "moving items" (default sort order in Rails.) -->
+<% @sorted_items = @cart.product_items.order(:product_id, :size_id) %>
+<% @sorted_items.each do|item| %>
    <ul>
     <li>
      <%= link_to 'x', item, method: :delete, data: { confirm: 'You sure?' } %> -
