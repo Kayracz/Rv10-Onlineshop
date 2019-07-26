@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:index, :shop, :show, :about]
+  before_action :set_cart, only: [:index, :show, :about]
   before_action :set_product, only: [:new, :show, :edit, :update, :destroy]
   # GET /albums
   # GET /albums.json

@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:index, :shop, :show, :about, :women, :kids, :men, :new]
+  before_action :set_cart, only: [:index, :show, :about, :women, :kids, :men, :new]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def new

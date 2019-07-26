@@ -6,7 +6,6 @@ class CartsController < ApplicationController
     @cart = Cart.new
   end
 
-  #edited by me not sure if relevant? test1
   def show
     @carts = Cart.all
   end

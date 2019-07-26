@@ -5,7 +5,7 @@
     <li>
      <%= link_to 'x', item, method: :delete, data: { confirm: 'You sure?' } %> -
      <%= item.quantity %>&times;<%= item.product.title %> =
-     <%= number_to_currency item.total_price %> - <%=item.size.name %> <%=item.size.name.last %>
+     <%= number_to_currency item.total_price %> - <%=item.size.name %>
 
         <%= link_to "+", product_items_add_path(item.id), method: :post %>
         <%= link_to "-", product_items_reduce_path(item.id), method: :post %>
@@ -13,4 +13,3 @@
    </ul>
 
 <% end %>
-

@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   get 'women', to: 'products#women'
   get 'men', to: 'products#men'
   get 'kids', to: 'products#kids'
-  get 'shop' => 'pages#shop'
   get 'about' => 'pages#about'
 
   post 'product_items/:item_id/add'    => "product_items#add_quantity",
