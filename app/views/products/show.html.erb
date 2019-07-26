@@ -1,47 +1,44 @@
 
+<div class="container">
+<div class="row">
+<div class="col-md-3">
+<div class="showimage">
+<%= cl_image_tag @product.photo %>
 
- <div class="thumbnail">
- <%= cl_image_tag @product.photo %>
- </div>
-<p><%= @product.title %></p>
+<h1><%= @product.title %></h1>
 <p><%= @product.size %></p>
-<p>Description:<%= @product.description %></p>
-
+<p><b>Description: </b><%= @product.description %></p>
+<div class="sizecart">
+      <%= form_tag product_items_path(product_id: @product.id) do %>
+      <%= select_tag :size_id,
+         options_for_select(
+           sizes_for(@product.id)),
+         prompt: "TALLE"
+         %>
+      <br>
+      <button class="btn btn-default align-center">
+      <i class="fa fa-shopping-cart"></i>
+      Add to cart
+      </button>
+      <%end%>
+    </div>
+  </div>
+</div>
 
 <div class="container" style="margin-bottom:100px !important;">
-  <div class="row">
-<div id="gallery">
-            <% @product.photos.each do |photo| %>
-            <div class="col-lg-3 col-md-4 col-xs-6 photo">
-                 <a class="" data-image-id="" data-toggle="modal" data-title=""
-                   data-target="#image-gallery" style=" height: 183px; width: 98%;
-"> <%= cl_image_tag photo.photo %></a>
-
-                </a>
-            </div>
-             <% end %>
-          </div>
-        </div>
-
-
-<!--
-<%= button_to product_items_path(product_id: @product.id), class: 'btn btn-primary' do %>
-<i class="fa fa-shopping-cart"></i> Add to cart
-<% end %>
+   <div class="row">
+      <div id="gallery">
+         <% @product.photos.each do |photo| %>
+         <div class="col-lg-3 col-md-4 col-xs-6 photo">
+            <a class="" data-image-id="" data-toggle="modal" data-title=""
+               data-target="#image-gallery" style=" height: 200px; width: 98%;
+               "> <%= cl_image_tag photo.photo %></a>
+            </a>
+         </div>
+         <% end %>
       </div>
- -->
+   </div>
 
-           <div class="sizecart">
-                          <%= form_tag product_items_path(product_id: @product.id) do %>
-                          <%= select_tag :size_id,
-                            options_for_select(
-                              sizes_for(@product.id)),
-                            prompt: "TALLE"
-                            %>
-                            <br>
-                          <button class="btn btn-default align-center">
-                            <i class="fa fa-shopping-cart"></i>
-                            Add to cart
-                          </button>
-                          <%end%>
-
+ </div>
+</div>
+</div>

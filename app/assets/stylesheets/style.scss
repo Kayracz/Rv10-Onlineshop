@@ -2900,3 +2900,16 @@ img.mfp-img {
     margin: auto;
 }
 
+
+.showimage > img, .thumbnail a > img {
+    display: block;
+    width: 100%;
+}
+
+.text-center{
+  font-weight:300;
+}
+
+.titulo {
+   font-weight:lighter;
+}
