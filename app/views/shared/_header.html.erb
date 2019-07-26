@@ -28,7 +28,7 @@
 
     <div class="nav-container">
       <nav class="navbar navbar-default">
-        <div class="container">
+        <div class="container" >
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-navigation" aria-expanded="false">
@@ -36,9 +36,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <%= link_to root_path, class: 'navbar-brand' do %>
-            Rv10 <span class="logo-dot accent-bg"></span>
+          <%= link_to root_path, class: 'navbar-brand' do %>
+          <%= image_tag "rv10.png", height: 30 %>
           <% end %>
+
             <a href="#sidr" class="side-menu-opener mobile">
               <div class="bars">
                     <span class="bar top"></span>
@@ -56,7 +57,7 @@
               <li><%= link_to 'Mujer', women_path %></li>
               <li><%= link_to 'Hombre', men_path %></li>
               <li><%= link_to 'Ninos', kids_path %></li>
-              <li><%= link_to 'Sale', products_path %></li>
+              <li><%= link_to 'Productos', products_path %></li>
 
               <li>
             <% if @cart.total_price > 0 %>

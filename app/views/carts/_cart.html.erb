@@ -1,21 +1,12 @@
 <% @cart.product_items.each do|item| %>
    <ul>
     <li>
+     <%= link_to 'x', item, method: :delete, data: { confirm: 'You sure?' } %> -
      <%= item.quantity %>&times;<%= item.product.title %> =
-     <%= number_to_currency item.total_price %> - <%=item.size.name %>.
+     <%= number_to_currency item.total_price %> - <%=item.size.name %> <%=item.size.name.last %>
 
-      <li>
-        <%= link_to "Add one", product_items_add_path(item.id), method: :post %>
-       </li>
-
-       <li>
-        <%= link_to "Reduce one", product_items_reduce_path(item.id), method: :post %>
-      </li>
-
-       <li>
-         <%= link_to 'Delete', item, method: :delete, data: { confirm: 'You sure?' } %>
-      </li>
-
+        <%= link_to "+", product_items_add_path(item.id), method: :post %>
+        <%= link_to "-", product_items_reduce_path(item.id), method: :post %>
     </li>
    </ul>
 

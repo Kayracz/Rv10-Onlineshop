@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   post 'product_items/:item_id/reduce' => "product_items#reduce_quantity",
     as: "product_items_reduce"
 
-  get 'contraentrega' => 'orders#contraentrega'
+  # get 'contraentrega' => 'orders#contraentrega'
 
   resources :carts, :product_items, :orders, :contacts,
     :products, :photos, :quantity

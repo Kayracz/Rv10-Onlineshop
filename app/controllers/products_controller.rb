@@ -38,6 +38,11 @@ class ProductsController < ApplicationController
     @kids_product_items = Product.kids
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+  end
+
 
   private
 

@@ -1,42 +1,33 @@
 <h1> Mujer Deportiva </h1>
 
-<section class="product-list">
-        <div class="container">
-          <% @women_product_items.each do |product| %>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="product">
-                <div class="row">
-                  <div class="col-md-6 col-xs-12">
-                    <div class="thumbnail">
-                       <%= cl_image_tag product.photo %>
-                    </div>
-                  </div>
-                  <div class="col-md-5 col-md-offset-1">
-                    <div class="product-details">
-                      <h2 class="product-title"> <a href=""><%= link_to product.title, product %></h2>
-                      <p class="product-price"><%= number_to_currency product.price %></p>
 
-                      <div>
-                        <!-- This way we can also pass size_id as an argument. -->
-                        <%= form_tag product_items_path(product_id: product.id) do %>
-                          <%= select_tag :size_id, 
-                            options_for_select(
-                              sizes_for(product.id)),
-                            prompt: "TALLE"
-                            %>
-                          <button class="btn btn-default">
-                            <i class="fa fa-shopping-cart"></i>
-                            Add to cart
-                          </button>
-                       <% end %>
-                      </div>
-                    </div>
-                  </div>
+      <!-- trytwofrontend -->
+<div class="container-fluid">
+    <div class="row">
+  <% @women_product_items.each do |product| %>
+        <div class="col-md-3">
+
+            <div class="product-grid2">
+                <div class="product-image2">
+                    <a href="#"><%= cl_image_tag product.photo %></a>
+                    <ul class="social">
+                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                        <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
                 </div>
-              </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#"><%= link_to product.title, product %></a></h3>
+                    <span class="price"><%= number_to_currency product.price %></span>
+                </div>
             </div>
-          </div><!-- /.row -->
-          <% end %>
         </div>
-      </section>
+   <% end %>
+
+
+</div>
+</div>
+<hr>
+
+</div>
+</div>
+
