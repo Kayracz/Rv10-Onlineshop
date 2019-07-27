@@ -1,32 +1,28 @@
-<header class="secondary">
-  <div class="background-image-holder parallax-background overlay">
-    <%= image_tag('bg-5.jpg', class: 'background-image', alt:'Background') %>
-  </div>
-
+<header class="">
   <div class="container align-vertical hero">
     <div class="row">
       <div class="col-md-5 text-left">
-        <h1>Your Cart</h1>
-        <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates depudiandae sint et molestiae.</p>
+        <h1>Tu Carrito</h1>
+        <hr>
       </div>
     </div><!--end of row-->
   </div><!--end of container-->
 </header>
 
-<section class="product-list">
+<section class="product-list" style="padding-top: 5px !important;">
   <div class="container">
-    <div class="col-md-12">
-      <h2>Cart Details</h2>
+    <div class="col-md-12" style="padding-top: -40px !important;">
+      <h3 style="font-weight:400;">Detalles de tu compra</h3>
       <br>
       <%= render 'carts/cart' %>
       <br>
-      <h5>Total: <%= number_to_currency @cart.total_price %></h5>
+      <h4><b>Total:</b> <%= number_to_currency @cart.total_price %></h4>
       <br>
-      <%= button_to 'Checkout', new_order_path, method: :get %>
+      <%= button_to 'Comprar', new_order_path, method: :get %>
       <br>
-      <%= link_to 'Back to Store', products_path %>
+      <%= link_to 'De vuelta a la tienda', products_path %>
       <br>
-      <%= link_to 'Empty Your Cart', @cart, method: :delete, data: {confirm: 'You sure?'} %>
+      <%= link_to 'Vacía tu carrito', @cart, method: :delete, data: {confirm: 'You sure?'} %>
     </div>
   </div>
 </section>
