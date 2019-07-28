@@ -1,4 +1,6 @@
-<section class="products-grid">
+<section class="products-grid" style="
+    padding-top: 24px;
+">
         <div class="container">
           <div class="row products-container">
           <% @products.each do |product| %>
@@ -7,10 +9,10 @@
               <div class="thumbnail" style="background-image: url(<%= product.photo %>);">
                 <div class="product-details text-center">
                   <div class="align-vertical">
-                    <h3><%= product.title %> </h3>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                    <h3><%= product.title %></h3>
                     <p class="product-price"><%= number_to_currency product.price %></p>
                   </div>
+                   <p class="btn btn-primary"><%= link_to product.title, product %></p>
                 </div>
               </div>
             </div>
