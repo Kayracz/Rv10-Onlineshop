@@ -29,7 +29,7 @@ permit_params :shipped
           item.quantity
         end
         column 'Price' do |item|
-          number_to_currency item.total_price
+          number_to_currency_bo item.total_price
         end
          column 'Size' do |item|
           item.size.name
@@ -41,7 +41,7 @@ permit_params :shipped
     end
 
     panel 'Order Total' do
-      number_to_currency order.total_price
+      number_to_currency_bo order.total_price
     end
 
   end

@@ -1,39 +1,12 @@
 
-<div class="container-fluid">
-<div class="row">
-<div class="">
-<div class="showimage" style="height:300px; width:300px;">
-<%= cl_image_tag @product.photo %>
-</div>
-</div>
-</div>
-
-<div class="info">
- <div class="col-lg-4">
-<h1><%= @product.title %></h1>
-<p><%= @product.size %></p>
-<p><b>Detalles del producto: </b><%= @product.description %></p>
-<div class="sizecart">
-      <%= form_tag product_items_path(product_id: @product.id) do %>
-      <%= select_tag :size_id,
-         options_for_select(
-           sizes_for(@product.id)),
-         prompt: "Talla"
-         %>
-      <br>
-      <button class="btn btn-danger align-center">
-      <i class="fa fa-shopping-cart"></i>
-      Add to cart
-      </button>
-      <%end%>
-    </div>
-</div>
-
-
 <div class="container modalish" style="margin-bottom:100px !important;">
+<div class="row">
+<div class="showimage">
+  <div class="column">
+<%= cl_image_tag @product.photo %>
    <div id="gallery">
       <div class="row">
-         <div class="col-lg-4 photo">
+         <div class="photo">
             <% @product.photos.each do |photo| %>
             <a class="" data-image-id="" data-toggle="modal" data-title=""
                data-target="#image-gallery" style=" height: 200px; width: 98%;
@@ -43,9 +16,51 @@
          </div>
       </div>
    </div>
+ </div>
+</div>
+
+<div class="column">
+  <div class="container-fluid">
+<h1><%= @product.title %></h1>
+<p class="titulo" style="font-size:15px;">Codigo: Co012324 </p>
+<hr>
+<p><%= @product.size %></p>
+<p class="titulo2" style="font-size:16px;"><%= number_to_currency_bo @product.price %></p>
+<p class="titulo" style="font-size:16px;"><b class="titulo2" style="font-size:16px;">Detalles del producto: </b><%= @product.description %></p>
+<hr>
+<div class="sizecart titulo2">
+      <%= label :size_id, 'Seleciona tu talle' %>
+      <%= form_tag product_items_path(product_id: @product.id) do %>
+      <%= select_tag :size_id,
+         options_for_select(
+           sizes_for(@product.id)),
+         prompt: "Seleciona tu talle"
+         %>
+      <br>
+      <button class="btn btn-danger align-center">
+      <i class="fa fa-shopping-cart"></i>
+      Add to cart
+      </button>
+      <br>
+      <%end%>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 
-<hr>
+<style>
+  .column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
 

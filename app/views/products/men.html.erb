@@ -1,6 +1,7 @@
 
-<div class="container-fluid text-center">
-<h1> Hombre Deportivo </h1>
+<div class="container">
+<h3 class="titulo"> Hombre </h3>
+<h4 class="titulo"> Filtrar por </h4>
     <div class="row">
   <% @men_product_items.each do |product| %>
         <div class="col-md-3">
@@ -15,7 +16,7 @@
                 </div>
                 <div class="product-content">
                     <h3 class="title"><a href="#"><%= link_to product.title, product %></a></h3>
-                    <span class="price"><%= number_to_currency product.price %></span>
+                    <span class="price"><%= number_to_currency_bo product.price %></span>
                 </div>
             </div>
         </div>

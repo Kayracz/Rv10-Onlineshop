@@ -10,7 +10,7 @@
      &nbsp;&nbsp;&nbsp;&nbsp;
      <%= cl_image_tag item.product.photo %>&nbsp;&nbsp;
      <%= item.quantity %>&nbsp;<b><%= item.product.title %></b> =&nbsp;&nbsp;
-     <%= number_to_currency item.total_price %> - &nbsp;<%=item.size.name %>&nbsp;&nbsp;&nbsp;
+     <%= number_to_currency_bo item.total_price %> - &nbsp;<%=item.size.name %>&nbsp;&nbsp;&nbsp;
 
      <%= link_to "Agregar (+)", product_items_add_path(item.id), method: :post %>&nbsp;&nbsp;
      <%= link_to "Disminuir (-)", product_items_reduce_path(item.id), method: :post %>

@@ -1,8 +1,11 @@
 
 <!-- trytwofrontend -->
-<div class="container-fluid text-center" style="font-weight:lighter;">
-<h1> All Products (delete after) </h1>
-    <div class="row">
+<div class="container-fluid">
+<h3 class="titulo"> Todos los productos </h3>
+<hr>
+<h4 class="titulo"> Filtrar por </h4>
+
+ <div class="row">
   <% @products.each do |product| %>
         <div class="col-md-3">
 
@@ -16,7 +19,7 @@
                 </div>
                 <div class="product-content">
                     <h3 class="title"><a href="#"><%= link_to product.title, product %></a></h3>
-                    <span class="price"><%= number_to_currency product.price %></span>
+                    <span class="price"><%= number_to_currency_bo product.price %></span>
                 </div>
             </div>
         </div>
@@ -29,3 +32,8 @@
 
 </div>
 </div>
+
+
+
+
+
