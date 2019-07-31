@@ -20,14 +20,19 @@
 /* GENERAL STYLES */
 select {
     position: relative;
-    height: 35px;
-    padding: 10px;
+    height: 40px !important;
+    padding: 11px ;
     margin-bottom:0px !important;
-    font-size: 5px;
     line-height: 18px;
     background-color: white;
-    border: 1px solid #7a7e82;
-    border-radius: 4px;
+    border: 1px solid #dddbdb;
+    border-radius: 0.5px;
+
+    // font-family: "Verlag-Book" !important;
+    color: #9a9a9a !important;
+    font-size: 12px !important;
+    letter-spacing: 2px;
+    font-weight: 400 !important;
   }
 
   button, select {
@@ -1929,7 +1934,6 @@ a.load-more {
 .navbar {
   background: none;
   border: none;
-  margin: 0;
   position: relative;
   z-index: 5;
   width: 100%;
@@ -1964,9 +1968,10 @@ a.load-more {
 .navbar-default .navbar-nav li a {
   font-size: 12px;
   color: #323237;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
+
 }
 
 @media screen and (min-width: 768px) {

@@ -36,5 +36,9 @@ class Product < ApplicationRecord
    where(category: 'kids')
  end
 
+ def sale_price
+  price * size.to_i / 100
+end
+
 end
 

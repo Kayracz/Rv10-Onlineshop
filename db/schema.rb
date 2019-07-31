@@ -117,8 +117,6 @@ ActiveRecord::Schema.define(version: 2019_07_25_000359) do
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "size"
-    t.string "size2"
     t.string "category"
   end
 
