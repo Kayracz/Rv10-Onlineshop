@@ -15,9 +15,9 @@
     </li>
 
     <li>
-      <%= number_to_currency_bo item.total_price %>
+      <%= number_to_currency item.total_price %>
     </li>
   </ul>
 <% end %>
 
-<p>Total: <%= number_to_currency_bo @order.total_price %></p>
+<p>Total: <%= number_to_currency @order.total_price %></p>

@@ -34,9 +34,6 @@ permit_params :shipped
          column 'Size' do |item|
           item.size.name
         end
-         column 'Size2' do |item|
-          item.product.size2
-        end
       end
     end
 

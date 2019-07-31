@@ -1,6 +1,6 @@
 class Size < ApplicationRecord
   # Returns a collection of key/value pairs that we
-  # can use as options for select on combos that 
+  # can use as options for select on combos that
   # shows sizes.
   # [["XS, 1],["S - Sin Stock", 2], ["M", 3], and so on...
   def self.options_for product_id
