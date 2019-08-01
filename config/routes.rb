@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   # get 'contraentrega' => 'orders#contraentrega'
 
   resources :carts, :product_items, :orders, :contacts,
-    :products, :photos, :quantity
+    :products, :photos, :quantity, :categories
 end
 
 

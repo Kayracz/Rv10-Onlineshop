@@ -5,6 +5,7 @@ class Product < ApplicationRecord
 
   has_many :product_items
   has_many :photos, :inverse_of => :product, :dependent => :destroy
+  has_many :categories
   accepts_nested_attributes_for :photos, allow_destroy: true
 
   validates :title, :description, presence: true
