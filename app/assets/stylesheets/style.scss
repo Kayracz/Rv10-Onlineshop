@@ -2889,9 +2889,17 @@ img.mfp-img {
 .product-grid2 .product-new-label{background-color:#3498db;color:#fff;font-size:17px;padding:5px 10px;position:absolute;right:0;top:0;transition:all .3s}
 .product-grid2:hover .product-new-label{opacity:0}
 .product-grid2 .product-content{padding:20px 10px;text-align:center}
-.product-grid2 .title{font-size:17px;margin:0 0 7px}
-.product-grid2 .title a{color:#303030}
-.product-grid2 .title a:hover{color:#3498db}
+.product-grid2 .title{font-size:17px;margin:0 0 7px; line-height: 7px;}
+
+.product-grid2 .title a {
+    color: #303030;
+    letter-spacing: 2px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.product-grid2 .title a:hover{color:gray}
 .product-grid2 .price{color:#303030;font-size:15px}
 @media screen and (max-width:990px){.product-grid2{margin-bottom:30px}
 }
@@ -2920,4 +2928,7 @@ img.mfp-img {
   height:50px !important;
 }
 
+.price{
+  font-size: 12px;
+}
 

@@ -1,25 +1,22 @@
-<section class="products-grid" style="
-    padding-top: 24px;
-">
-        <div class="container">
-          <div class="row products-container">
-          <% @products.each do |product| %>
-          <% if product.id <= 3 %>
-            <div class="col-md-4 col-sm-6 col-xs-12 product">
-              <div class="thumbnail" style="background-image: url(<%= product.photo %>);">
-                <div class="product-details text-center">
-                  <div class="align-vertical">
-                    <h3><%= product.title %></h3>
-                    <p class="product-price"><%= number_to_currency_bo product.price %></p>
-                  </div>
-                   <p class="btn btn-primary"><%= link_to product.title, product %></p>
-                </div>
-              </div>
+<section>
+<h2 class="page-title text-center" style="padding-bottom:-50px;">Destacados</h2>
+<hr>
+   <div class="row">
+     <% cache do %>
+      <% @products.each do |product| %>
+      <% if product.id <= 4 %>
+      <div class="col-md-3">
+         <div class="product-image2">
+            <a href="/women"><%= cl_image_tag product.photo %></a>
             </div>
             <% end %>
-            <% end %>
-          </div><!-- /.row -->
-        </div><!-- /.container -->
-      </section>
-
-
+         </div>
+         </div>
+       </div>
+     </div>
+      <% end %>
+      </div>
+    </div>
+   </div>
+   <% end %>
+</section>
