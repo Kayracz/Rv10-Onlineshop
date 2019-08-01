@@ -37,7 +37,7 @@ class Product < ApplicationRecord
  end
 
  def sale_price
-  price * size.to_i / 100
+  price * size.to_i * 10 / 100
 end
 
 end

@@ -12,17 +12,16 @@
    </div>
 
 
-
-
    <div class="sidebar text-center">
       <h1><%= @product.title %></h1>
-      <p class="titulo" style="font-size:15px;">Codigo: Co012324 </p>
+      <p class="titulo" style="font-size:15px;">Codigo:<%= @product.size2 %></p>
 
       <% if @product.sale_price == 0 %>
       <p class="titulo2" style="font-size:16px"><%= number_to_currency_bo @product.price %></p>
       <% else %>
-      <p class="titulo2" style="font-size:16px; text-decoration: line-through;"><%= number_to_currency_bo @product.price %></p>
-      <h4 class="titulo2" style="color: #ce1414;">Ahora: <%= number_to_currency_bo @product.sale_price %></h4>
+      <span>
+      <p class="titulo2" style="font-size:16px; text-decoration: line-through; display: inline-block;"><%= number_to_currency_bo @product.sale_price %></p><p class="titulo2" style="font-size:16px; color: #ce1414; display: inline-block;">&nbsp;&nbsp;<%= number_to_currency_bo @product.price %></p>
+      </span>
       <% end %>
    <hr>
 

@@ -21,7 +21,11 @@
                 </div>
                 <div class="product-content">
                     <h3 class="title"><a href="#"><%= link_to product.title, product %></a></h3>
-                    <span class="price"><%= number_to_currency_bo product.price %></span>
+                       <% if product.sale_price == 0 %>
+                    <h4 class="price"><%= number_to_currency_bo product.price %></h4>
+                    <% else %>
+                    <p style="display: inline-block; font-size: 14px;"><i style="text-decoration: line-through;"><%= number_to_currency_bo product.sale_price %></i>&nbsp;&nbsp;<b style="font-weight: 600;"><%= number_to_currency_bo product.price %></b></p>
+                     <% end %>
                 </div>
             </div>
         </div>

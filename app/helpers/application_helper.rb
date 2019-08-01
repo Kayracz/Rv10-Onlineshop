@@ -1,7 +1,7 @@
 module ApplicationHelper
 
 def number_to_currency_bo(number)
-  number_to_currency(number, :unit => "Bs. ", :separator => ",", :delimiter => ".")
+  number_to_currency(number, :unit => "Bs. ", :separator => ".", :delimiter => ",")
 end
 
 end
