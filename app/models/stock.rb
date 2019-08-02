@@ -23,7 +23,7 @@ class Stock < ApplicationRecord
     stock = Stock.where(product_id: product_id, size_id: size_id).first
     return stock ? stock.units : 0
   end
- 
+
   # Increases the number of units in stock for the
   # given product_id/size_id combination.
   def self.increase product_id, size_id, units
@@ -41,7 +41,7 @@ class Stock < ApplicationRecord
   def self.decrease product_id, size_id, units
     stock = Stock.where(product_id: product_id, size_id: size_id).first
     if stock
-      # Based on how they handle the cart, they don't want 
+      # Based on how they handle the cart, they don't want
       # negative stock, so we check for that here.
       old = stock.units
       return false if old - units < 0

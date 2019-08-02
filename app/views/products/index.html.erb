@@ -1,23 +1,41 @@
 
 <!-- Navbar for categories -->
-
-<h1> Products | <%= link_to "New Category", new_category_path %> |</h1>
-<!-- end -->
-
-
-<!-- trytwofrontend -->
-<div class="container-fluid">
-<h3 class="titulo"> Todos los productos </h3>
+<div class="container">
+<h1> Products | <%= link_to "New Category", new_category_path %></h1>
+<br>
 <hr>
+<br>
+All categories <br>
+<% Category.all.each do |cat| %>
+<%= link_to cat.name, products_path(category: cat.name) %>
+<br>
+<% end %>
+<!-- end -->
+<hr>
+<br>
+<br>
+Only in Navbar: <br>
+<% Category.where(display_in_navbar: true).each do |cat| %>
+<%= link_to cat.name, products_path(category: cat.name)%>
+<br>
+<% end %>
+</div>
+
+
+<div class="container-fluid" style="margin-top:5%; ">
+<h4 class="titulo"> Todos los Productos </h4>
+<hr style="border-top: 1px solid gray;">
 <h4 class="titulo"> Filtrar por </h4>
 
- <div class="row">
+<hr>
+    <div class="row">
+      <% cache do %>
   <% @products.each do |product| %>
         <div class="col-md-3">
 
             <div class="product-grid2">
                 <div class="product-image2">
-                    <a href="#"><%= cl_image_tag product.photo %></a>
+                    <a><%= cl_image_tag product.photo %></a>
                     <ul class="social">
                         <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                         <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
@@ -25,26 +43,28 @@
                 </div>
                 <div class="product-content">
                     <h3 class="title"><a href="#"><%= link_to product.title, product %></a></h3>
-
-                    <% if product.sale_price == 0 %>
-                    <h4 class="price"><%= number_to_currency_bo product.price %></h4>
+                       <% if product.sale_price == 0 %>
+                    <p style="font-size:12px;"><%= number_to_currency_bo product.price %></p>
                     <% else %>
-                    <p style="display: inline-block; font-size: 14px;"><i style="text-decoration: line-through;"><%= number_to_currency_bo product.sale_price %></i>&nbsp;&nbsp;<b style="font-weight: 600;"><%= number_to_currency_bo product.price %></b></p>
+                    <p style="display: inline-block; font-size: 12px;"><i style="text-decoration: line-through;"><%= number_to_currency_bo product.sale_price %></i>&nbsp;&nbsp;<b style="font-weight: 600;"><%= number_to_currency_bo product.price %></b></p>
                      <% end %>
-
-
                 </div>
             </div>
         </div>
    <% end %>
+   <% end %>
+</div>
+</div>
+</div>
+</div>
 
 
-</div>
-</div>
-<hr>
 
-</div>
-</div>
+
+
+
+
+
 
 
 

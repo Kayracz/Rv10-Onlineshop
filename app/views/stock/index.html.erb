@@ -16,7 +16,7 @@
         <%= hidden_field_tag :product_id, p.id %>
         <%= hidden_field_tag :size_id, s.id %>
         <%= text_field_tag :size, s.name %>
-        <%= number_field_tag :units, units_in_stock(p.id, s.id), 
+        <%= number_field_tag :units, units_in_stock(p.id, s.id),
               min: "0",
               class: "stk-units" %>
       <%= submit_tag "Update" %>
@@ -24,4 +24,3 @@
   <% end %>
 <% end %>
 </div>
-

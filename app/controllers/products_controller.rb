@@ -3,6 +3,15 @@ class ProductsController < ApplicationController
   before_action :set_cart, only: [:index, :show, :about, :women, :kids, :men, :new]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  def index
+    if params.has_key?(:category)
+     @category = Category.find_by_name(params[:category])
+     @products = Product.where(category: @category)
+    else
+    @products = Product.all
+   end
+  end
+
   def new
     @product = Product.new
   end
@@ -12,10 +21,6 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
-  def index
-    @products = Product.all
-
-  end
 
   def show
     @product = Product.find(params[:id])

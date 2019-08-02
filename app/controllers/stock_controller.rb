@@ -20,7 +20,7 @@ class StockController < ApplicationController
 
   def ensure_admin
     return if Rails.env.development?
-    # TODO: If we are not in development monde, 
+    # TODO: If we are not in development monde,
     #       we have to make sure that the current user is an admin.
     #       If it's not, redirect to index or something like that.
   end

@@ -62,12 +62,12 @@
             <% if @cart.total_price > 0 %>
               <%= link_to @cart, class: 'menu-cart' do  %>
                 <i class="fa fa-shopping-cart"></i>
-               <b> <%= number_to_currency_bo @cart.total_price %> </b>
+                <%= number_to_currency @cart.total_price %>
               <% end %>
             <% else %>
-             <b><a href="#" class="menu-cart"><i class="fa fa-shopping-cart"></i> Bs.0.00</a>
+              <a href="#" class="menu-cart"><i class="fa fa-shopping-cart"></i> $0.00</a>
             <% end %>
-          </li></b>
+          </li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
