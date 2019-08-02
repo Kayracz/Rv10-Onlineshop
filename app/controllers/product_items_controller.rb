@@ -5,12 +5,13 @@ class ProductItemsController < ApplicationController
 
   # This actions adds an item to the cart.
   def create
-    product = Product.find(params[:product_id])
-    size_id = params[:size_id]
-    @product_item = @cart.add_product(product.id, size_id)
+    @product = Product.find(params[:product_id])
+    @size_id = params[:size_id]
+    @category_id = params[:category_id]
+    @product_item = @cart.add_product(product.id, size_id, category_id)
     if @product_item.save
       # How critical is the stock update?
-      # For now, let's assume that as long as the 
+      # For now, let's assume that as long as the
       # item gets added to the cart we are good to go.
       # (That's what most e-commerce websites do.)
       Stock.decrease product.id, size_id, 1
@@ -55,7 +56,7 @@ class ProductItemsController < ApplicationController
   end
 
   def product_item_params
-    params.require(:product_item).permit(:product_id, :quantity)
+    params.require(:product_item).permit(:product_id, :quantity, :category_id, :category)
   end
 
 end

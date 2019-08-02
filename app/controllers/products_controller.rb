@@ -18,6 +18,12 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.create(product_params)
+    @category_id = params[:category_id]
+    # Creates entries in the stock table to handle the new product.
+    # (This could be a create callback on the model, too.)
+    Size.all.each do |s|
+      Stock.create! product_id: @product.id, size_id: s.id, units: 1
+    end
     redirect_to products_path
   end
 
@@ -58,6 +64,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :photo, :description, :price, :category)
+      params.require(:product).permit(:title, :photo, :description, :price, :category_id, :category)
     end
 end

@@ -1,11 +1,12 @@
 
 <!-- Navbar for categories -->
-<div class="container">
+<div class="container" style="display:inline-block;">
 <h1> Products | <%= link_to "New Category", new_category_path %></h1>
 <br>
 <hr>
 <br>
 All categories <br>
+<%= link_to 'Todas las categorias', products_path %><br>
 <% Category.all.each do |cat| %>
 <%= link_to cat.name, products_path(category: cat.name) %>
 <br>
@@ -43,6 +44,7 @@ Only in Navbar: <br>
                 </div>
                 <div class="product-content">
                     <h3 class="title"><a href="#"><%= link_to product.title, product %></a></h3>
+
                        <% if product.sale_price == 0 %>
                     <p style="font-size:12px;"><%= number_to_currency_bo product.price %></p>
                     <% else %>
