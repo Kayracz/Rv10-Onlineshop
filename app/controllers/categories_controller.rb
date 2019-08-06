@@ -1,6 +1,6 @@
 class CategoriesController < InheritedResources::Base
  include CurrentCart
-  before_action :set_cart, only: [:new, :create, :show, :index]
+  before_action :set_cart, only: [:new, :create, :show, :index, :edit]
   before_action :set_category, only: [:show, :edit, :destroy]
 
 
@@ -19,6 +19,6 @@ class CategoriesController < InheritedResources::Base
     end
 
     def category_params
-      params.require(:category).permit(:name, :description, :display_in_navbar, :categories_attributes => [:product_id, :category])
+      params.require(:category).permit(:name, :description, :display_in_men, :display_in_women, :categories_attributes => [:product_id, :category])
     end
 end

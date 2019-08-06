@@ -1,6 +1,8 @@
 
+
+
 <!-- Navbar for categories -->
-<div class="container" style="display:inline-block;">
+    <div class="container" style="display:inline-block;">
 <br>
 <hr>
 <br>
@@ -13,13 +15,23 @@ All categories <br>
 <!-- end -->
 <hr>
 <br>
-<br>
-Only in Navbar: <br>
-<% Category.where(display_in_navbar: true).each do |cat| %>
+Only in Women: <br>
+<% Category.where(display_in_women: true).each do |cat| %>
 <%= link_to cat.name, products_path(category: cat.name)%>
 <br>
 <% end %>
+<br>
+<br>
+<br>
+Only in Men: <br>
+<% Category.where(display_in_men: true).each do |cat| %>
+<%= link_to cat.name, men_path(category: cat.name)%>
+<br>
+<% end %>
 </div>
+
+  </div>
+
 
 
 <div class="container-fluid" style="margin-top:5%; ">
@@ -58,6 +70,12 @@ Only in Navbar: <br>
 </div>
 </div>
 </div>
+
+
+
+
+
+
 
 
 

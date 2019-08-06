@@ -7,11 +7,10 @@
 
 Only in Women/navbar: <br>
 <%= link_to 'Todas las categorias', women_path %><br>
-<% Category.where(display_in_navbar: true).each do |cat| %>
+<% Category.where(display_in_women: true).each do |cat| %>
 <%= link_to cat.name, women_path(category: cat.name)%>
 <br>
 <% end %>
-</div>
 
 <hr>
     <div class="row">

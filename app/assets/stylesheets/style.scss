@@ -2936,3 +2936,73 @@ img.mfp-img {
   font-size: 12px;
 }
 
+
+
+
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main,
+.sidebar {
+/*  border: 3px solid black;*/
+  background-color: #fff;
+}
+
+.main {
+  width: 60%;
+}
+
+.sidebar {
+  width: 40%;
+  height: 100vh;
+  padding: 5%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #ebebeb;
+}
+
+.toggle {
+  font-family: arial, sans-serif;
+}
+.toggle .tabs {
+  width: 100%;
+  overflow: hidden;
+  height: 36px;
+  line-height: 36px;
+}
+.toggle .tabs .tab {
+  border-bottom: 0.5px solid lightgrey;
+  float: left;
+  align-items: center;
+  color: black;
+  height: 31px;
+  margin: 2px 8px 0px;
+  padding: 0 10px;
+  padding-left: 15px;
+  cursor: pointer;
+
+}
+.toggle .tabs .tab.active {
+  color: #ce1414;
+  border-bottom: 3px solid #ce1414;
+}
+.toggle .panels1 .panel1 {
+  padding: 20px 10px;
+  display: none;
+  font-weight: lighter;
+  font-size: 12px !important;
+}
+.toggle .panels1 .panel1:first-child {
+  display: block;
+}
+
+.description{
+  align-items: center;
+}
+ p{
+  font-size: 10px;
+}
