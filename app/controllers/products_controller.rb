@@ -27,6 +27,9 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
+   def edit
+  end
+
 
   def show
     @product = Product.find(params[:id])
@@ -39,16 +42,31 @@ class ProductsController < ApplicationController
   end
 
   def women
+    if params.has_key?(:category)
+     @category = Category.find_by_name(params[:category])
+    @women_product_items = Product.where(category: @category)
+  else
     @women_product_items = Product.women
+   end
   end
 
   def men
+    if params.has_key?(:category)
+     @category = Category.find_by_name(params[:category])
+     @men_product_items = Product.where(category: @category)
+   else
     @men_product_items = Product.men
   end
+ end
 
   def kids
+    if params.has_key?(:category)
+     @category = Category.find_by_name(params[:category])
+     @kids_product_items = Product.where(category: @category)
+   else
     @kids_product_items = Product.kids
   end
+end
 
   def destroy
     @product = Product.find(params[:id])
@@ -64,6 +82,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :photo, :description, :price, :category_id, :category)
+      params.require(:product).permit(:title, :photo, :description, :price, :category_id, :category, :subcategory, :promo, :codigo)
     end
 end

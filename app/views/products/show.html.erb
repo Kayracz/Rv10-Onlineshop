@@ -14,7 +14,7 @@
 
    <div class="sidebar text-center">
       <h1><%= @product.title %></h1>
-      <p class="titulo" style="font-size:12px;">Codigo:<%= @product.size2 %></p>
+      <p class="titulo" style="font-size:12px;">Codigo:<%= @product.codigo %></p>
       <% if @product.sale_price == 0 %>
       <p class="titulo2" style="font-size:14px"><%= number_to_currency_bo @product.price %></p>
       <% else %>

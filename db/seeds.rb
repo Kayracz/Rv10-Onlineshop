@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 if Rails.env.development?
   unless AdminUser.find_by_email 'admin@example.com'
-    AdminUser.create!(email: 'admin@example.com', 
-                      password: 'password', 
+    AdminUser.create!(email: 'admin@example.com',
+                      password: 'password',
                       password_confirmation: 'password')
   end
 
@@ -18,32 +18,32 @@ if Rails.env.development?
     Product.create!(
       title: "Hoodie", description: "An awesome hoodie!", price: 23.45,
       photo: "/coolcloud/hoddie",
-      size: "L", size2: "XL", category: "men")
+      size: "L", category: "men")
 
     Product.create!(
       title: "Jean", description: "Incredible pants!", price: 45.67,
       photo: "/coolcloud/jean",
-      size: "L", size2: "XL", category: "men")
+      size: "L", category: "men")
 
     Product.create!(
       title: "Shirt", description: "An awesome shirt!", price: 56.78,
       photo: "/coolcloud/shirt",
-      size: "XS", size2: "S", category: "women")
+      size: "XS", category: "women")
 
     Product.create!(
       title: "Scarf", description: "Colorful scarf!", price: 67.89,
       photo: "/coolcloud/scarf",
-      size: "XS", size2: "S", category: "women")
+      size: "XS", category: "women")
 
     Product.create!(
       title: "Kid Shirt", description: "Cool shirt!", price: 56.78,
       photo: "/coolcloud/shirt",
-      size: "XS", size2: "S", category: "kids")
+      size: "XS", category: "kids")
 
     Product.create!(
       title: "Hat", description: "Cool hat!", price: 56.78,
       photo: "/coolcloud/shirt",
-      size: "XS", size2: "S", category: "kids")
+      size: "XS", category: "kids")
     # =====
   end
 end

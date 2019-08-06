@@ -5,7 +5,6 @@ class Product < ApplicationRecord
   has_many :product_items
   has_many :categories
 
-
   has_many :photos, :inverse_of => :product, :dependent => :destroy
   accepts_nested_attributes_for :photos, allow_destroy: true
 
@@ -27,19 +26,19 @@ class Product < ApplicationRecord
   end
 
  def self.women
-   where(category: 'women')
+   where(subcategory: 'women')
  end
 
  def self.men
-   where(category: 'men')
+   where(subcategory: 'men')
  end
 
   def self.kids
-   where(category: 'kids')
+   where(subcategory: 'kids')
  end
 
  def sale_price
-  price * size.to_i * 10 / 100
+  price * promo.to_i * 10 / 100
 end
 
 end

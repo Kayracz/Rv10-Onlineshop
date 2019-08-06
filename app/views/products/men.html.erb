@@ -1,8 +1,17 @@
+<div class="container-fluid" style="margin-top:5%; ">
+<h4 class="titulo"> Seleccion Hombres </h4>
+<hr style="border-top: 1px solid gray;">
+<h4 class="titulo"> Filtrar por </h4>
 
-<div class="container">
-<h3 class="titulo"> Hombre </h3>
+Only in Men: <br>
+<% Category.where(display_in_navbar: true).each do |cat| %>
+<%= link_to cat.name, products_path(category: cat.name)%>
+<br>
+<% end %>
+</div>
+
+<h2 class="titulo text-center"> Proximamente! </h2>
 <hr>
-<h2 class="titulo"> Proximamente! </h2>
     <div class="row">
   <% @men_product_items.each do |product| %>
         <div class="col-md-3">
