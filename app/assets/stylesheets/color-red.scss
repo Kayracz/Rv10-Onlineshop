@@ -4,7 +4,7 @@ p a,
 }
 
 a {
-  color: #e74c3c;
+    text-decoration: none;
 }
 
 a:hover,
@@ -25,7 +25,7 @@ a:focus {
 }
 
 .navbar-default .navbar-nav li a.menu-cart {
-  color: #e74c3c;
+  color: #e74c3c !important;
 }
 
 .navbar-default .navbar-nav li a.menu-cart:hover,

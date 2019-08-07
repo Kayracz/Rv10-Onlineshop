@@ -41,5 +41,6 @@ class Product < ApplicationRecord
   price * promo.to_i * 10 / 100
 end
 
+
 end
 

@@ -7,8 +7,11 @@
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.input :subcategory %>
-    <%= f.input :promo %> Sale
-    <%= f.input :codigo %> Codigo
+     Codigo de Promo
+    <%= f.input :promo %>
+    Codigo de producto
+    <%= f.input :codigo %>
+    <%= f.input :color %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
     <%= f.select :category, Category.all.map{ |f| [f.name, f.id] } %>

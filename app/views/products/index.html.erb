@@ -1,44 +1,47 @@
 
+<!-- Titulo de pagina -->
+<div class="container-fluid" style="margin-top:5%; ">
+<h4 class="titulo"> Todos los Productos </h4>
+<hr style="border-top: 1px solid gray;">
+<h4 class="titulo"> Filtrar por </h4>
+<!-- end -->
 
 
+<div class="wrap">
+
+<div class="left">
 <!-- Navbar for categories -->
-    <div class="container" style="display:inline-block;">
+<div class="categories" style="display:inline-block;">
 <br>
-<hr>
 <br>
-All categories <br>
+<b>Todas Las Categorias</b> <br>
 <%= link_to 'Todas las categorias', products_path %><br>
 <% Category.all.each do |cat| %>
 <%= link_to cat.name, products_path(category: cat.name) %>
 <br>
 <% end %>
 <!-- end -->
+<br>
 <hr>
 <br>
-Only in Women: <br>
+<b>MUJERES</b> <br>
 <% Category.where(display_in_women: true).each do |cat| %>
 <%= link_to cat.name, products_path(category: cat.name)%>
 <br>
 <% end %>
 <br>
+<hr>
 <br>
-<br>
-Only in Men: <br>
+<b>HOMBRES</b> <br>
 <% Category.where(display_in_men: true).each do |cat| %>
 <%= link_to cat.name, men_path(category: cat.name)%>
 <br>
 <% end %>
 </div>
 
-  </div>
+</div><!-- close left -->
 
-
-
-<div class="container-fluid" style="margin-top:5%; ">
-<h4 class="titulo"> Todos los Productos </h4>
-<hr style="border-top: 1px solid gray;">
-<h4 class="titulo"> Filtrar por </h4>
-
+<!-- productos -->
 <hr>
     <div class="row">
       <% cache do %>
@@ -70,16 +73,30 @@ Only in Men: <br>
 </div>
 </div>
 </div>
+   <hr>
+ </div>
+<!-- end productos -->
 
 
 
 
+<style>
+
+
+.wrap{
+  width:100%;
+}
+
+.left{
+width:240px;
+/*background-color: lightblue;*/
+height: 600px;
+float: left;
+}
 
 
 
-
-
-
+</style>
 
 
 

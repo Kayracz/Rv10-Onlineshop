@@ -4,6 +4,10 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
+     if params.has_key?(:color)
+      @products = @products.where(:color => params[:color])
+    end
+
     if params.has_key?(:category)
      @category = Category.find_by_name(params[:category])
      @products = Product.where(category: @category)
@@ -82,6 +86,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :photo, :description, :price, :category_id, :category, :subcategory, :promo, :codigo)
+      params.require(:product).permit(:title, :photo, :color, :description, :price, :category_id, :category, :subcategory, :promo, :codigo)
     end
 end

@@ -5,7 +5,7 @@
 <hr style="border-top: 1px solid gray;">
 <h4 class="titulo"> Filtrar por </h4>
 
-Only in Women/navbar: <br>
+Only in Women: <br>
 <%= link_to 'Todas las categorias', women_path %><br>
 <% Category.where(display_in_women: true).each do |cat| %>
 <%= link_to cat.name, women_path(category: cat.name)%>
