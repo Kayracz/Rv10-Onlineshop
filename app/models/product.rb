@@ -12,6 +12,14 @@ class Product < ApplicationRecord
   validates :price, numericality: {greater_than_or_equal_to: 0.01}
   validates :title, uniqueness: true
 
+  def self.search(search)
+   if search
+     where(["codigo LIKE ?","%#{search}%"])
+   else
+    all
+  end
+end
+
   def total_price
    product.price * quantity
   end
@@ -40,7 +48,6 @@ class Product < ApplicationRecord
  def sale_price
   price * promo.to_i * 10 / 100
 end
-
 
 end
 

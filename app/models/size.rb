@@ -11,8 +11,8 @@ class Size < ApplicationRecord
   def self.display_format size, product_id
     name  = '%-3.3s' % size.name
     stock = Stock.by_size(product_id, size.id)
-    if stock == 0
-      "#{name} - Sin Stock"
+      if stock == 0
+       "#{name} - Sin Stock"
     else
       # Show units in stock. It may be useful for debugging.
       #"#{name} - Stock #{'%3.3s' % stock}"

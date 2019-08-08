@@ -2,8 +2,9 @@
 <!-- Titulo de pagina -->
 <div class="container-fluid" style="margin-top:5%; ">
 <h4 class="titulo"> Todos los Productos </h4>
+<br>
+<h5 class="titulo"> Filtrar por </h5>
 <hr style="border-top: 1px solid gray;">
-<h4 class="titulo"> Filtrar por </h4>
 <!-- end -->
 
 
@@ -12,8 +13,18 @@
 <div class="left">
 <!-- Navbar for categories -->
 <div class="categories" style="display:inline-block;">
+
+<b>Buscar por Codigo:</b> <br>
 <br>
+<%= form_tag products_path, :method => 'get' do %>
+<%= text_field_tag :search, params[:search] %>
+<% end %>
+<!-- <b>Todos Los Talles</b> <br>
+<#% Size.all.each do |cat| %>
+<#%= link_to cat.name, products_path(Size: cat.name) %>
 <br>
+<#% end %> -->
+
 <b>Todas Las Categorias</b> <br>
 <%= link_to 'Todas las categorias', products_path %><br>
 <% Category.all.each do |cat| %>
@@ -21,23 +32,27 @@
 <br>
 <% end %>
 <!-- end -->
-<br>
 <hr>
-<br>
+
 <b>MUJERES</b> <br>
 <% Category.where(display_in_women: true).each do |cat| %>
 <%= link_to cat.name, products_path(category: cat.name)%>
 <br>
 <% end %>
-<br>
+
 <hr>
-<br>
+
 <b>HOMBRES</b> <br>
 <% Category.where(display_in_men: true).each do |cat| %>
-<%= link_to cat.name, men_path(category: cat.name)%>
+<%= link_to cat.name, products_path(category: cat.name)%>
 <br>
 <% end %>
 </div>
+<hr>
+<br>
+<br>
+<br>
+<br>
 
 </div><!-- close left -->
 
@@ -79,12 +94,13 @@
 
 
 
-
 <style>
 
 
 .wrap{
   width:100%;
+  height: 800px;
+
 }
 
 .left{

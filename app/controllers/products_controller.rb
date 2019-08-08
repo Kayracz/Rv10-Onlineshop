@@ -4,16 +4,12 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
-     if params.has_key?(:color)
-      @products = @products.where(:color => params[:color])
-    end
-
     if params.has_key?(:category)
      @category = Category.find_by_name(params[:category])
      @products = Product.where(category: @category)
     else
-    @products = Product.all
-   end
+    @products = Product.search(params[:search])
+    end
   end
 
   def new

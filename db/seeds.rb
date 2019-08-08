@@ -17,33 +17,33 @@ if Rails.env.development?
   unless Product.count > 0
     Product.create!(
       title: "Hoodie", description: "An awesome hoodie!", price: 23.45,
-      photo: "/coolcloud/hoddie",
+      photo: "http://res.cloudinary.com/deruwllkv/image/upload/v1565141088/a6usehtmcxhskup7cmex.png",
       size: "L", category: "men")
 
     Product.create!(
       title: "Jean", description: "Incredible pants!", price: 45.67,
-      photo: "/coolcloud/jean",
-      size: "L", category: "men")
+      photo: "http://res.cloudinary.com/deruwllkv/image/upload/v1565141088/a6usehtmcxhskup7cmex.png",
+      size: "L", category: "women")
 
     Product.create!(
       title: "Shirt", description: "An awesome shirt!", price: 56.78,
-      photo: "/coolcloud/shirt",
+      photo: "http://res.cloudinary.com/deruwllkv/image/upload/v1565141088/a6usehtmcxhskup7cmex.png",
       size: "XS", category: "women")
 
     Product.create!(
       title: "Scarf", description: "Colorful scarf!", price: 67.89,
-      photo: "/coolcloud/scarf",
+      photo: "http://res.cloudinary.com/deruwllkv/image/upload/v1565141088/a6usehtmcxhskup7cmex.png",
       size: "XS", category: "women")
 
     Product.create!(
       title: "Kid Shirt", description: "Cool shirt!", price: 56.78,
-      photo: "/coolcloud/shirt",
-      size: "XS", category: "kids")
+      photo: "http://res.cloudinary.com/deruwllkv/image/upload/v1565141088/a6usehtmcxhskup7cmex.png",
+      size: "XS", category: "men")
 
     Product.create!(
       title: "Hat", description: "Cool hat!", price: 56.78,
-      photo: "/coolcloud/shirt",
-      size: "XS", category: "kids")
+      photo: "http://res.cloudinary.com/deruwllkv/image/upload/v1565141088/a6usehtmcxhskup7cmex.png",
+      size: "XS", category: "women", color: "blue")
     # =====
   end
 end

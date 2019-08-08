@@ -16,7 +16,7 @@ class StockController < ApplicationController
   private
   def units_in_stock product_id, size_id
     Stock.by_size product_id, size_id
-  end
+end
 
   def ensure_admin
     return if Rails.env.development?

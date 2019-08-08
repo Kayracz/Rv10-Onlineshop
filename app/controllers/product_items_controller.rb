@@ -4,11 +4,10 @@ class ProductItemsController < ApplicationController
   before_action :set_product_item, only: [:show, :index, :new, :destroy, :edit]
 
   # This actions adds an item to the cart.
-  def create
-    @product = Product.find(params[:product_id])
-    @size_id = params[:size_id]
-    @category_id = params[:category_id]
-    @product_item = @cart.add_product(product.id, size_id, category_id)
+ def create
+    product = Product.find(params[:product_id])
+    size_id = params[:size_id]
+    @product_item = @cart.add_product(product.id, size_id)
     if @product_item.save
       # How critical is the stock update?
       # For now, let's assume that as long as the
