@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_07_025809) do
+ActiveRecord::Schema.define(version: 2019_08_09_214746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,10 +115,12 @@ ActiveRecord::Schema.define(version: 2019_08_07_025809) do
     t.bigint "order_id"
     t.integer "size_id"
     t.bigint "category_id"
+    t.bigint "transfer_id"
     t.index ["cart_id"], name: "index_product_items_on_cart_id"
     t.index ["category_id"], name: "index_product_items_on_category_id"
     t.index ["order_id"], name: "index_product_items_on_order_id"
     t.index ["product_id"], name: "index_product_items_on_product_id"
+    t.index ["transfer_id"], name: "index_product_items_on_transfer_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -150,10 +152,23 @@ ActiveRecord::Schema.define(version: 2019_08_07_025809) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "transfers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "address"
+    t.string "city"
+    t.string "Nit"
+    t.string "Notas"
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "photos", "products"
   add_foreign_key "product_items", "carts"
   add_foreign_key "product_items", "categories"
   add_foreign_key "product_items", "orders"
   add_foreign_key "product_items", "products"
+  add_foreign_key "product_items", "transfers"
 end

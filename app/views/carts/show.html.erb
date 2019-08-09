@@ -15,14 +15,25 @@
       <h3 style="font-weight:400;">Detalles de tu compra</h3>
       <br>
       <%= render 'carts/cart' %>
-      <br>
+      <%= link_to 'Vacía tu carrito', @cart, method: :delete, data: {confirm: 'You sure?'} %>
+       <br>
+       <br>
       <h4><b>Total:</b> <%= number_to_currency_bo @cart.total_price %></h4>
       <br>
-      <%= button_to 'Comprar', new_order_path, method: :get %>
+      <br>
+      <br>
+      <h4><b>COMPRAR</b></h4>
+      <h4>Elije como quieres Comprar</h4>
+      <i>Haz clic en Contra-entrega para pagar en effectivo y en Transferencia para hacer una transferencia bancaria.</i>
+      <br>
+      <br>
+      <br>
+      <%= button_to 'Contra-entrega', new_order_path, method: :get %>
+      <br>
+      <%= button_to 'Transferencia', new_transfer_path, method: :get %>
       <br>
       <%= link_to 'De vuelta a la tienda', products_path %>
       <br>
-      <%= link_to 'Vacía tu carrito', @cart, method: :delete, data: {confirm: 'You sure?'} %>
     </div>
   </div>
 </section>

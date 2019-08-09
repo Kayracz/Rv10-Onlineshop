@@ -1,0 +1,7 @@
+<% unless @transfer.errors.empty? %>
+  <script type="text/javascript">
+    <% @transfer.errors.full_messages.each do |msg| %>
+      toastr.error('<%= msg %>')
+    <% end %>
+  </script>
+<% end %>

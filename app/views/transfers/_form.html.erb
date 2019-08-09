@@ -1,0 +1,71 @@
+<%= form_for @transfer do |f| %>
+  <%= render 'shared/msg2' %>
+  <div class="container">
+    <div class="col-md-10">
+      <h3>Por favor, introduzca sus datos</h3>
+   <br>
+   <br>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-md-10">
+        <%= f.label :name, 'Nombre Completo' %>
+        <%= f.text_field :name, size: 40, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-10">
+        <%= f.label :email %>
+        <%= f.email_field :email, size: 40, class: 'form-control' %>
+      </div>
+    </div>
+
+      <div class="form-group">
+      <div class="col-md-10">
+        <%= f.label :phone, 'Telefono' %>
+        <%= f.phone_field :phone, size: 40, class: 'form-control' %>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-md-10">
+        <%= f.label :city, 'Ciudad' %>
+        <%= f.text_field :city, size: 40, class: 'form-control' %>
+      </div>
+    </div>
+
+       <div class="form-group">
+      <div class="col-md-10" style="margin-bottom: 2%;">
+        <%= f.label :address, 'Direccion' %>
+        <%= f.text_area :address, cols: 35, class: 'form-control' %>
+      </div>
+    </div>
+
+
+      <div class="form-group">
+      <div class="col-md-10">
+        <%= f.label :Notas, 'Notas Adicionales' %>
+        <%= f.text_field :Notas, cols: 40, class: 'form-control' %>
+      </div>
+    </div>
+
+
+      <div class="form-group">
+      <div class="col-md-10">
+        <%= f.label :Nit, 'CI/NIT' %>
+        <%= f.text_field :Nit, cols: 40, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-10">
+        <%= f.submit 'Comprar' %>
+      </div>
+    </div>
+
+
+</div>
+<% end %>

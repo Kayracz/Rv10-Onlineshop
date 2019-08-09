@@ -14,5 +14,21 @@ ActiveAdmin.register_page "Dashboard" do
       end
       strong {link_to 'View All Orders', admin_orders_path}
     end
+
+     section 'Recent Transfer' do
+      table_for Transfer.order('created_at DESC').limit(10) do
+        column :name
+        column :total_price do |order|
+          number_to_currency_bo order.total_price
+        end
+        column :created_at do |order|
+          time_ago_in_words order.created_at
+        end
+      end
+      strong {link_to 'View All Transfers', admin_transfers_path}
+    end
+
   end # content
 end
+
+
