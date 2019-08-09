@@ -1,59 +1,27 @@
 
-  <div class="bannerpromo">
-<div class="display-flex container flex-full-centered more-info-flex">
-
-<div class="landing-more-info__container col-sm-4">
-<div class="vh">
-<h5 class="text-center">
-50% DE DESCUENTO
-</h5>
-<h6 class="text-center" style="margin-right:20px;">
-Up to 80% OFF Absolutely Everything + Take an EXTRA 10% OFF! Use code: GET10
-</h6>
-</div>
-</div>
-
-<div class="landing-more-info__container col-sm-4">
-<div class="vh">
-<h5 class="text-center" style="margin-right:10px;">
-Envíos A TODO BOLIVIA
-</h5>
-<h6 class="text-center" style="margin-right:10px;">
-Compra ahora. paga después. En tu Casa.<br><br>
-</h6>
-</div>
-</div>
-
-
-<div class="landing-more-info__container col-sm-4">
-<h5 class="text-center">
-Nuevas Promociones
-</h5>
-<h6 class="text-center">
-Student Discount - An Extra 20% OFF Everything
-</h6>
-</div>
-</div>
-</div>
-</div>
-
-
 
 
   <div class="main-container">
       <header class="fullscreen-element">
         <div class="background-image-holder parallax-background overlay" data-stellar-background-ratio="0.9">
-          <%= image_tag('coverbo1.png', class: 'background-image', alt:'Background') %>
+          <%= image_tag('cover2.png', class: 'background-image', alt:'Background') %>
         </div>
 
         <div class="container align-vertical hero">
           <div class="row">
-            <div class="col-md-5 col-sm-5 col-md-offset-7 col-sm-offset-7 text-left">
+                              <div class="titan-caption">
+                <div class="caption-content">
+                  <div class="font-alt mb-30 titan-title-size-1"><h2 style="font-size:100px;">#<%= image_tag "rv10.png", height: 200 %></h2></div>
+                  <div class="font-alt mb-30 titan-title-size-4"><p class="description">50% DE DESCUENTO EN TODO</p></div>
+                  <div class="font-alt mb-40 titan-title-size-1"><p class="description">Usa el codigo SUMMER50, Oferta EXPIRA en <p id="demo"></p></p></div>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                </div>
               </div>
             </div>
           </div><!--end of row-->
         </div><!--end of container-->
       </header>
+
 
 
 
@@ -91,8 +59,8 @@ Student Discount - An Extra 20% OFF Everything
       </section>
 
 
-<section class="landing-more-info overflow-hidden">
-<div class="display-flex container flex-full-centered more-info-flex">
+
+<div class="display-flex container flex-full-centered more-info-flex description" style="margin:4%;">
 <div class="landing-more-info__container col-sm-3">
 <h5 class="text-center">
 Cambios
@@ -126,24 +94,43 @@ Con Mercado Pago
 </h6>
 </div>
 </div>
-</section>
-
 
 
 
 
 
 <style>
-  .bannerpromo{
-    background-color:black;
-    color:white;
+
+  .propa{
+    margin: 0 0 15px 0;
+    font-weight: bold;
+    font-size: 0.8em;
+    letter-spacing: 3px;
   }
 
-  .vh{
-     border-right: solid white;
+/* Caption */
+.titan-caption {
+  position: relative;
+  display: table;
+  height: 100%;
+  width: 70%;
+  margin: 0 auto;
+}
 
-  }
+.titan-caption {
+  position: relative;
+  display: table;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.caption-content {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
 </style>
-
 
 

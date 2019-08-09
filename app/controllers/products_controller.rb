@@ -3,14 +3,6 @@ class ProductsController < ApplicationController
   before_action :set_cart, only: [:index, :show, :about, :women, :kids, :men, :new]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-  def index
-    if params.has_key?(:category)
-     @category = Category.find_by_name(params[:category])
-     @products = Product.where(category: @category)
-    else
-    @products = Product.search(params[:search]).page(params[:page]).per(4)
-    end
-  end
 
   def new
     @product = Product.new
@@ -41,12 +33,21 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
+    def index
+    if params.has_key?(:category)
+     @category = Category.find_by_name(params[:category])
+     @products = Product.where(category: @category)
+    else
+    @products = Product.search(params[:search]).page(params[:page]).per(4)
+    end
+  end
+
   def women
     if params.has_key?(:category)
      @category = Category.find_by_name(params[:category])
     @women_product_items = Product.where(category: @category)
   else
-    @women_product_items = Product.women
+    @women_product_items = Product.women.search(params[:search]).page(params[:page]).per(3)
    end
   end
 
@@ -55,7 +56,7 @@ class ProductsController < ApplicationController
      @category = Category.find_by_name(params[:category])
      @men_product_items = Product.where(category: @category)
    else
-    @men_product_items = Product.men
+    @men_product_items = Product.men.search(params[:search]).page(params[:page]).per(3)
   end
  end
 

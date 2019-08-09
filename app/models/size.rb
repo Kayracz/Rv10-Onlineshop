@@ -20,3 +20,5 @@ class Size < ApplicationRecord
     end
   end
 end
+
+
