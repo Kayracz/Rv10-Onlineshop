@@ -1,4 +1,7 @@
 
+
+
+
       <section class="newsletter accent-bg">
         <div class="background-image-holder overlay accent" data-stellar-background-ratio="0.9">
           <%= image_tag('', class: 'background-image', alt:'Background') %>
@@ -26,7 +29,42 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-md-offset-3">
-              <ul class="footer-navigation">
+              </ul>
+              <ul class="accepted-payments">
+                <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+                <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+                <li><a href="#"><i class="fa fa-paypal"></i></a></li>
+                <li><a href="#"><i class="fa fa-cc-stripe"></i></a></li>
+                <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+            </div>
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </footer>
+
+<!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>Sobre Nosotros</h6>
+            <p class="text-justify">Rv10.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Categorias</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+              <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+              <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+              <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+              <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+              <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
                 <li class="active"><a href="./index.html">Inicio</a></li>
                 <li><%=link_to 'Sobre Nosotros', about_path %></li>
                 <li> <%=link_to 'Tienda', products_path %></li>
@@ -37,18 +75,28 @@
             <% end %>
           </li>
 
-              </ul>
-              <ul class="accepted-payments">
-                <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
-                <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-                <li><a href="#"><i class="fa fa-paypal"></i></a></li>
-                <li><a href="#"><i class="fa fa-cc-stripe"></i></a></li>
-                <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-              </ul>
-              <div class="copyright">
-                <p>Copyright © 2019 Rv10. Created by kay</p>
-              </div>
-            </div>
-          </div><!-- /.row -->
-        </div><!-- /.container -->
-      </footer>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+                <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+          <p class="copyright-text" style="display:inline;">Copyright &copy; 2019 All Rights Reserved by <a href="#">Rv10</a>.
+             <p class="copyright-text" style="display:inline;">Created by <a href="#">Kay</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+</footer>
+
