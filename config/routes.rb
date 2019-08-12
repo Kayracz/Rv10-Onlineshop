@@ -8,11 +8,12 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'pages#index'
 
-  # get 'order', to: 'orders#show'
   get 'women', to: 'products#women'
   get 'men', to: 'products#men'
   get 'kids', to: 'products#kids'
+  get 'orderdashboard' => 'orders#orderdashboard'
   get 'about' => 'pages#about'
+
 
   post 'product_items/:item_id/add'    => "product_items#add_quantity",
     as: "product_items_add"

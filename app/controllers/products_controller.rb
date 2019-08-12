@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
      @category = Category.find_by_name(params[:category])
      @products = Product.where(category: @category)
     else
-    @products = Product.search(params[:search]).page(params[:page]).per(5)
+    @products = Product.search(params[:search])
     end
   end
 
@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
      @category = Category.find_by_name(params[:category])
     @women_product_items = Product.where(category: @category)
   else
-    @women_product_items = Product.women.search(params[:search]).page(params[:page]).per(3)
+    @women_product_items = Product.women.search(params[:search])
    end
   end
 
@@ -56,7 +56,7 @@ class ProductsController < ApplicationController
      @category = Category.find_by_name(params[:category])
      @men_product_items = Product.where(category: @category)
    else
-    @men_product_items = Product.men.search(params[:search]).page(params[:page]).per(2)
+    @men_product_items = Product.men.search(params[:search])
   end
  end
 

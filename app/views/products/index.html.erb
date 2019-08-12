@@ -68,7 +68,6 @@
 <hr>
 
     <div class="row">
-       <div><%= paginate @products %></div>
       <% cache do %>
   <% @products.each do |product| %>
         <div class="col-md-3">
@@ -98,9 +97,9 @@
 </div>
 </div>
 </div>
- <div style="margin-left:49%;"> <%= paginate @products %></div>
    <hr>
  </div>
+
 <!-- end productos -->
 
 
@@ -123,9 +122,6 @@ float: left;
 
 
 </style>
-
-
-
 
 
 

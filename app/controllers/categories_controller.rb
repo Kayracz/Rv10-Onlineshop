@@ -5,7 +5,7 @@ class CategoriesController < InheritedResources::Base
 
 
  def index
-  @categories = Category.all
+  @categories = Category.search(params[:search])
  end
 
  def show

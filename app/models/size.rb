@@ -3,22 +3,22 @@ class Size < ApplicationRecord
   # can use as options for select on combos that
   # shows sizes.
   # [["XS, 1],["S - Sin Stock", 2], ["M", 3], and so on...
-  def self.options_for product_id
-    all.collect {|s| [display_format(s, product_id), s.id] }
-  end
-
-  private
-  def self.display_format size, product_id
-    name  = '%-3.3s' % size.name
-    stock = Stock.by_size(product_id, size.id)
-      if stock == 0
-       "#{name} - Sin Stock"
-    else
-      # Show units in stock. It may be useful for debugging.
-      #"#{name} - Stock #{'%3.3s' % stock}"
-      "#{name}"
+   def self.options_for product_id
+        all.collect do |size|
+            stock = Stock.by_size(product_id, size.id)
+            is_disabled = stock < 1
+            [display_format(size, stock), size.id, disabled: is_disabled]
+        end
     end
-  end
+
+    private
+    def self.display_format size, stock
+        name = '%-3.3s' % size.name
+
+        if stock == 0
+            "#{name} - Sin Stock"
+        else
+            name
+        end
+    end
 end
-
-

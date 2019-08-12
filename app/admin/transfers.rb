@@ -1,16 +1,22 @@
 ActiveAdmin.register Transfer do
 
+  permit_params :recibido, :enviado
+
   show do |transfer|
 
-    panel 'Customer Details' do
+    panel 'Detalles del Cliente' do
       attributes_table_for transfer, :name, :email, :phone, :address, :city, :Nit, :Notas
     end
 
-    panel 'Created' do
+    panel 'Creado' do
       "#{time_ago_in_words transfer.created_at} ago"
     end
 
-    panel 'Transfer Details' do
+     panel 'Transferencia recibida' do
+      transfer.recibido
+    end
+
+    panel 'Detalles de la Transferencia' do
       table_for(transfer.product_items) do
         column 'Product' do |item|
           item.product.title
@@ -23,9 +29,6 @@ ActiveAdmin.register Transfer do
         end
          column 'Size' do |item|
           item.size.name
-        end
-          column 'Codigo' do |item|
-          item.product.size2
         end
       end
     end

@@ -25,13 +25,12 @@
       <% end %>
    <hr>
 
-      <%= label :size_id, 'Seleciona tu talle' %>
-      <%= form_tag product_items_path(product_id: @product.id) do %>
-      <%= select_tag :size_id,
-         options_for_select(
-           sizes_for(@product.id)),
-         prompt: "Seleciona tu talle"
-         %>
+    <%= label_tag :size_id, 'Seleciona tu talle' %>
+     <%= form_tag product_items_path(product_id: @product.id) do %>
+    <%= select_tag :size_id,
+        options_for_select(Size.options_for(@product.id), @product.size),
+        prompt: "Seleciona tu talle" %>
+
       <br>
       <button class="btn btn-danger ">
       <i class="fa fa-shopping-cart"></i>

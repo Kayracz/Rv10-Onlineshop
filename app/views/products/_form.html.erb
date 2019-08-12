@@ -3,19 +3,30 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
+    Titulo del producto
     <%= f.input :title %>
+    Descripcion del producto
     <%= f.input :description %>
+    Precio
     <%= f.input :price %>
+     Genero
     <%= f.input :subcategory %>
      Codigo de Promo
     <%= f.input :promo %>
     Codigo de producto
     <%= f.input :codigo %>
     <%= f.input :color %>
+    Foto principal
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
+    <%= link_to "Agregar mas fotos", new_admin_photo_path %> &larr; <br>
+    <br>
+    Categoria del producto
+    <br>
     <%= f.select :category, Category.all.map{ |f| [f.name, f.id] } %>
   </div>
+  <br>
+  <hr>
 
   <div class="form-actions">
     <%= f.button :submit %>

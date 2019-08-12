@@ -1,9 +1,39 @@
 <div class="container">
-<h1>New Product | <%= link_to "New Category", new_category_path %></h1>
+
+<br>
+<hr>
+<b style="color:indianred;">&#9200 NUEVOS PEDIDOS &#9200</b>
+<br>
+<span class="pedidoslinks">
+| <%= link_to "Todos los pedidos", admin_dashboard_path %> |
+| <%= link_to "Pedidos contra-entrega", admin_orders_path %> |
+| <%= link_to "Pedidos con transferencia bancaria", admin_transfers_path %> |
+</span>
+<hr>
+<b style="color:indianred;">&#10024 INBOX &#10024</b>
+<br>
+<span class="pedidoslinks">
+| <%= link_to "Mensajes/Clientes", admin_contacts_path %> |
+</span>
+<br>
+<hr>
+<h1> Crear un Nuevo Producto </h1>
+<h1 style="display:inline; font-size: 20px;"> | <%= link_to "Lista de productos", admin_products_path %> |  | <%= link_to "Agregar Nueva Categoria", new_category_path %> |  | <%= link_to "Actualizar Stock", stock_path %> | </h1>
+<hr>
+<br>
+<br>
 
 <%= render 'form', product: @product %>
+
+
 
 <%= link_to 'Back', products_path %>
 </div>
 <br>
 <br>
+
+<style>
+  .pedidoslinks a{
+    color:black;
+  }
+</style>

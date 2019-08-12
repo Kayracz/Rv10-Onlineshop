@@ -11,8 +11,6 @@ gem 'pg', '>= 0.18', '< 2.0'
 
 gem 'puma', '~> 3.11'
 
-gem 'kaminari'
-
 gem 'jquery-rails'
 
 gem 'bootstrap-sass'

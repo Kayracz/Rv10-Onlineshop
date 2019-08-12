@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:new, :create, :show, :contraentrega]
-  before_action :set_order, only: [:show, :edit, :destroy, :contraentrega]
+  before_action :set_cart, only: [:new, :create, :show, :orderdashboard]
+  before_action :set_order, only: [:show, :edit, :destroy]
 
   def index
     @orders = Order.all
@@ -37,20 +37,8 @@ class OrdersController < ApplicationController
     end
   end
 
-  def contraentrega
-    @order = Order.new(order_params)
-    if @order.save
-      @order.add_product_items_from_cart(@cart)
-      Cart.destroy(session[:cart_id])
-      session[:cart_id] = nil
-      redirect_to contraentrega_path, notice: 'Thank You for Your Order!'
-    else
-      flash[:error] = 'Check Your Cart'
-      redirect_to root_url, alert: @result.message
-      @order.destroy
-    end
-  else
-    render :new
+  def orderdashboard
+     @orders = Order.all
   end
 
   def show
@@ -67,7 +55,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:name, :email, :phone, :address, 
+    params.require(:order).permit(:name, :email, :phone, :address,
                                   :city, :country, :Nit, :Notas)
   end
 
