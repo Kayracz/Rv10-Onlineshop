@@ -133,7 +133,7 @@ header.secondary.small .parallax-background {
 
 .background-image-holder.parallax-background {
   height: 120%;
-  top: -10%;
+  top: -1%;
 }
 
 .main-container {
@@ -1930,14 +1930,15 @@ a.load-more {
   bottom: -30px;
 }
 
-/* BOOTSTRAP THEME */
+// /* BOOTSTRAP THEME */ navbar stuf
 .navbar {
   background: none;
   border: none;
-  position: relative;
+  position: inherit;
   z-index: 5;
   width: 100%;
 }
+
 
 .navbar .navbar-header .navbar-brand {
   font-size: 26px;
@@ -2026,6 +2027,9 @@ a.load-more {
 .navbar .open a.dropdown-toggle {
   background-color: transparent !important;
 }
+
+
+
 
 .side-menu-opener span {
   background: #323237;
@@ -3014,20 +3018,25 @@ img.mfp-img {
 
 }
 
+.site-footer .social-icons a {
+  background-color:white !important;
+}
+
 
 .site-footer
 {
-  background-color: #ffffff;
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
-  color: #a30b1e;
+  background-color: #ce1414;
+  color: white;
 }
 
 .site-footer p{
   font-size: 13px;
   margin-right: 60px;
-  color: gray;
+  color: white;
+  font-weight: 300;
 }
 .site-footer hr
 {
@@ -3040,15 +3049,16 @@ img.mfp-img {
 }
 .site-footer h6
 {
-  color:#ce1414;
+  color: white;
   font-size:14px;
   text-transform:uppercase;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top:5px;
   letter-spacing:2px;
 }
 .site-footer a
 {
-  color: #ce1414;
+  font-weight: 300;
 }
 .site-footer a:hover
 {
@@ -3067,7 +3077,7 @@ img.mfp-img {
 }
 .footer-links a
 {
-  color:gray;
+  color:white;
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
@@ -3090,7 +3100,6 @@ img.mfp-img {
   margin-left:6px;
   margin-right:0;
   border-radius:100%;
-  background-color: #ce1414;
 }
 .copyright-text
 {
@@ -3129,12 +3138,9 @@ img.mfp-img {
 {
   margin-right:15px;
   text-transform:uppercase;
-  color: white;
   font-weight:700;
 }
 .social-icons a{
-  background-color:#ce1414;
-  color:white;
   display:inline-block;
   line-height:44px;
   width:44px;
@@ -3160,19 +3166,19 @@ img.mfp-img {
 }
 .social-icons a.facebook:hover
 {
-  background-color:#3b5998;
+  background-color:#3b5998 !important;
 }
 .social-icons a.twitter:hover
 {
-  background-color:#00aced;
+  background-color:#00aced !important;
 }
 .social-icons a.linkedin:hover
 {
-  background-color:#007bb6;
+  background-color:#007bb6 !important;
 }
 .social-icons a.dribbble:hover
 {
-  background-color:#ea4c89;
+  background-color:#ea4c89 !important;
 }
 @media (max-width:767px)
 {
