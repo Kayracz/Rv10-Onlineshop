@@ -1,85 +1,70 @@
-
 <div class="container">
-    <div class="navbar-wagon-item">
-    <div class="dropdown">
-      <div class="navbar-wagon navbar-fixed-top">
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "rv10.png", height: 40 %>
-  <% end %>
+   <div class="navbar-wagon navbar-fixed-top">
+      <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "rv10.png", height: 40 %>
+      <% end %>
+      <div class="navbar-wagon-item">
+         <a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'Mujer', women_path %></a>
+         <a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'Hombre', men_path %></a>
+         <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Niños', kids_path %></a>
+         <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Todos', products_path %></a>&nbsp;
 
-
-    <span class="navbarhome">
-        <a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'Mujer', women_path %></a>
-            <a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'Hombre', men_path %></a>
-            <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Niños', kids_path %></a>
-            <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Todos', products_path %></a>&nbsp;&nbsp;
-        </span>
-
-
-            <% if @cart.total_price > 0 %>
-              <%= link_to @cart, class: 'menu-cart' do  %>
-                <i class="fa fa-shopping-cart"></i>
-                <%= number_to_currency_bo @cart.total_price %>
-              <% end %>
-            <% else %>
-              <a class="menu-cart"><i class="fa fa-shopping-cart"style="color:#ce1414;"></i> <b style="color:#ce1414">Bs.0.00</b></a>
-            <% end %>
-
-
-
-
- <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-
-            <a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'Mujer', women_path %></a>
-            <a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'Hombre', men_path %></a>
-            <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Niños', kids_path %></a>
-            <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Todos', products_path %></a>
-
-            <% if @cart.total_price > 0 %>
-              <%= link_to @cart, class: 'menu-cart' do  %>
-                <i class="fa fa-shopping-cart"></i>
-                <%= number_to_currency_bo @cart.total_price %>
-              <% end %>
-            <% else %>
-              <a class="menu-cart"><i class="fa fa-shopping-cart"></i> $0.00</a>
-            <% end %>
-
-      </ul>
-    </div>
-  </div>
+         <% if @cart.total_price > 0 %>
+         <%= link_to @cart, class: 'menu-cart' do  %>
+         <i class="fa fa-shopping-cart"></i>
+         <%= number_to_currency_bo @cart.total_price %>
+         <% end %>
+         <% else %>
+         <a class="menu-cart"><i class="fa fa-shopping-cart" style="color:#ce1414 !important;"></i> <span style="color:#ce1414">Bs.0.00</span></a>
+         <% end %>
 </div>
 
 
-
-    </div>
-  </div>
+      <div class="hidden-md hidden-lg">
+         <div class="dropdown">
+            <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+               &nbsp;
+               <li><a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'Mujer', women_path %></a> </li>
+               <li><a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'Hombre', men_path %></a> </li>
+               <li><a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Niños', kids_path %></a></li>
+               <li><a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Todos', products_path %></a></li>
+               <hr>
+               <li> <% if @cart.total_price > 0 %>
+                  <%= link_to @cart, class: 'menu-cart' do  %>
+                  <i class="fa fa-shopping-cart"></i>
+                  <%= number_to_currency_bo @cart.total_price %>
+                  <% end %>
+                  <% else %>
+                  <a class="menu-cart"><i class="fa fa-shopping-cart"></i> $0.00</a>
+                  <% end %>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
 </div>
-
 </div>
-
-
 
 
 
 <style>
-.navbarhome{
-  display:inline; margin-right:50%;
-}
+
+.carrito{
+display:flex;
+justify-content:flex-end;
+  }
 
 .navbar-wagon {
   box-shadow: 0 1px 20px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: transparent !important;
   transition: all 0.3s ease;
-  height: 70px;
+  height: 52px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 40px;
-  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
@@ -89,16 +74,6 @@
     font-weight: 400 !important;
   }
 }
-
-
- .kay {
-
-  display: block !important;
-  }
-  .nic {
-
-  display: block !important;
-  }
 
 
 .navbar-fixed-top.scrolled {
@@ -142,14 +117,16 @@
 
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
-  margin-top: 15px;
+  margin-right: -50px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
+  padding: 4px 44px;
+  text-align: center;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-size: 15px !important;
-  line-height: 22px !important;
+  line-height: 10px !important;
   padding: 10px 20px;
 
     color: black !important;
@@ -171,6 +148,8 @@
   .navbar-wagon{
   background-color: white !important;
   }
+
+
 }
 
 
@@ -225,9 +204,10 @@
 }
 
  .navbar-wagon a {
-    color: #ce1414 !important;
+    color: #a3a3a3 !important;
     font-weight: 400 !important;
     text-decoration: none;
+    padding:10px;
 }
 
 
@@ -248,11 +228,9 @@
 /* SMARTPHONES PORTRAIT */
 @media only screen and (min-width: 300px) {
   .navbar-wagon-link{
-    display: none;
-  }
-  .langmenu{
     display: none !important;
   }
+
 }
 
 /* SMARTPHONES LANDSCAPE */
@@ -260,18 +238,13 @@
 .navbar-wagon-link{
     display: none;
   }
-.langmenu{
-    display: none !important;
-  }
+
 }
 
 /* TABLETS PORTRAIT */
 @media only screen and (min-width: 768px) {
 .navbar-wagon-link{
     display: none;
-  }
-.langmenu{
-    display: none !important;
   }
 }
 
@@ -281,9 +254,6 @@
 .navbar-wagon-link{
   display:inline-block;
 }
-.langmenu{
-    display: initial !important;
-  }
 }
 
 </style>
