@@ -54,6 +54,15 @@
 <%= link_to cat.name, products_path(category: cat.name)%>
 <br>
 <% end %>
+
+<hr>
+
+<b>KIDS</b> <br>
+<% Category.where(display_in_kids: true).each do |cat| %>
+<%= link_to cat.name, kids_path(category: cat.name)%>
+<br>
+<% end %>
+
 </div>
 <hr>
 <br>
@@ -103,25 +112,7 @@
 <!-- end productos -->
 
 
-<style>
 
-
-.wrap{
-  width:100%;
-  height: 900px;
-
-}
-
-.left{
-width:240px;
-/*background-color: lightblue;*/
-height: 800px;
-float: left;
-}
-
-
-
-</style>
 
 
 

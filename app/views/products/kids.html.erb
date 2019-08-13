@@ -1,16 +1,58 @@
 <%= render "shared/header" %>
-<!-- trytwofrontend -->
-<div class="container">
-<h3 class="titulo"> Ninos by: AnJu </h3>
+    <div class="containe-fluid" style="background-color: #ebebeb; padding-bottom: 2% !important;">
+      <div class="caption-content text-center">
+      <div class="font-alt mb-30 titan-title-size-1 "><h2 style="font-size:100px;"><%= image_tag "rv10.png", height: 70 %></h2></div>
+      <div class="font-alt mb-30 titan-title-size-4"><p class="description">50% DE DESCUENTO EN TODO</p></div>
+      <div class="font-alt mb-40 titan-title-size-1"><p class="description">Usa el codigo <b>SUMMER50</b>, Oferta EXPIRA en <b><p id="demo"></p></b></p></div>
+       </div>
+     </div>
+
+      <!-- trytwofrontend -->
+<div class="container-fluid" style="margin-top:5%; ">
+<h4 class="titulo text-center"> Selección Kids </h4>
+<br>
+<h5 class="titulo"> Filtrar por </h5>
+<hr style="border-top: 1px solid gray;">
+
+<div class="wrap">
+
+<div class="left">
+<!-- Navbar for categories -->
+<div class="categories" style="display:inline-block;">
+
+<b>Buscar por Codigo:</b> <br>
+<br>
+<%= form_tag products_path, :method => 'get' do %>
+<%= text_field_tag :search, params[:search] %>
+<% end %>
+
+Only in Kids: <br>
+<%= link_to 'Todas las categorias', kids_path %><br>
+<% Category.where(display_in_kids: true).each do |cat| %>
+<%= link_to cat.name, kids_path(category: cat.name)%>
+<br>
+<% end %>
+
+</div>
 <hr>
-<h2 class="titulo"> Proximamente! </h2>
+<br>
+<br>
+<br>
+<br>
+
+</div><!-- close left -->
+
+<!-- productos -->
+
+<hr>
     <div class="row">
+      <% cache do %>
   <% @kids_product_items.each do |product| %>
         <div class="col-md-3">
 
             <div class="product-grid2">
                 <div class="product-image2">
-                    <a href="#"><%= cl_image_tag product.photo %></a>
+                    <a><%= cl_image_tag product.photo %></a>
                     <ul class="social">
                         <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                         <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
@@ -18,17 +60,21 @@
                 </div>
                 <div class="product-content">
                     <h3 class="title"><a href="#"><%= link_to product.title, product %></a></h3>
-                    <span class="price"><%= number_to_currency_bo product.price %></span>
+                       <% if product.sale_price == 0 %>
+                    <p style="font-size:12px;"><%= number_to_currency_bo product.price %></p>
+                    <% else %>
+                    <p style="display: inline-block; font-size: 12px;"><i style="text-decoration: line-through;"><%= number_to_currency_bo product.sale_price %></i>&nbsp;&nbsp;<b style="font-weight: 600;"><%= number_to_currency_bo product.price %></b></p>
+                     <% end %>
                 </div>
             </div>
         </div>
    <% end %>
+   <% end %>
+</div>
+</div>
+</div>
+</div>
+ <hr>
+</div>
 
-
-</div>
-</div>
-<hr>
-
-</div>
-</div>
 

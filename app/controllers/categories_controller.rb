@@ -19,6 +19,6 @@ class CategoriesController < InheritedResources::Base
     end
 
     def category_params
-      params.require(:category).permit(:name, :description, :display_in_men, :display_in_women, :categories_attributes => [:product_id, :category])
+      params.require(:category).permit(:name, :description, :display_in_kids, :display_in_men, :display_in_women, :categories_attributes => [:product_id, :category])
     end
 end

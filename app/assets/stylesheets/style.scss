@@ -27,8 +27,6 @@ select {
     background-color: white;
     border: 1px solid #dddbdb;
     border-radius: 0.5px;
-
-    // font-family: "Verlag-Book" !important;
     color: #9a9a9a !important;
     font-size: 12px !important;
     letter-spacing: 2px;
@@ -1967,9 +1965,9 @@ a.load-more {
 
 .navbar-default .navbar-nav li a {
   font-size: 12px;
-  color: #323237;
+  color: black;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   text-transform: uppercase;
 
 }
@@ -2924,7 +2922,7 @@ img.mfp-img {
 
 
 .titulo {
-   font-weight:200 !important;
+   font-weight:400 !important;
 }
 
 .titulo2{
@@ -3035,7 +3033,7 @@ img.mfp-img {
   font-size: 13px;
   margin-right: 60px;
   color: white;
-  font-weight: 300;
+  font-weight: 350;
 }
 .site-footer hr
 {
@@ -3054,10 +3052,11 @@ img.mfp-img {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top:5px;
   letter-spacing:2px;
+  font-weight: 700;
 }
 .site-footer a
 {
-  font-weight: 300;
+  font-weight: 400;
 }
 .site-footer a:hover
 {
@@ -3080,7 +3079,8 @@ img.mfp-img {
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
-  color: #a30b1e;
+  font-size:10px;
+  color: white;
   text-decoration:none;
 }
 .footer-links.inline li
@@ -3188,4 +3188,21 @@ img.mfp-img {
     font-weight:600;
   }
 }
+
+
+
+// Productos women men y kids
+.wrap{
+  width:100%;
+  height: 900px;
+
+}
+
+.left{
+width:240px;
+// background-color: lightblue;
+height: 1500px;
+float: left;
+}
+
 

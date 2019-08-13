@@ -65,7 +65,7 @@ class ProductsController < ApplicationController
      @category = Category.find_by_name(params[:category])
      @kids_product_items = Product.where(category: @category)
    else
-    @kids_product_items = Product.kids
+    @kids_product_items = Product.kids.search(params[:search])
   end
 end
 
