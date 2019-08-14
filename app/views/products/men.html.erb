@@ -28,6 +28,7 @@
 <% end %>
 
 Only in Men: <br>
+<%= link_to 'Todas las categorias', men_path %><br>
 <% Category.where(display_in_men: true).each do |cat| %>
 <%= link_to cat.name, men_path(category: cat.name)%>
 <br>

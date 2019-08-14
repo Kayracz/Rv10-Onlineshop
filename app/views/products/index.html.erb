@@ -59,7 +59,7 @@
 
 <b>KIDS</b> <br>
 <% Category.where(display_in_kids: true).each do |cat| %>
-<%= link_to cat.name, kids_path(category: cat.name)%>
+<%= link_to cat.name, products_path(category: cat.name)%>
 <br>
 <% end %>
 
