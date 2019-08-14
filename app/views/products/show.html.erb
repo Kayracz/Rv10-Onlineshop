@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 <div class="wrapper">
-   <div class="main">
+   <div class="main zoomImg">
       <% cache do %>
       <%= cl_image_tag @product.photo %>
       <% @product.photos.each do |photo| %>
