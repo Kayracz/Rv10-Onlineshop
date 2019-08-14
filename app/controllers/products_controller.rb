@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
   include CurrentCart
   before_action :set_cart, only: [:index, :show, :about, :women, :kids, :men, :new]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
@@ -36,9 +37,9 @@ class ProductsController < ApplicationController
     def index
     if params.has_key?(:category)
      @category = Category.find_by_name(params[:category])
-     @products = Product.where(category: @category)
+      @pagy,@products =  pagy(Product.where(category: @category))
     else
-    @products = Product.search(params[:search])
+    @pagy, @products = pagy(Product.search(params[:search]), items:9)
     end
   end
 
