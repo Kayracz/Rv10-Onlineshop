@@ -1,8 +1,18 @@
 <%= render "shared/header" %>
-<h1>Thank you for your order</h1>
 
-<h3><%= @order.name %>, Gracias por tu pedido! </h3>
-<%= @order.address %>
-<%= @order.city %>
+<div id="confirmation-back">
+  <p></p>
+</div>
 
+<div id="confirmation-holder">
+<div class="container-fluid">
+<h2 class="text-center">Tu Pedido ha sido Recibido</h2>
+<br>
+<h3 class="text-center"><%= @order.name %>, Gracias por tu pedido! Te notificaremos pronto con mas informacion a tu email <%= @order.email %> y tu telefono <%= @order.phone %>. </h3>
+<br>
+<h4 class="text-center"> Cualquier consulta porfavor <a href="/contacts/new">contactanos. </a></h4>
+<br>
+<h4></h4>
+</div>
+</div>
 

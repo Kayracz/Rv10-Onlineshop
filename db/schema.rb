@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_13_015934) do
+ActiveRecord::Schema.define(version: 2019_08_14_034023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 2019_08_13_015934) do
     t.text "Nit"
     t.text "Notas"
     t.integer "phone"
+    t.boolean "terminos", default: false
   end
 
   create_table "photos", force: :cascade do |t|
@@ -165,6 +166,7 @@ ActiveRecord::Schema.define(version: 2019_08_13_015934) do
     t.datetime "updated_at", null: false
     t.boolean "recibido", default: false
     t.boolean "enviado", default: false
+    t.boolean "terminos", default: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

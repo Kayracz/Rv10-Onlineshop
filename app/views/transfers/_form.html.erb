@@ -2,7 +2,7 @@
   <%= render 'shared/msg2' %>
   <div class="container">
     <div class="col-md-10">
-      <h3>Por favor, introduzca sus datos</h3>
+      <h3 class="text-center" style="font-weight:400;">Por favor, introduzca sus datos</h3>
    <br>
    <br>
     </div>
@@ -60,7 +60,49 @@
       </div>
     </div>
 
-    <div class="form-group">
+      <div class="form-group">
+      <div class="col-md-11">
+        <span class="checkbox inline">
+          <%= f.check_box :terminos %>
+          <%= f.label "Acepto Los Terminos & Condiciones" %>
+        </span>
+      </div>
+    </div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+ Terminos y Condiciones
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Terminos & Condiciones</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       El USUARIO debe leer, entender y aceptar todas las condiciones establecidas en los Términos y Condiciones de LA EMPRESA, previo a su registración como miembro de MARKOVA. Quién haga uso del sitio acepta las condiciones del servicio quedando sujeta a ellas.
+CUALQUIER PERSONA QUE NO ACEPTE ESTOS TÉRMINOS Y CONDICIONES GENERALES, LOS CUALES TIENEN UN CARÁCTER OBLIGATORIO Y VINCULANTE, DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO Y/O LOS SERVICIOS.
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+ </div>
+<br>
+<br>
+
+<br>
+  <div class="form-group">
       <div class="col-md-10">
         <%= f.submit 'Comprar' %>
       </div>
@@ -69,3 +111,5 @@
 
 </div>
 <% end %>
+
+

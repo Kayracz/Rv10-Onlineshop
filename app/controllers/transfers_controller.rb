@@ -9,7 +9,7 @@ class TransfersController < ApplicationController
 
   def new
     if @cart.product_items.empty?
-      redirect_to product_url, notice: 'Your Cart is Empty'
+      redirect_to product_url, notice: 'Tu carrito esta vacio'
       return
     end
     @transfer = Transfer.new
@@ -22,9 +22,9 @@ class TransfersController < ApplicationController
     if @transfer.save
       Cart.destroy(session[:cart_id])
       session[:cart_id] = nil
-      redirect_to @transfer, notice: 'Thank You for Your Order!'
+      redirect_to @transfer, notice: 'Gracias por su pedido!'
     else
-      render :new, notice: 'Please check your form'
+      render :new, notice: 'Porfavor chequea tu informacion'
     end
   end
 
@@ -44,7 +44,7 @@ class TransfersController < ApplicationController
 
   def transfer_params
     params.require(:transfer).permit(:name, :email, :phone, :address,
-                                  :city, :country, :Nit, :Notas)
+                                  :city, :country, :Nit, :Notas, :terminos)
   end
 
 end

@@ -1,16 +1,26 @@
-<%= render "shared/header" %>
-<h1 class="text-center"> Tu Pedido </h1>
-
-<br>
-
-<%= render 'orders/form' %>
-
-<br>
-
-
-
 <!--Script for Braintree -->
 <script>
 braintree.setup(<%= @client_token %>, 'dropin', {
   container: 'payment-form'
 }); </script>
+
+
+
+<%= render "shared/header" %>
+
+
+<div id="confirmation-back">
+  <p></p>
+</div>
+
+<div id="confirmation-holder">
+<h1 class="text-center"> Tu Pedido </h1>
+<div class="container formorders">
+<%= render 'orders/form' %>
+</div>
+</div>
+
+
+
+
+

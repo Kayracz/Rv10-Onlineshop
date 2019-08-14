@@ -14,7 +14,7 @@ class ProductItemsController < ApplicationController
       # item gets added to the cart we are good to go.
       # (That's what most e-commerce websites do.)
       Stock.decrease product.id, size_id, 1
-      redirect_to products_url, notice: 'Product added to Cart'
+      redirect_to request.referrer, notice: 'Tu producto ha sido agregado al carrito'
     else
       render :new
     end

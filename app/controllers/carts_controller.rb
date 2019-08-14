@@ -13,7 +13,7 @@ class CartsController < ApplicationController
   def destroy
     @cart.destroy if @cart.id == session[:cart_id]
     session[:cart_id] = nil
-    redirect_to root_url, notice: 'Your cart is empty'
+    redirect_to root_url, notice: 'Tu carrito esta vacio'
   end
 
   private
@@ -26,8 +26,8 @@ class CartsController < ApplicationController
   end
 
   def invalid_cart
-    logger_error = 'You are trying to access an invalid cart'
-    redirect_to product_url,  notice:'Invalid Cart'
+    logger_error = 'Estas tratando de acceder a un carrito invalido'
+    redirect_to product_url,  notice:'Carrito invalido'
   end
 
 end

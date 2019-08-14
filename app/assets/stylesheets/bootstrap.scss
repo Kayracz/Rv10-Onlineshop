@@ -153,6 +153,7 @@ html input[type="button"], input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
+  padding: 10px;
 }
 
 button[disabled],
@@ -3163,6 +3164,7 @@ input[type="search"] {
   margin-bottom: 0;
   font-weight: normal;
   cursor: pointer;
+  padding-top:1.8%;
 }
 
 .radio input[type="radio"],
@@ -3170,7 +3172,6 @@ input[type="search"] {
 .checkbox input[type="checkbox"],
 .checkbox-inline input[type="checkbox"] {
   position: absolute;
-  margin-left: -20px;
   margin-top: 4px \9;
 }
 

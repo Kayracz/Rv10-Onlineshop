@@ -9,16 +9,19 @@
          <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Niños', kids_path %></a>
          <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Todos', products_path %></a>&nbsp;
 
+
+</div>
+         <div class="carrito">
+
          <% if @cart.total_price > 0 %>
          <%= link_to @cart, class: 'menu-cart' do  %>
          <i class="fa fa-shopping-cart"></i>
          <%= number_to_currency_bo @cart.total_price %>
          <% end %>
          <% else %>
-         <a class="menu-cart" style="color:violet !important;"><i class="fa fa-shopping-cart" style="color:violet !important;"></i> <span>Bs.0.00</span></a>
+         <a class="menu-cart" style="color:#ce1414 !important;"><i class="fa fa-shopping-cart" style="color:#ce1414 !important;"></i> <span>Bs.0.00</span></a>
          <% end %>
-
-</div>
+       </div>
 
 
       <div class="hidden-md hidden-lg">
@@ -77,7 +80,7 @@ color:violet;
   padding: 0px 30px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: ;
   margin-bottom: 40px;
   top: 0;
   left: 0;
@@ -113,6 +116,7 @@ color:violet;
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
+  margin-right: 54% !important;
 }
 
 /* Navbar link */

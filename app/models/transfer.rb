@@ -1,6 +1,6 @@
 class Transfer < ApplicationRecord
 has_many :product_items, dependent: :destroy
-validates :name, :email, :phone, :address, :city, presence: true
+validates :name, :email, :phone, :address, :city, :terminos, presence: true
 
 def add_product_items_from_cart(cart)
 cart.product_items.each do |item|

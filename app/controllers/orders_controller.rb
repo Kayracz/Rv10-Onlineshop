@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
 
   def new
     if @cart.product_items.empty?
-      redirect_to product_url, notice: 'Your Cart is Empty'
+      redirect_to product_url, notice: 'Tu carrito esta vacio'
       return
     end
     @order = Order.new
@@ -25,9 +25,9 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifierMailer.recieved(@order).deliver
-        redirect_to @order, notice: 'Thank You for Your Order!'
+        redirect_to @order, notice: 'Gracias por su pedido!'
       else
-        flash[:error] = 'Check Your Cart'
+        flash[:error] = 'Revisa tu carrito'
         redirect_to root_url, alert: @result.message
         @order.destroy
       end
@@ -56,7 +56,7 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:name, :email, :phone, :address,
-                                  :city, :country, :Nit, :Notas)
+                                  :city, :country, :Nit, :terminos, :Notas)
   end
 
   def charge

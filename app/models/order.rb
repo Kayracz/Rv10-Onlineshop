@@ -2,7 +2,7 @@ class Order < ApplicationRecord
 
 has_many :product_items, dependent: :destroy
 
-validates :name, :email, :phone, :address, :city, presence: true
+validates :name, :email, :phone, :address, :terminos, :city, presence: true
 
 def add_product_items_from_cart(cart)
 cart.product_items.each do |item|
