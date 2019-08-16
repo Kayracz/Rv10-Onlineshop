@@ -3,15 +3,14 @@
       <%= link_to root_path, class: "navbar-wagon-brand" do %>
       <%= image_tag "rv10.png", height: 40 %>
       <% end %>
-      <div class="navbar-wagon-item">
+      <div class="navbar-wagon-item nav-hide">
          <a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'Mujer', women_path %></a>
          <a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'Hombre', men_path %></a>
          <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Niños', kids_path %></a>
          <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Todos', products_path %></a>&nbsp;
+     </div>
 
-
-</div>
-         <div class="carrito">
+         <div class="carrito nav-hide">
 
          <% if @cart.total_price > 0 %>
          <%= link_to @cart, class: 'menu-cart' do  %>
@@ -130,7 +129,7 @@ color:violet;
 
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
-  margin-right: -50px;
+  /*margin-right: -50px;*/
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
   padding: 4px 44px;
@@ -162,6 +161,13 @@ color:violet;
   background-color: white !important;
   }
 
+.navbar-wagon a {
+    padding-right: 184px;
+}
+
+  .categorybottom{
+        margin-bottom: 19%;
+  }
 
 }
 
@@ -225,6 +231,10 @@ color:violet;
   .messagetitle h2 {
     margin-top: 135px !important;
 
+  }
+
+  .nav-hide{
+    display:none;
   }
 
 }

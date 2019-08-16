@@ -9,13 +9,13 @@
      </div>
 <!-- Titulo de pagina -->
 <div class="container-fluid" style="margin-top:5%; ">
-<h4 class="titulo text-center">Todos los Productos</h4>
+<!-- h4 class="titulo text-center">Todos los Productos</h4>
 <br>
 <h5 class="titulo"> Filtrar por </h5>
 <hr style="border-top: 1px solid gray;">
-<!-- end -->
-
+!-- end -->
 <div class="wrap">
+
 
 <div class="left">
 <!-- Navbar for categories -->
@@ -39,7 +39,7 @@
 <br>
 <% end %>
 <!-- end -->
-<hr>
+<br>
 
 <b>MUJERES</b> <br>
 <% Category.where(display_in_women: true).each do |cat| %>
@@ -47,7 +47,7 @@
 <br>
 <% end %>
 
-<hr>
+<br>
 
 <b>HOMBRES</b> <br>
 <% Category.where(display_in_men: true).each do |cat| %>
@@ -55,7 +55,7 @@
 <br>
 <% end %>
 
-<hr>
+<br>
 
 <b>KIDS</b> <br>
 <% Category.where(display_in_kids: true).each do |cat| %>
@@ -64,7 +64,7 @@
 <% end %>
 
 </div>
-<hr>
+
 <br>
 <br>
 <br>
@@ -72,8 +72,18 @@
 
 </div><!-- close left -->
 
+
+<h4 class="titulo"><b>TODOS LOS PRODUCTOS</b></h4>
+<div class="searcher">
+  <div class="btn btn-default"> Price </div>
+  <div class="btn btn-default"> Color </div>
+  <div class="btn btn-default"> Size </div>
+</div>
+<br>
 <!-- productos -->
-<%== pagy_nav(@pagy) %>
+<%== pagy_nav(@pagy) %>&nbsp;&nbsp;
+<div class="quantityproducts">Productos ( <%= @products.count %> )
+</div>
 <hr>
 
     <div class="row">
@@ -109,7 +119,7 @@
 <%== pagy_nav(@pagy) %>
    <hr>
  </div>
-
+</div>
 
 <!-- end productos -->
 

@@ -4,6 +4,8 @@
 
   <div class="form-inputs">
     Titulo del producto
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%= f.input :title %>
     Descripcion del producto
     <%= f.input :description %>
@@ -17,9 +19,6 @@
     <%= f.input :codigo %>
     <%= f.input :color %>
     Foto principal
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= link_to "Agregar mas fotos", new_admin_photo_path %> &larr; <br>
     <br>
     Categoria del producto
     <br>

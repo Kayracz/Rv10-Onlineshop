@@ -302,8 +302,6 @@ textarea {
   border: 2px solid #f2f3f5;
   border-radius: 0;
   margin-bottom: 40px;
-  padding-left: 15px;
-  padding-right: 15px;
   font-size: 16px;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -2922,6 +2920,7 @@ img.mfp-img {
 
 .titulo {
    font-weight:400 !important;
+
 }
 
 .titulo2{
@@ -3000,7 +2999,9 @@ img.mfp-img {
   display: block;
 }
 
-
+.categories{
+  margin-left:10px;
+}
 .categories a{
   color: black;
   font-weight: 300;
@@ -3223,4 +3224,14 @@ float: left;
     margin-bottom: 75px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.quantityproducts{
+  font-size:10px;
+  display:inline;
+  color: gray;
+}
+
+.searcher{
+  display:inline;
 }
