@@ -1,7 +1,7 @@
 $(document).ready(function() {
-	
+
 	"use strict";
-	
+
 	//Parallax
 
 	//Get Browser prefix
@@ -9,7 +9,7 @@ $(document).ready(function() {
 		var styles = window.getComputedStyle(document.documentElement, ''),
 		pre = (Array.prototype.slice
 			.call(styles)
-			.join('') 
+			.join('')
 			.match(/-(moz|webkit|ms)-/) || (styles.OLink === '' && ['', 'o'])
 		)[1];
 		return {
@@ -50,20 +50,20 @@ $(document).ready(function() {
     //Set each full screen element height
 
     $('.fullscreen-element').each(function(){
-		$(this).css('height', $(window).height()-125);
+		$(this).css('height', $(window).height()-120);
 	});
 
     alignVertical();
    	halfMarginTop();
-	
+
 	$(window).resize(function(){
 		alignVertical();
 		halfMarginTop();
 	});
 
-	
+
 	// Append .background-image-holder <img>'s as CSS backgrounds
-	
+
 	$('.background-image-holder').each(function(){
 		var imgSrc= $(this).children('img').attr('src');
 		$(this).css('background', 'url("' + imgSrc + '")');
@@ -71,7 +71,7 @@ $(document).ready(function() {
         $(this).css('background-position', '50% 0%');
 	});
 
-	
+
 	//Products Grid
 
 	if ($('.products-container').length) {
@@ -81,7 +81,7 @@ $(document).ready(function() {
 		});
 	}
 
-	
+
 	//Offscreen navigation
 
 	if ($('.side-menu-opener').length) {
@@ -96,8 +96,8 @@ $(document).ready(function() {
 		});
 	}
 
-	
-	//Hero Slider 
+
+	//Hero Slider
 
 	if ($('.hero-slider').length ) {
     	$('.hero-slider').slick({
@@ -169,7 +169,7 @@ $(document).ready(function() {
 			return false;
 		});
 	}
- 
+
 
 	// Google maps
 
@@ -186,13 +186,13 @@ $(document).ready(function() {
 			type: 'image',
 			gallery: {
 			  enabled: true, // set to true to enable gallery
-			
+
 			  preload: [0,2], // read about this option in next Lazy-loading section
-			
+
 			  navigateByImgClick: true,
-			
+
 			  arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
-			
+
 			  tPrev: 'Previous (Left arrow key)', // title for left button
 			  tNext: 'Next (Right arrow key)', // title for right button
 			  tCounter: '<span class="mfp-counter">%curr% of %total%</span>' // markup of counter
@@ -223,7 +223,7 @@ function alignVertical() {
 			that.css('padding-top', padAmount);
 		}
 	});
-	
+
 }
 
 function halfMarginTop() {
@@ -231,10 +231,10 @@ function halfMarginTop() {
 	$('.half-margin-top').each(function(){
 		var that = $(this);
 			height = that.height()/2+40,
-		
+
 		that.css('margin-top', -height);
 	});
-	
+
 }
 
 function initialize_map(id) {
