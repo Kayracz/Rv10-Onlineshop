@@ -2,8 +2,8 @@
 <header class="">
   <div class="container align-vertical hero">
     <div class="row">
-      <div class="col-md-5 text-left">
-        <h1>Tu Carrito</h1>
+      <div class="col-md-5 text-left" style="margin-top:20px;">
+        <h1 style="color: #a80f0f;">Tu Carrito</h1>
         <hr>
       </div>
     </div><!--end of row-->
@@ -25,13 +25,17 @@
       <br>
       <h4><b>COMPRAR</b></h4>
       <h4>Elije como quieres Comprar</h4>
+       <br>
       <i>Haz clic en Contra-entrega para pagar en effectivo y en Transferencia para hacer una transferencia bancaria.</i>
       <br>
       <br>
+      <%= button_to 'Transferencia', new_transfer_path, method: :get %>
+      <br>
+      <br>
+      * <i>Los pagos contra-entrega solo son disponibles en</i> <b>SANTA CRUZ DE LA SIERRA</b>.
+      <br>
       <br>
       <%= button_to 'Contra-entrega', new_order_path, method: :get %>
-      <br>
-      <%= button_to 'Transferencia', new_transfer_path, method: :get %>
       <br>
       <%= link_to 'De vuelta a la tienda', products_path %>
       <br>
