@@ -1,4 +1,13 @@
 <%= render "shared/header" %>
+  <div class="container-fluid categorybar">
+<%= link_to 'Todo', kids_path %>&nbsp;
+<% Category.where(display_in_kids: true).each do |cat| %>
+<%= link_to cat.name, kids_path(category: cat.name)%>
+<% end %>
+&nbsp;
+  </div>
+
+
     <div class="containe-fluid" style="background-color: #ebebeb; padding-bottom: 2% !important;">
       <div class="caption-content text-center">
       <div class="font-alt mb-30 titan-title-size-1 "><h2 style="font-size:100px;"><%= image_tag "rv10.png", height: 70 %></h2></div>
@@ -7,44 +16,51 @@
        </div>
      </div>
 
+
+  <style>
+    .categorybar a{
+    color:white;
+    padding: 10px;
+    text-decoration: none;
+    }
+
+     .categorybar a:hover{
+     color:black;
+     background-color: white;
+     padding-top: 30px;
+     padding-bottom: 30px;
+    }
+
+    .categorybar{
+    background-color: #c11111; padding: 20px;
+    padding-left: 30px;
+    }
+
+  </style>
+
       <!-- trytwofrontend -->
 <div class="container-fluid" style="margin-top:5%; ">
 <h4 class="titulo text-center"> Selección Kids </h4>
 <br>
-<h5 class="titulo"> Filtrar por </h5>
-<hr style="border-top: 1px solid gray;">
 
-<div class="wrap">
-
-<div class="left">
+<!-- <div class="wrap"> -->
 <!-- Navbar for categories -->
 <div class="categories" style="display:inline-block;">
-
+<!--
 <b>Buscar por Codigo:</b> <br>
 <br>
 <%= form_tag products_path, :method => 'get' do %>
 <%= text_field_tag :search, params[:search] %>
-<% end %>
-
-Only in Kids: <br>
-<%= link_to 'Todas las categorias', kids_path %><br>
-<% Category.where(display_in_kids: true).each do |cat| %>
-<%= link_to cat.name, kids_path(category: cat.name)%>
-<br>
-<% end %>
+<% end %> -->
 
 </div>
 <hr>
-<br>
-<br>
-<br>
-<br>
 
-</div><!-- close left -->
+<br>
+</div>
 
+<div class="container">
 <!-- productos -->
-
-<hr>
     <div class="row">
       <% cache do %>
   <% @kids_product_items.each do |product| %>

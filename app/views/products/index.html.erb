@@ -32,7 +32,7 @@
 <br>
 <#% end %> -->
 
-<b>Todas Las Categorias</b> <br>
+<b class="titulos">Todas Las Categorias</b> <br>
 <%= link_to 'Todas las categorias', products_path %><br>
 <% Category.all.each do |cat| %>
 <%= link_to cat.name, products_path(category: cat.name) %>
@@ -41,7 +41,7 @@
 <!-- end -->
 <br>
 
-<b>MUJERES</b> <br>
+<b class="titulos">MUJERES</b> <br>
 <% Category.where(display_in_women: true).each do |cat| %>
 <%= link_to cat.name, products_path(category: cat.name)%>
 <br>
@@ -49,7 +49,7 @@
 
 <br>
 
-<b>HOMBRES</b> <br>
+<b class="titulos">HOMBRES</b> <br>
 <% Category.where(display_in_men: true).each do |cat| %>
 <%= link_to cat.name, products_path(category: cat.name)%>
 <br>
@@ -57,7 +57,7 @@
 
 <br>
 
-<b>KIDS</b> <br>
+<b class="titulos">KIDS</b> <br>
 <% Category.where(display_in_kids: true).each do |cat| %>
 <%= link_to cat.name, products_path(category: cat.name)%>
 <br>
@@ -153,6 +153,11 @@
 .pagination {
     display: inline-block;
     padding-left: 32%;
+}
+}
+
+.titulos {
+  color: #ac2217 !important;
 }
 </style>
 
