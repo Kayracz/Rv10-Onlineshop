@@ -12,6 +12,8 @@ class ProductsController < ApplicationController
   def create
     @product = Product.create(product_params)
     @category_id = params[:category_id]
+    # Creates entries in the stock table to handle the new product.
+    # (This could be a create callback on the model, too.)
     Size.all.each do |s|
       Stock.create! product_id: @product.id, size_id: s.id, units: 1
     end
