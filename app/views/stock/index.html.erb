@@ -1,5 +1,4 @@
 <%= render "shared/header" %>
-<link href="/style.css" rel="stylesheet" type="text/css" media="all"/>
 
 <h2>
   Stock
@@ -11,6 +10,7 @@
       <%= form_tag stock_update_path do %>
         <% if i == 0 %>
           <%= label_tag p.title, nil, class: "stk-label" %>
+          <br>
         <% else %>
           <%= label_tag nil, nil, class: "stk-label" %>
         <% end %>

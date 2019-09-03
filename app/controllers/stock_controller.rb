@@ -1,4 +1,6 @@
 class StockController < ApplicationController
+  include CurrentCart
+  before_action :set_cart, only: [:index, :show, :about]
   before_action :ensure_admin
 
   layout false
