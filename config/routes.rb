@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'kids', to: 'products#kids'
   get 'orderdashboard' => 'orders#orderdashboard'
   get 'about' => 'pages#about'
+  get 'termsandconditions' => 'pages#termsandconditions'
 
 
   post 'product_items/:item_id/add'    => "product_items#add_quantity",
