@@ -35,7 +35,7 @@ class ProductsController < ApplicationController
   end
 
     def index
-    if params.has_key?(:category)
+    if params.key?(:category)
      @category = Category.find_by_name(params[:category])
       @pagy,@products =  pagy(Product.where(category: @category))
     else
@@ -44,7 +44,7 @@ class ProductsController < ApplicationController
   end
 
   def women
-    if params.has_key?(:category)
+    if params.key?(:category)
      @category = Category.find_by_name(params[:category])
     @women_product_items = Product.where(category: @category)
   else
@@ -53,7 +53,7 @@ class ProductsController < ApplicationController
   end
 
   def men
-    if params.has_key?(:category)
+    if params.key?(:category)
      @category = Category.find_by_name(params[:category])
      @men_product_items = Product.where(category: @category)
    else
@@ -62,7 +62,7 @@ class ProductsController < ApplicationController
  end
 
   def kids
-    if params.has_key?(:category)
+    if params.key?(:category)
      @category = Category.find_by_name(params[:category])
      @kids_product_items = Product.where(category: @category)
    else
