@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   get 'orderdashboard' => 'orders#orderdashboard'
   get 'about' => 'pages#about'
   get 'termsandconditions' => 'pages#termsandconditions'
-
+  get 'envios' => 'pages#envios'
+  get 'pagos' => 'pages#pagos'
+  get 'devoluciones' => 'pages#devoluciones'
 
   post 'product_items/:item_id/add'    => "product_items#add_quantity",
     as: "product_items_add"

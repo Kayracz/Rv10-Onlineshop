@@ -7,13 +7,10 @@
       <div class="font-alt mb-40 titan-title-size-1"><p class="description">Usa el codigo <b>SUMMER50</b>, Oferta EXPIRA en <b><p id="demo"></p></b></p></div>
        </div>
      </div>
-<!-- Titulo de pagina -->
+
+
 <div class="container-fluid" style="margin-top:5%; ">
-<!-- h4 class="titulo text-center">Todos los Productos</h4>
-<br>
-<h5 class="titulo"> Filtrar por </h5>
-<hr style="border-top: 1px solid gray;">
-!-- end -->
+
 <div class="wrap">
 
 
@@ -26,11 +23,7 @@
 <%= form_tag products_path, :method => 'get' do %>
 <%= text_field_tag :search, params[:search] %>
 <% end %>
-<!-- <b>Todos Los Talles</b> <br>
-<#% Size.all.each do |cat| %>
-<#%= link_to cat.name, products_path(Size: cat.name) %>
-<br>
-<#% end %> -->
+
 
 <b class="titulos">Todas Las Categorias</b> <br>
 <%= link_to 'Todas las categorias', products_path %><br>
@@ -76,10 +69,8 @@
 <h4 class="titulo"><b>TODOS LOS PRODUCTOS</b></h4>
 <div class="searcher">
   <h5>La mejor version de ti mismo. Moda boliviana inspirada en gente activa.</h5>
-<!--   <div class="btn btn-default"> Price </div>
-  <div class="btn btn-default"> Color </div>
-  <div class="btn btn-default"> Size </div> -->
 </div>
+
 <br>
 <!-- productos -->
 <%== pagy_nav(@pagy) %>&nbsp;&nbsp;
@@ -117,7 +108,9 @@
 </div>
 </div>
 </div>
+<div class="text-center">
 <%== pagy_nav(@pagy) %>
+</div>
    <hr>
  </div>
 </div>
