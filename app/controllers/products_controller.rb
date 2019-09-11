@@ -55,18 +55,18 @@ class ProductsController < ApplicationController
   def men
     if params.key?(:category)
      @category = Category.find_by_name(params[:category])
-     @men_product_items = Product.where(category: @category)
+     @pagy,@men_product_items = pagy(Product.where(category: @category))
    else
-    @men_product_items = Product.men.search(params[:search])
+    @pagy,@men_product_items = pagy(Product.men.search(params[:search]))
   end
  end
 
   def kids
     if params.key?(:category)
      @category = Category.find_by_name(params[:category])
-     @kids_product_items = Product.where(category: @category)
+     @pagy,@kids_product_items = pagy(Product.where(category: @category))
    else
-    @kids_product_items = Product.kids.search(params[:search])
+    @pagy,@kids_product_items = pagy(Product.kids.search(params[:search]))
   end
 end
 

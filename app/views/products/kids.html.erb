@@ -1,4 +1,5 @@
 <%= render "shared/header" %>
+
   <div class="container-fluid categorybar">
 <%= link_to 'Todo', kids_path %>&nbsp;
 <% Category.where(display_in_kids: true).each do |cat| %>
@@ -14,54 +15,25 @@
      </div>
 
 
-  <style>
-    .categorybar a{
-    color:white;
-    padding: 10px;
-    text-decoration: none;
-    }
-
-     .categorybar a:hover{
-     color:black;
-     background-color: white;
-     padding-top: 30px;
-     padding-bottom: 30px;
-    }
-
-    .categorybar{
-    background-color: #c11111; padding: 20px;
-    padding-left: 30px;
-    }
-
- @media screen and (max-width: 768px) {
-
-    .categorybar{
-      margin-top: 40px;
-    }
-  }
-  </style>
-
-      <!-- trytwofrontend -->
-<div class="container-fluid" style="margin-top:5%; ">
-<h4 class="titulo text-center"> Selección Kids </h4>
+ <!-- trytwofrontend -->
+<div class="container" style="margin-top:5%; ">
+<h4 class="titulo text-center"> Selección Niños </h4>
 <br>
 
-<!-- <div class="wrap"> -->
-<!-- Navbar for categories -->
+<p class="titulo2">ver todos</p>
+<hr class="sabana-line"></hr>
+
+<div class="quantityproducts pagination2"><%== pagy_nav(@pagy) %>&nbsp; Productos ( <%= @kids_product_items.count %> )
+</div>
+
+
 <div class="categories" style="display:inline-block;">
-<!--
-<b>Buscar por Codigo:</b> <br>
-<br>
-<%= form_tag products_path, :method => 'get' do %>
-<%= text_field_tag :search, params[:search] %>
-<% end %> -->
+
 
 </div>
-<hr>
 
 <br>
 </div>
-
 <div class="container">
 <!-- productos -->
     <div class="row">
@@ -93,5 +65,6 @@
 </div>
  <hr>
 </div>
+
 
 

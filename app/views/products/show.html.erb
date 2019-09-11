@@ -25,11 +25,11 @@
       <% end %>
    <hr>
 
-    <%= label_tag :size_id, 'Seleciona tu talla' %>
+    <%= label_tag :size_id, 'Seleciona tu talle' %>
      <%= form_tag product_items_path(product_id: @product.id) do %>
     <%= select_tag :size_id,
         options_for_select(Size.options_for(@product.id), @product.size),
-        prompt: "Seleciona tu talla" %>
+        prompt: "Seleciona tu talle" %>
 
       <br>
 
@@ -122,8 +122,7 @@
       <%end%>
       </div>
    </div>
-
+</div>
 
 <!-- end mobile devices -->
-
 

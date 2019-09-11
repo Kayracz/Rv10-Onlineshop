@@ -1,0 +1,48 @@
+
+.sabana-line{
+    border-top: 1px solid black;
+    margin-left: -2%;
+    margin-right: 1.5vw;
+  }
+
+  .titulo2{
+    color: #404040;
+    text-decoration: none;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .pagination2{
+    padding-left: 23%;
+  }
+
+    .categorybar a{
+    color:white;
+    padding: 10px;
+    text-decoration: none;
+    }
+
+     .categorybar a:hover{
+     color:black;
+     background-color: white;
+     padding-top: 30px;
+     padding-bottom: 30px;
+    }
+
+    .categorybar{
+    background-color: #c11111; padding: 20px;
+    padding-left: 30px;
+      margin-top: -11px;
+    }
+
+
+
+ @media screen and (max-width: 768px) {
+
+    .categorybar{
+      margin-top: 40px;
+    }
+  }
+
+
