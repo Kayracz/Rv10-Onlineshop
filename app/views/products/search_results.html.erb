@@ -1,0 +1,18 @@
+<%= render "shared/header" %>
+
+<div class="container-fluid" style="min-height:500px;background-color: #ebebeb; padding-bottom: 2% !important;">
+  <% if @results.any? %>
+    <table style="margin:20px;margin-left:100px;;">
+      <% @results.each do |r| %>
+        <tr>
+          <td style='padding-right:20px'> <%= link_to r.title, product_path(r.id) %> </td>
+          <td style='padding-right:20px'> <%= r.description %> </td>
+          <td style='padding-right:20px'> <%= number_to_currency_bo r.price %> </td>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+    No hay resultados :( <br/>
+    TODO: Sugerir correcciones en los terminos de busqueda, alla' Google.
+  <% end %>
+</div>

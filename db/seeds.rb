@@ -18,32 +18,42 @@ if Rails.env.development?
     Product.create!(
       title: "Hoodie", description: "An awesome hoodie!", price: 23.45,
       photo: "http://res.cloudinary.com/deruwllkv/image/upload/v1565141088/a6usehtmcxhskup7cmex.png",
-      size: "L", category: "men")
+      size: "L", 
+      color: "Red",
+      category: "men")
 
     Product.create!(
       title: "Jean", description: "Incredible pants!", price: 45.67,
       photo: "http://res.cloudinary.com/deruwllkv/image/upload/v1565141088/a6usehtmcxhskup7cmex.png",
-      size: "L", category: "women")
+      size: "L", 
+      color: "Red",
+      category: "women")
 
     Product.create!(
       title: "Shirt", description: "An awesome shirt!", price: 56.78,
       photo: "http://res.cloudinary.com/deruwllkv/image/upload/v1565141088/a6usehtmcxhskup7cmex.png",
-      size: "XS", category: "women")
+      size: "XS", 
+      color: "Blue",
+      category: "women")
 
     Product.create!(
       title: "Scarf", description: "Colorful scarf!", price: 67.89,
       photo: "http://res.cloudinary.com/deruwllkv/image/upload/v1565141088/a6usehtmcxhskup7cmex.png",
-      size: "XS", category: "women")
+      size: "XS", 
+      color: "Green",
+      category: "women")
 
     Product.create!(
       title: "Kid Shirt", description: "Cool shirt!", price: 56.78,
       photo: "http://res.cloudinary.com/deruwllkv/image/upload/v1565141088/a6usehtmcxhskup7cmex.png",
-      size: "XS", category: "men")
+      size: "XS", 
+      color: "Green",
+      category: "men")
 
     Product.create!(
       title: "Hat", description: "Cool hat!", price: 56.78,
       photo: "http://res.cloudinary.com/deruwllkv/image/upload/v1565141088/a6usehtmcxhskup7cmex.png",
-      size: "XS", category: "women", color: "blue")
+      size: "XS", category: "women", color: "Blue")
     # =====
   end
 end

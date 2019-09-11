@@ -1,0 +1,19 @@
+<%= render "shared/header" %>
+<div class="containe-fluid" style="background-color: #ebebeb; padding-bottom: 2% !important;">
+  <div class="caption-content text-center">
+    <div style="text-align:left;margin-left:100px;">
+      <% if @suggestions.any? %>
+      <div style="min-height:400px;padding-top:40px;">
+        <b>Quisiste decir:</b>
+        <% @suggestions.each do |term| %>
+          <div><%= link_to(term, "/search_results?term=#{term}") %></div>
+        <% end %>
+      </div>
+      <% else %>
+      <div style="min-height:400px;padding-top:40px;">
+        <b>No hay resultados para "<%= @term %>".
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

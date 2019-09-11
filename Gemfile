@@ -1,13 +1,18 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.4'
+# ruby '2.4.4'
+ruby '2.5.1'
 
 gem 'rails', '~> 5.2.3'
 
 gem 'mini_magick'
 
 gem 'pg', '>= 0.18', '< 2.0'
+
+gem 'pg_search' #<- Full text search.
+
+gem 'did-you-mean' #<- Misspelled words.
 
 gem 'puma', '~> 3.11'
 
