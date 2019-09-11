@@ -69,6 +69,33 @@
 </div>
 
 <br>
+
+<!-- filtros -->
+<div>
+  <%= select_tag "color",
+        options_for_select(Product.color, @color), 
+        include_blank: "Color",
+        onchange: "updateFilters()",
+        class: "filter_opt" 
+      %>
+
+  <%= select_tag "size",  
+        options_for_select(Product.size, @size), 
+        include_blank: "Talle",
+        onchange: "updateFilters()",
+        class: "filter_opt" 
+      %>
+
+  <%= select_tag "price", 
+        options_for_select(Product.price_range, @price), 
+        include_blank: "Precio", 
+        onchange: "updateFilters()",
+        class: "filter_opt" 
+      %>
+
+    <%= link_to "Limpiar Filtros", products_clear_filters_path %>
+</div>
+
 <!-- productos -->
 <%== pagy_nav(@pagy) %>&nbsp;&nbsp;
 <div class="quantityproducts">Productos ( <%= @products.count %> )
@@ -149,6 +176,19 @@
 font-weight: 500;
     letter-spacing: 0px;
 }
+  .filter_opt {
+    width: 100px;
+    margin: 3px;
+  }
 </style>
+  <script>
+    function updateFilters() {
+			const color = $("#color").val() || "";
+			const size  = $("#size").val()  || "";
+			const price = $("#price").val() || "";
+
+			location.href = `/filter?color=${color}&size=${size}&price=${price}`;
+    }
+  </script>
 
 

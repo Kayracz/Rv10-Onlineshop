@@ -45,13 +45,13 @@
       <%= link_to root_path, class: "navbar-wagon-brand" do %>
       <%= image_tag "rv10.png", height: 40 %>
       <% end %>
-      <div class="navbar-wagon-item nav-hide">
-         <a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'Mujer', women_path %></a>
-         <a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'Hombre', men_path %></a>
-         <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Niños', kids_path %></a>
-         <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Todos', products_path %></a>&nbsp;
-     </div>
-
+    <div class="navbar-wagon-item nav-hide">
+       <a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'Mujer', women_path %></a>
+       <a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'Hombre', men_path %></a>
+       <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Niños', kids_path %></a>
+       <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Todos', products_path %></a>
+       <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Buscar', products_search_path %></a>
+    </div>
          <div class="carrito nav-hide">
 
          <% if @cart.total_price > 0 %>
