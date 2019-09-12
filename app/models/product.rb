@@ -15,7 +15,7 @@ class Product < ApplicationRecord
   validates :title, uniqueness: true
 
 
-  pg_search_scope :full_text_search, 
+  pg_search_scope :full_text_search,
     against: %i(title description category subcategory color),
     :using => {
       :tsearch => {
@@ -51,6 +51,10 @@ class Product < ApplicationRecord
     select('DISTINCT color').map(&:color).sort!
   end
 
+  def self.subcategory
+    select('DISTINCT subcategory').map(&:subcategory).sort!
+  end
+
   def self.price_range
     @@price_range_options ||=
       price_ranges.collect {|range| ["#{range.first} - #{range.last}", range] }
@@ -78,6 +82,10 @@ class Product < ApplicationRecord
 	def color_picker
 		@color
 	end
+
+  def subcategory_picker
+    @subcategory
+  end
 
   def total_price
     product.price * quantity

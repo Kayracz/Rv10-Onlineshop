@@ -11,8 +11,14 @@
     <%= f.input :description %>
     Precio
     <%= f.input :price %>
+
+
      Genero
-    <%= f.input :subcategory %>
+    <%= f.input :subcategory, as: :hidden %>
+    <%= f.select :subcategory_picker, Product.subcategory, onchange: "setSubcategory()" %>
+    <button type="button" onclick="newSubcategory()">Nueva Categoria</button>
+    <br>
+
      Codigo de Promo
     <%= f.input :promo %>
     Codigo de producto
@@ -55,6 +61,24 @@
 				$cp.val(color);
 			}
 		}
+
+        function setSubcategory() {
+      const subcategory = $("#product_subcategory_picker option:selected").val()
+      if (subcategory)
+        $("#product_subcategory").val(subcategory);
+    }
+
+    function newSubcategory() {
+      let subcategory = prompt("Ingresa la nueva Sub-Categoria:");
+      if (subcategory) {
+        $("#product_subcategory").val(subcategory);
+        const $cp = $("#product_subcategory_picker");
+        $cp.append($('<option>', {
+            text: subcategory
+        }));
+        $cp.val(subcategory);
+      }
+    }
 	</script>
 
 
