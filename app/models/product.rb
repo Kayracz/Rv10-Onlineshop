@@ -11,8 +11,9 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :photos, allow_destroy: true
 
   validates :title, :description, presence: true
-  validates :price, numericality: {greater_than_or_equal_to: 0.01}
+  validates :price, numericality: { greater_than_or_equal_to: 0.01 }
   validates :title, uniqueness: true
+
 
   pg_search_scope :full_text_search, 
     against: %i(title description size category subcategory color),
@@ -34,7 +35,7 @@ class Product < ApplicationRecord
   end
 
   def self.color
-    @@color_options ||= select('DISTINCT color').map(&:color).sort!
+    select('DISTINCT color').map(&:color).sort!
   end
 
   def self.price_range
@@ -60,6 +61,10 @@ class Product < ApplicationRecord
       all
     end
   end
+
+	def color_picker
+		@color
+	end
 
   def total_price
     product.price * quantity
