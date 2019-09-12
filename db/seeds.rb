@@ -71,7 +71,7 @@ end
 unless Stock.count > 0
   Product.all.each do |p|
     Size.all.each do |s|
-      Stock.create! product_id: p.id, size_id: s.id, units: 1
+      Stock.create! product_id: p.id, size_id: s.id, units: 10
     end
   end
 end

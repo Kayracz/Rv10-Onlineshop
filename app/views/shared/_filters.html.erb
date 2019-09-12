@@ -1,0 +1,21 @@
+<%= select_tag "color",
+	options_for_select(Product.color, @color), 
+	include_blank: "Color",
+	onchange: "updateFilters()",
+	class: "filter_opt" 
+%>
+
+<%= select_tag "size",  
+	options_for_select(Product.size, @size), 
+	include_blank: "Talle",
+	onchange: "updateFilters()",
+	class: "filter_opt" 
+%>
+
+<%= select_tag "price", 
+	options_for_select(Product.price_range, @price), 
+	include_blank: "Precio", 
+	onchange: "updateFilters()",
+	class: "filter_opt" 
+%>
+

@@ -1,6 +1,9 @@
 
 <%= render "shared/header" %>
 
+<!-- filters -->
+<input type="hidden" id="subcat" value="women"/>
+
 <div class="container-fluid categorybar">
   <%= link_to 'Todo', women_path %>&nbsp;
   <% Category.where(display_in_women: true).each do |cat| %>
@@ -19,40 +22,17 @@
   <p class="titulo2">ver todos</p>
   <hr class="sabana-line"></hr>
 
-  <div>
-  <%= select_tag "color",
-        options_for_select(Product.color, @color),
-        include_blank: "Color",
-        onchange: "updateFilters()",
-        class: "filter_opt"
-      %>
-
-  <%= select_tag "size",
-        options_for_select(Product.size, @size),
-        include_blank: "Talle",
-        onchange: "updateFilters()",
-        class: "filter_opt"
-      %>
-
-  <%= select_tag "price",
-        options_for_select(Product.price_range, @price),
-        include_blank: "Precio",
-        onchange: "updateFilters()",
-        class: "filter_opt"
-      %>
-
-  &nbsp;<%= link_to "Limpiar Filtros", products_clear_filters_path %>
-
-</div>
-
 <div class="quantityproducts pagination2">
   <%== pagy_nav(@pagy) %>&nbsp; Productos ( <%= @women_product_items.count %> )
 </div>
 </div>
   <br>
 
-<!-- products -->
+<!-- filters -->
+<%= render "shared/filters" %>
+<%= link_to "Limpiar Filtros", products_clear_filters_path("women") %>
 
+<!-- products -->
 <div class="container">
   <div class="row">
   <% @women_product_items.each do |product| %>
@@ -82,13 +62,4 @@
 </div>
  <hr>
 
-
-  <script>
-    function updateFilters() {
-      const color = $("#color").val() || "";
-      const size  = $("#size").val()  || "";
-      const price = $("#price").val() || "";
-
-      location.href = `/filter?color=${color}&size=${size}&price=${price}`;
-    }
-  </script>
+<%= render "shared/update_filters" %>

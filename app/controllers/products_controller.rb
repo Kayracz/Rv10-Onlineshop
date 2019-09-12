@@ -1,3 +1,5 @@
+require 'pagy/extras/array'
+
 class ProductsController < ApplicationController
 	include CurrentCart
 
@@ -48,8 +50,10 @@ class ProductsController < ApplicationController
 		if params.key?(:category)
 			@category = Category.find_by_name(params[:category])
 			@pagy,@women_product_items = pagy(Product.where(category: @category))
-		else
+		elsif params.key?(:search)
 			@pagy,@women_product_items = pagy(Product.women.search(params[:search]))
+		else
+			@pagy,@women_product_items = pagy(Product.women)
 		end
 	end
 
@@ -57,8 +61,10 @@ class ProductsController < ApplicationController
 		if params.key?(:category)
 			@category = Category.find_by_name(params[:category])
 			@pagy,@men_product_items = pagy(Product.where(category: @category))
-		else
+		elsif params.key?(:search)
 			@pagy,@men_product_items = pagy(Product.men.search(params[:search]))
+		else 
+			@pagy,@men_product_items = pagy(Product.men)
 		end
 	end
 
@@ -66,8 +72,10 @@ class ProductsController < ApplicationController
 		if params.key?(:category)
 			@category = Category.find_by_name(params[:category])
 			@pagy,@kids_product_items = pagy(Product.where(category: @category))
-		else
+		elsif params.key?(:search)
 			@pagy,@kids_product_items = pagy(Product.kids.search(params[:search]))
+		else 
+			@pagy,@kids_product_items = pagy(Product.kids)
 		end
 	end
 
@@ -94,20 +102,48 @@ class ProductsController < ApplicationController
 		end
 	end
 
-	def filter
-		@color = params[:color]
-		@price = params[:price]
-		@size  = params[:size]
+def filter
+		@color  = params[:color]
+		@price  = params[:price]
+		@size   = params[:size]
+		@subcat = params[:subcategory]
 
 		price_range = parse_price_rage(@price)
 		size_name   = size_name(@size)
-		products    = Product.filter(@color, price_range, size_name)
-		@pagy, @products = pagy(products, items:9)
-		render :index
+		products    = Product.filter(@color, price_range, size_name, @subcat)
+
+		case @subcat
+		when "women"
+			@pagy, @women_product_items = pagy_array(products, items: 9)
+			render :women
+		when "men"
+			@pagy, @men_product_items = pagy_array(products, items: 9)
+			render :men
+		when "kids"
+			@pagy, @kids_product_items = pagy_array(products, items: 9)
+			render :kids
+		else
+			@pagy, @products = pagy_array(products, items: 9)
+			render :index
+		end
 	end
 
 	def clear_filters
-		redirect_to controller: :products, action: :index
+		@subcat = params[:subcat]
+		case @subcat
+		when "women"
+			@pagy, @women_product_items = pagy(Product.women, items: 9)
+			render :women
+		when "men"
+			@pagy, @men_product_items = pagy(Product.men, items: 9)
+			render :men
+		when "kids"
+			@pagy, @kids_product_items = pagy(Product.kids, items: 9)
+			render :kids
+		else
+			@pagy, @products = pagy(Product.all, items: 9)
+			render :index
+		end
 	end
 
 	private

@@ -15,7 +15,7 @@
    <div class="sidebar text-center displayimage2">
       <h1><%= @product.title %></h1>
       <p class="titulo" style="font-size:12px;">Codigo:<%= @product.codigo %></p>
-      <p class="titulo" style="font-size:12px;">Color: Negro<%= @product.color %></p>
+      <p class="titulo" style="font-size:12px;">Color: <%= @product.color %></p>
       <% if @product.sale_price == 0 %>
       <p class="titulo2" style="font-size:14px"><%= number_to_currency_bo @product.price %></p>
       <% else %>
@@ -28,7 +28,7 @@
     <%= label_tag :size_id, 'Seleciona tu talle' %>
      <%= form_tag product_items_path(product_id: @product.id) do %>
     <%= select_tag :size_id,
-        options_for_select(Size.options_for(@product.id), @product.size),
+        options_for_select(Size.options_for(@product.id)),
         prompt: "Seleciona tu talle" %>
 
       <br>
@@ -107,7 +107,7 @@
     <%= label_tag :size_id, 'Seleciona tu talle' %>
      <%= form_tag product_items_path(product_id: @product.id) do %>
     <%= select_tag :size_id,
-        options_for_select(Size.options_for(@product.id), @product.size),
+        options_for_select(Size.options_for(@product.id)),
         prompt: "Seleciona tu talle" %>
 
       <br>

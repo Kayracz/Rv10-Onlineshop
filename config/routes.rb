@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   get 'search', to: 'products#search', as: :products_search
   get 'search_results', to: 'products#perform_search', as: :perform_products_search
-  get 'clear_filters', to: 'products#clear_filters', as: :products_clear_filters
+  get 'clear_filters/:subcat', to: 'products#clear_filters', as: :products_clear_filters
   get 'filter', to: 'products#filter'
 
   post 'product_items/:item_id/add'    => "product_items#add_quantity",
