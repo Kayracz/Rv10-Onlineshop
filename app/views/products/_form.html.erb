@@ -17,7 +17,12 @@
     <%= f.input :promo %>
     Codigo de producto
     <%= f.input :codigo %>
-    <%= f.input :color %>
+
+		Color
+		<%= f.input :color, as: :hidden %>
+		<%= f.select :color_picker, Product.color, onchange: "setColor()" %>
+		<button type="button" onclick="newColor()">Nuevo Color</button>
+    <br>
     Foto principal
     <br>
     Categoria del producto
@@ -31,6 +36,27 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+
+	<script>
+		function setColor() {
+			const color = $("#product_color_picker option:selected").val()
+			if (color)
+				$("#product_color").val(color);
+		}
+
+		function newColor() {
+			let color = prompt("Ingresa el nuevo color:");
+			if (color) {
+				$("#product_color").val(color);
+				const $cp = $("#product_color_picker");
+				$cp.append($('<option>', {
+						text: color
+				}));
+				$cp.val(color);
+			}
+		}
+	</script>
+
 
 <br>
 

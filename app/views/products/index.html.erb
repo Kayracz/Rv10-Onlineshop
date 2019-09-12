@@ -71,31 +71,8 @@
 <br>
 
 <!-- filtros -->
-<div>
-  <%= select_tag "color",
-        options_for_select(Product.color, @color),
-        include_blank: "Color",
-        onchange: "updateFilters()",
-        class: "filter_opt"
-      %>
-
-  <%= select_tag "size",
-        options_for_select(Product.size, @size),
-        include_blank: "Talla",
-        onchange: "updateFilters()",
-        class: "filter_opt"
-      %>
-
-  <%= select_tag "price",
-        options_for_select(Product.price_range, @price),
-        include_blank: "Precio",
-        onchange: "updateFilters()",
-        class: "filter_opt"
-      %>
-
-  &nbsp;<%= link_to "Limpiar Filtros", products_clear_filters_path %>
-
-</div>
+<%= render "shared/filters" %>
+<%= link_to "Limpiar Filtros", products_clear_filters_path("all") %>
 
 <!-- productos -->
 <%== pagy_nav(@pagy) %>&nbsp;&nbsp;
@@ -104,6 +81,7 @@
 <hr>
 
     <div class="row">
+
 
   <% @products.each do |product| %>
         <div class="col-md-3">
@@ -183,14 +161,4 @@ font-weight: 500;
   }
 </style>
 
-  <script>
-    function updateFilters() {
-			const color = $("#color").val() || "";
-			const size  = $("#size").val()  || "";
-			const price = $("#price").val() || "";
-
-			location.href = `/filter?color=${color}&size=${size}&price=${price}`;
-    }
-  </script>
-
-
+<%= render "shared/update_filters" %>
