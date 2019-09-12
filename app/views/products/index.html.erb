@@ -74,38 +74,10 @@
 <br>
 
 <!-- filtros -->
-<div>
-  <%= select_tag "color",
-        options_for_select(Product.color, @color),
-        include_blank: "Color",
-        onchange: "updateFilters()",
-        class: "filter_opt"
-      %>
-
-  <%= select_tag "size",
-        options_for_select(Product.size, @size),
-        include_blank: "Talla",
-        onchange: "updateFilters()",
-        class: "filter_opt"
-      %>
-
-  <%= select_tag "price",
-        options_for_select(Product.price_range, @price),
-        include_blank: "Precio",
-        onchange: "updateFilters()",
-        class: "filter_opt"
-      %>
-
- &nbsp; <%= link_to products_clear_filters_path do %>
+<%= render "shared/filters" %>
+ &nbsp;<%= link_to products_clear_filters_path("all") do %>
   <i class="fas fa-backspace" style="color:black; font-size:20px;"></i>
 <% end %>
-
-</div>
-
-<!-- new -->
-<%= render "shared/filters" %>
-<%= link_to "Limpiar Filtros", products_clear_filters_path("all") %>
-
 
 <!-- productos -->
 <%== pagy_nav(@pagy) %>&nbsp;&nbsp;
