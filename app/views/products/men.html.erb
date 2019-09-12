@@ -12,9 +12,8 @@
 </div>
 
 <div class="container-fluid" style=" margin-top:2%;">
-  <%= image_tag "aqua3.png" %>
+  <%= image_tag "tester1.png" %>
 </div>
-
 
 <div class="container" style="margin-top:5%; ">
   <h4 class="titulo text-center"> Selección Hombres</h4>
@@ -38,7 +37,7 @@
   <% @men_product_items.each do |product| %>
         <div class="col-md-3">
             <div class="product-grid2">
-                <div class="product-image2">
+                <div class="product-image2" style="height: 393px;">
                     <a><%= cl_image_tag product.photo %></a>
                     <ul class="social">
                         <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>

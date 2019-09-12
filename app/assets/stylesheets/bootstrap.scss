@@ -1396,8 +1396,9 @@ textarea {
 }
 
 a {
-  color: red;
-  text-decoration: none;
+  color: #c11111;
+  text-decoration: none !important;
+  font-weight: 400;
 }
 
 a:hover,

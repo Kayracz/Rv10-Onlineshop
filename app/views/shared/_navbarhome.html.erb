@@ -1,59 +1,23 @@
-<!-- <div class="container logo">
-     <div class="logo">
-      <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "rv10.png", height: 50 %>
-      <% end %>
-</div>
 
-<div class="container">
-    <div class="logo2 text-center">
-         <a class="navbar-wagon-item navbar-wagon-link logo2"> <%= link_to 'Mujer', women_path %></a>&nbsp;
-         <a class="navbar-wagon-item navbar-wagon-link logo2"> <%= link_to 'Hombre', men_path %></a>&nbsp;
-         <a class="navbar-wagon-item navbar-wagon-link logo2"><%= link_to 'Niños', kids_path %></a>&nbsp;
-         <a class="navbar-wagon-item navbar-wagon-link logo2"><%= link_to 'Todos', products_path %></a>&nbsp;
-     </div>
-</div>
-
-<style>
-  .logo{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-    background-color: transparent;
-  }
-
-  .logo2 a{
-   color: black;
-   text-align: center;
-   padding: 15px;
-  }
-
-  .logo2{
-     margin-top:30px;
-     text-decoration: none;
-     font-size: 15px;
-
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 2px;
-  }
-
-  </style> -->
 
 <div class="container">
    <div class="navbar-wagon navbar-fixed-top">
       <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "rv10.png", height: 40 %>
+
       <% end %>
     <div class="navbar-wagon-item nav-hide">
-       <a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'Mujer', women_path %></a>
-       <a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'Hombre', men_path %></a>
-       <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Niños', kids_path %></a>
-       <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Todos', products_path %></a>
-       <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Buscar', products_search_path %></a>
+       <a href="/"><i class="fas fa-home"></i></a>
+       <a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'MUJER', women_path %></a>
+       <a class="navbar-wagon-item navbar-wagon-link"> <%= link_to 'HOMBRE', men_path %></a>
+       <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'NIÑOS ', kids_path %></a>
+       <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'TODOS', products_path %></a>
+       <!-- <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Buscar', products_search_path %><i class="fas fa-search"></i></a> -->
+       <img height="40" src="/assets/rv10-d22ebec6cda7ada82547182da5fc58207311410331761b5731ee57f362f2ac10.png" style="
+    margin-left: 206px;
+">
     </div>
-         <div class="carrito nav-hide">
 
+         <div class="carrito nav-hide">
          <% if @cart.total_price > 0 %>
          <%= link_to @cart, class: 'menu-cart' do  %>
          <i class="fa fa-shopping-cart"></i>
@@ -62,6 +26,7 @@
          <% else %>
          <a class="menu-cart" style="color:#ce1414 !important;"><i class="fa fa-shopping-cart" style="color:#ce1414 !important;"></i> <span>Bs.0.00</span></a>
          <% end %>
+         &nbsp;<a href="/search"><i class="fas fa-search"></i>&nbsp;Buscar</a>
        </div>
 
 
@@ -136,7 +101,7 @@ color:violet;
 }
 
 .navbar-fixed-top.scrolled a{
- color: #ce1414 !important;
+ color: #1a1a1a !important;
   font-weight: 400 !important;
 }
 
@@ -157,7 +122,6 @@ color:violet;
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
-  margin-right: 54% !important;
 }
 
 /* Navbar link */
