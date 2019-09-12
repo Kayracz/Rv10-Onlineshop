@@ -21,6 +21,9 @@
 <%= text_field_tag :search, params[:search] %>
 <% end %>
 
+&nbsp;<a href="/search"><i class="fab fa-searchengin" style="font-size: 20px;"></i></i>&nbsp;Busqueda Avanzada</a>
+<br>
+<br>
 
 <b class="titulos">Todas Las Categorias</b> <br>
 <%= link_to 'Todas las categorias', products_path %><br>
@@ -63,7 +66,7 @@
 </div><!-- close left -->
 
 
-<h4 class="titulo"><b>TODOS LOS PRODUCTOS</b></h4>
+<h4 class="titulo" style="font-size:22px;font-weight: 800;"><b>TODOS LOS PRODUCTOS</b></h4>
 <div class="searcher">
 <!--   <h5>La mejor version de ti mismo. Moda boliviana inspirada en gente activa.</h5> -->
 </div>
@@ -93,7 +96,9 @@
         class: "filter_opt"
       %>
 
-  &nbsp;<%= link_to "Limpiar Filtros", products_clear_filters_path %>
+ &nbsp; <%= link_to products_clear_filters_path do %>
+  <i class="fas fa-backspace" style="color:black; font-size:20px;"></i>
+<% end %>
 
 </div>
 
