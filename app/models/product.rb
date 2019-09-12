@@ -14,7 +14,7 @@ class Product < ApplicationRecord
   validates :price, numericality: {greater_than_or_equal_to: 0.01}
   validates :title, uniqueness: true
 
-  pg_search_scope :full_text_search, 
+  pg_search_scope :full_text_search,
     against: %i(title description size category subcategory color),
     :using => {
       :tsearch => {
@@ -38,7 +38,7 @@ class Product < ApplicationRecord
   end
 
   def self.price_range
-    @@price_range_options ||= 
+    @@price_range_options ||=
       price_ranges.collect {|range| ["#{range.first} - #{range.last}", range] }
   end
 
@@ -48,8 +48,8 @@ class Product < ApplicationRecord
 
   def self.price_ranges
     # TODO: Use sensible values.
-    @@price_ranges ||= 
-      [[1, 500], [501, 1000], [1001, 2000], [2001, 5000], [5000, 10000]]
+    @@price_ranges ||=
+      [[1, 100], [101, 300], [301, 500], [501, 800], [801, 1000]]
   end
 
 
@@ -100,7 +100,7 @@ class Product < ApplicationRecord
     if color.present?
       filters << "lower(color) = '#{color.downcase}'"
     end
-    
+
     if price_range.present?
       filters << "price BETWEEN #{price_range.first} AND #{price_range.last}"
     end

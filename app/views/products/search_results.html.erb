@@ -1,14 +1,31 @@
-<%= render "shared/header" %>
+<%= render "shared/navbarhome" %>
+<br>
+<br>
+<br>
+<div class="container-fluid searching" style="background-color: #ebebeb;">
+  <%= form_tag perform_products_search_path,
+  method: :get, style:"width:600px;margin-top:30px;" do %>
+      <%= text_field_tag "term", nil,
+        style: "float:left",
+        placeholder: "Busca el producto que tengas en mente...",
+        autofocus: "",
+        style: "width:500px;" %>
 
-<div class="container-fluid" style="min-height:500px;background-color: #ebebeb; padding-bottom: 2% !important;">
+      <%= submit_tag "Buscar", style:"float:right;width:95px;" %>
+    <% end %>
+</div>
+
+<div class="container-fluid text-center" style="min-height:500px;background-color: #ebebeb; padding-bottom: 2% !important;">
   <% if @results.any? %>
     <table style="margin:20px;margin-left:100px;;">
       <% @results.each do |r| %>
         <tr>
+          <td class="iconing searchimage" style='padding-right:20px; padding-bottom:10px;'> <%= cl_image_tag r.photo %> </td>
           <td style='padding-right:20px'> <%= link_to r.title, product_path(r.id) %> </td>
           <td style='padding-right:20px'> <%= r.description %> </td>
           <td style='padding-right:20px'> <%= number_to_currency_bo r.price %> </td>
         </tr>
+        <br>
       <% end %>
     </table>
   <% else %>
@@ -16,3 +33,23 @@
     TODO: Sugerir correcciones en los terminos de busqueda, alla' Google.
   <% end %>
 </div>
+
+
+<style>
+
+input#term{
+  padding-left: 20px;
+  border-radius: 20px;
+}
+
+.searching{
+    background-color: #ebebeb;
+    padding-left: 27%;
+    margin-bottom: -5%;
+    padding-top: 2%;
+  }
+
+.searchimage img{
+height: 100px;
+}
+</style>

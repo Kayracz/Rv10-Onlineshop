@@ -1,10 +1,24 @@
 <%= render "shared/header" %>
+
+<div class="container-fluid searching" style="background-color: #ebebeb;">
+  <%= form_tag perform_products_search_path,
+  method: :get, style:"width:600px;margin-top:30px;" do %>
+      <%= text_field_tag "term", nil,
+        style: "float:left",
+        placeholder: "Busca el producto que tengas en mente...",
+        autofocus: "",
+        style: "width:500px;" %>
+
+      <%= submit_tag "Buscar", style:"float:right;width:95px;" %>
+    <% end %>
+</div>
+
 <div class="containe-fluid" style="background-color: #ebebeb; padding-bottom: 2% !important;">
   <div class="caption-content text-center">
     <div style="text-align:left;margin-left:100px;">
       <% if @suggestions.any? %>
       <div style="min-height:400px;padding-top:40px;">
-        <b>Quisiste decir:</b>
+        <b>Quisiste decir...?</b>
         <% @suggestions.each do |term| %>
           <div><%= link_to(term, "/search_results?term=#{term}") %></div>
         <% end %>
@@ -17,3 +31,21 @@
     </div>
   </div>
 </div>
+
+
+<style>
+
+input#term{
+  padding-left: 20px;
+  border-radius: 20px;
+}
+
+.searching{
+    background-color: #ebebeb;
+    padding-left: 27%;
+  }
+
+.searchimage img{
+height: 100px;
+}
+</style>

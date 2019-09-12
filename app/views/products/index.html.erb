@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
-      <div class="container-fluid" style="padding-bottom: 2% !important; margin-top:2%;">
-        <%= image_tag "aqua3.png" %>
+      <div class="container-fluid">
+        <%= image_tag "tester1.png" %>
        </div>
      </div>
 
@@ -73,27 +73,28 @@
 <!-- filtros -->
 <div>
   <%= select_tag "color",
-        options_for_select(Product.color, @color), 
+        options_for_select(Product.color, @color),
         include_blank: "Color",
         onchange: "updateFilters()",
-        class: "filter_opt" 
+        class: "filter_opt"
       %>
 
-  <%= select_tag "size",  
-        options_for_select(Product.size, @size), 
-        include_blank: "Talle",
+  <%= select_tag "size",
+        options_for_select(Product.size, @size),
+        include_blank: "Talla",
         onchange: "updateFilters()",
-        class: "filter_opt" 
+        class: "filter_opt"
       %>
 
-  <%= select_tag "price", 
-        options_for_select(Product.price_range, @price), 
-        include_blank: "Precio", 
+  <%= select_tag "price",
+        options_for_select(Product.price_range, @price),
+        include_blank: "Precio",
         onchange: "updateFilters()",
-        class: "filter_opt" 
+        class: "filter_opt"
       %>
 
-    <%= link_to "Limpiar Filtros", products_clear_filters_path %>
+  &nbsp;<%= link_to "Limpiar Filtros", products_clear_filters_path %>
+
 </div>
 
 <!-- productos -->
@@ -108,7 +109,7 @@
         <div class="col-md-3">
 
             <div class="product-grid2">
-                <div class="product-image2">
+                <div class="product-image2" style="height: 442px;">
                     <a><%= cl_image_tag product.photo %></a>
                     <ul class="social">
                     <!--     <li><a href="#" data-tip="Vista Rapida"><i class="fa fa-eye"></i></a></li>
@@ -181,6 +182,7 @@ font-weight: 500;
     margin: 3px;
   }
 </style>
+
   <script>
     function updateFilters() {
 			const color = $("#color").val() || "";

@@ -9,7 +9,7 @@
 </div>
 
 <div class="container-fluid" style=" margin-top:2%;">
-  <%= image_tag "aqua3.png" %>
+  <%= image_tag "tester1.png" %>
 </div>
 
 
@@ -18,6 +18,32 @@
   <br>
   <p class="titulo2">ver todos</p>
   <hr class="sabana-line"></hr>
+
+  <div>
+  <%= select_tag "color",
+        options_for_select(Product.color, @color),
+        include_blank: "Color",
+        onchange: "updateFilters()",
+        class: "filter_opt"
+      %>
+
+  <%= select_tag "size",
+        options_for_select(Product.size, @size),
+        include_blank: "Talle",
+        onchange: "updateFilters()",
+        class: "filter_opt"
+      %>
+
+  <%= select_tag "price",
+        options_for_select(Product.price_range, @price),
+        include_blank: "Precio",
+        onchange: "updateFilters()",
+        class: "filter_opt"
+      %>
+
+  &nbsp;<%= link_to "Limpiar Filtros", products_clear_filters_path %>
+
+</div>
 
 <div class="quantityproducts pagination2">
   <%== pagy_nav(@pagy) %>&nbsp; Productos ( <%= @women_product_items.count %> )
@@ -32,7 +58,7 @@
   <% @women_product_items.each do |product| %>
         <div class="col-md-3">
             <div class="product-grid2">
-                <div class="product-image2">
+                <div class="product-image2" style="height: 393px;">
                     <a><%= cl_image_tag product.photo %></a>
                     <ul class="social">
                         <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -56,3 +82,13 @@
 </div>
  <hr>
 
+
+  <script>
+    function updateFilters() {
+      const color = $("#color").val() || "";
+      const size  = $("#size").val()  || "";
+      const price = $("#price").val() || "";
+
+      location.href = `/filter?color=${color}&size=${size}&price=${price}`;
+    }
+  </script>

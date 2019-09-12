@@ -1,14 +1,30 @@
 <%= render "shared/header" %>
 
-<div class="container-fluid" style="background-color: #ebebeb; padding-bottom: 2% !important;">
+<div class="container-fluid searching" style="background-color: #ebebeb;">
   <%= form_tag perform_products_search_path,
   method: :get, style:"width:600px;margin-top:30px;" do %>
-      <%= text_field_tag "term", nil,  
+      <%= text_field_tag "term", nil,
         style: "float:left",
-        placeholder: "Nombre del producto...",
+        placeholder: "Busca el producto que tengas en mente...",
         autofocus: "",
         style: "width:500px;" %>
 
-      <%= submit_tag "Buscar", style:"float:right;width:100px;" %>
+      <%= submit_tag "Buscar", style:"float:right;width:95px;" %>
     <% end %>
 </div>
+
+
+<style>
+
+input#term{
+  padding-left: 20px;
+  border-radius: 20px;
+}
+
+.searching{
+    background-color: #ebebeb;
+    padding-bottom: 17% !important;
+    padding-left: 24%;
+    padding-top: 10%;
+  }
+</style>
