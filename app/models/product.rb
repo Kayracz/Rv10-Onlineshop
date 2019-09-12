@@ -16,7 +16,7 @@ class Product < ApplicationRecord
 
 
   pg_search_scope :full_text_search, 
-    against: %i(title description size category subcategory color),
+    against: %i(title description category subcategory color),
     :using => {
       :tsearch => {
         :dictionary => "spanish",
@@ -25,12 +25,25 @@ class Product < ApplicationRecord
       }
     }
 
-  def self.filter(color, price_range, size)
-    sql_filter = prepare_sql_filter(color, price_range, size)
+	def stock? size
+		stock = Stock.find_by("product_id = ? AND size_id = ?", self.id, size.id)
+		return stock && stock.units > 0
+	end
+
+	def self.filter_by_stock(products, size_name)
+		size = Size.find_by("LOWER(name) = ?", size_name.downcase)
+		return products unless size
+
+		products.select {|p| p.stock?(size) }
+	end
+
+  def self.filter(color, price_range, size_name, subcategory)
+    sql_filter = prepare_sql_filter(color, price_range, subcategory)
     if sql_filter.empty?
       all
     else
-      where(sql_filter)
+      products = where(sql_filter)
+			return size_name.present? ? filter_by_stock(products, size_name) : products
     end
   end
 
@@ -97,7 +110,7 @@ class Product < ApplicationRecord
 
   private
 
-  def self.prepare_sql_filter(color, price_range, size)
+  def self.prepare_sql_filter(color, price_range, subcategory)
     # Colors
     # Price range
     # Sizes (products that are available in stock in a precise size)
@@ -110,8 +123,8 @@ class Product < ApplicationRecord
       filters << "price BETWEEN #{price_range.first} AND #{price_range.last}"
     end
 
-    if size.present?
-      filters << "lower(size) = '#{size.downcase}'"
+    if subcategory.present?
+      filters << "lower(subcategory) = '#{subcategory.downcase}'"
     end
 
     filters.join(" AND ")

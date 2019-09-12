@@ -1,0 +1,12 @@
+<script>
+	function updateFilters() {
+		const color  = $("#color").val() || "";
+		const size   = $("#size").val()  || "";
+		const price  = $("#price").val() || "";
+		const subcat = $("#subcat").val() || "";
+
+		location.href = `/filter?color=${color}&size=${size}&price=${price}&subcategory=${subcat}`;
+	}
+</script>
+
+

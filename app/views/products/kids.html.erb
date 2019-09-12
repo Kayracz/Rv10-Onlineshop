@@ -1,5 +1,8 @@
 <%= render "shared/header" %>
 
+<!-- filters -->
+<input type="hidden" id="subcat" value="kids"/>
+
   <div class="container-fluid categorybar">
 <%= link_to 'Todo', kids_path %>&nbsp;
 <% Category.where(display_in_kids: true).each do |cat| %>
@@ -34,6 +37,11 @@
 
 <br>
 </div>
+
+<!-- filters -->
+<%= render "shared/filters" %>
+<%= link_to "Limpiar Filtros", products_clear_filters_path("kids") %>
+
 <div class="container">
 <!-- productos -->
     <div class="row">
@@ -68,3 +76,4 @@
 
 
 
+<%= render "shared/update_filters" %>
