@@ -1,24 +1,24 @@
 <%= render "shared/header" %>
-<header class="">
-  <div class="container align-vertical hero">
-    <div class="row">
-      <div class="col-md-5 text-left" style="margin-top:20px;">
-        <h1 style="color: #a80f0f;">Mi Carrito</h1>
-        <hr>
-      </div>
-    </div><!--end of row-->
-  </div><!--end of container-->
-</header>
+<div class="container-fluid bannercarrito" style="height: 500%; background-color: black;">
+</div>
 
-<section class="product-list" style="padding-top: 5px !important;">
+
+<section class="product-list" style="padding-top: 5% !important;">
   <div class="container">
-    <div class="col-md-12" style="padding-top: -40px !important;">
+    <div class="col-md-12 text-center" style="padding-top: -40px !important;">
+      <h2 style="font-weight:500; margin-top:1%;">Mi Carrito</h2>
+      <hr>
       <h3 style="font-weight:400;">Detalles de tu compra</h3>
       <br>
       <%= render 'carts/cart' %>
-      <%= link_to 'Vacía tu carrito', @cart, method: :delete, data: {confirm: 'You sure?'} %>
+      <i class="fas fa-trash-alt" style="color:#c11111;"></i> <%= link_to 'Vacía tu carrito', @cart, method: :delete, data: {confirm: 'You sure?'} %>
        <br>
        <br>
+
+     </div>
+
+     <br>
+     <br>
       <h4><b>Total:</b> <%= number_to_currency_bo @cart.total_price %></h4>
       <br>
       <br>
@@ -42,3 +42,11 @@
     </div>
   </div>
 </section>
+
+<style>
+.cartfun{
+  font-weight: 400;
+  text-align: center;
+}
+  </style>
+

@@ -1,10 +1,10 @@
 <!-- To avoid "moving items" (default sort order in Rails.) -->
 <% @sorted_items = @cart.product_items.order(:product_id, :size_id) %>
 <% @sorted_items.each do|item| %>
-<hr>
+
    <ul>
 
-
+<hr>
      <div class="carritoimg">
      <%= link_to 'x', item, method: :delete, data: { confirm: 'You sure?' } %>
      &nbsp;&nbsp;&nbsp;&nbsp;
@@ -12,14 +12,28 @@
      <%= item.quantity %>&nbsp;<b><%= item.product.title %></b> =&nbsp;&nbsp;
      <%= number_to_currency_bo item.total_price %> - &nbsp;<%=item.size.name %>&nbsp;&nbsp;&nbsp;
 
-     <%= link_to "Agregar (+)", product_items_add_path(item.id), method: :post %>&nbsp;&nbsp;
-     <%= link_to "Disminuir (-)", product_items_reduce_path(item.id), method: :post %>
+     <%= link_to "Agregar", product_items_add_path(item.id), method: :post %>&nbsp;<i class="fas fa-plus-circle" style="color:#c11111;"></i>&nbsp;&nbsp;
+
+     <%= link_to "Disminuir", product_items_reduce_path(item.id), method: :post %>&nbsp;<i class="fas fa-minus-circle" style="color:#c11111;"></i>
      </div>
 
-
+<hr>
    </ul>
-   <hr>
 
 <% end %>
 
 
+<style>
+
+  .carritoimg{
+/*background-color: white;
+    padding: 2%;
+    margin-left: 14%;
+    margin-right: 14%;
+    border-radius: 20px;
+    border-style: groove;
+    border-color: black;
+    box-shadow: 2px 3px;*/
+}
+  }
+</style>
