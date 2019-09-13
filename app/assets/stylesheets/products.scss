@@ -43,41 +43,28 @@
     .categorybar{
       margin-top: 40px;
     }
-  }
 
 
   .filtersubcategory{
   margin-top:20px;
   }
 
-select#color.filter_opt{
-  width: 100px;
-}
 
-select#size.filter_opt{
-  width: 100px;
-}
-
-select#price.filter_opt{
-  width: 100px;
 }
 
 
  @media screen and (max-width: 768px) {
 select#color.filter_opt{
-  width: 97px;
+  width: 81px;
 }
 
 select#size.filter_opt{
-  width: 75px;
+  width: 76px;
 }
 
 select#price.filter_opt{
-  width: 89px;
+  width: 88px;
 }
 
-.pagination{
- padding-left: 31%;
-}
   }
 

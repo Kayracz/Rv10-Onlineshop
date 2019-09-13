@@ -1,6 +1,6 @@
 
 
-<div class="container">
+<div class="container normal-version collapse navbar-collapse">
    <div class="navbar-wagon navbar-fixed-top">
       <%= link_to root_path, class: "navbar-wagon-brand" do %>
 
@@ -13,7 +13,7 @@
        <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'TODOS', products_path %></a>
        <!-- <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Buscar', products_search_path %><i class="fas fa-search"></i></a> -->
        <img height="40" src="/assets/rv10-d22ebec6cda7ada82547182da5fc58207311410331761b5731ee57f362f2ac10.png" style="
-    margin-left: 206px;
+    margin-left: 260px;
 ">
     </div>
 
@@ -28,10 +28,6 @@
          <% end %>
          &nbsp;<a href="/search"><i class="fas fa-search"></i>&nbsp;Buscar</a>
        </div>
-
-
-
-
 
 
 
@@ -63,77 +59,10 @@
 </div>
 
 
-<!-- new test -->
-<!--
- <div id="sidr">
-      <ul>
-
-        <li><a class="side-logo" href="index.html">Rv10<span class="logo-dot accent-bg"></span></a></li>
-
-        <li class="active"><a href="#">Tu Tienda Online</a></li>
-        <li><%= link_to 'Inicio', root_path %></li>
-        <li><%= link_to 'Sobre Nosotros', about_path %></li>
-        <li><%= link_to 'Tienda', products_path %></li>
-         <li> -->
-<!--             <%= link_to new_contact_path do  %>
-              <i class="fa fa-paper-plane"></i> Contact
-            <% end %>
-          </li>
-        <li class="divider"><span></span></li>
-        <li> <%=link_to 'Terms & conditions', root_path %></li>
-        <li> <%=link_to 'Privacy', root_path %></li>
-      </ul>
-
-      <div class="side-social">
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-google-plus"></i></a>
-        <a href="#"><i class="fa fa-pinterest"></i></a>
-        <a href="#"><i class="fa fa-instagram"></i></a>
-      </div>
-    </div> -->
-
-<!--     <div class="nav-container">
-      <nav class="navbar navbar-default">
-        <div class="container" > -->
-          <!-- Brand and toggle get grouped for better mobile display -->
-       <!--    <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-navigation" aria-expanded="false">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-          <%= link_to root_path, class: 'navbar-brand' do %>
-          <%= image_tag "rv10.png", height: 30 %>
-          <% end %> -->
-
-
-
- <!-- <ul class="nav navbar-nav navbar-right">
-              <li>
-                <a href="#sidr" class="side-menu-opener">
-                  <div class="bars">
-                        <span class="bar top"></span>
-                        <span class="bar middle"></span>
-                        <span class="bar bottom"></span>
-                    </div>
-                </a>
-              </li>
-
-
-
-          <a href="#sidr" class="side-menu-opener mobile">
-              <div class="bars">
-                    <span class="bar top"></span>
-                    <span class="bar middle"></span>
-                    <span class="bar bottom"></span>
-                </div>
-            </a>
-          </div> -->
-
-
-
-
+<!-- responsiveness part appear when in mobile -->
+<div class="mobile-version">
+<%= render "shared/header" %>
+</div>
 
 <style>
 
@@ -143,6 +72,7 @@
     font-weight: 400 !important;
     text-decoration: none;
     padding:10px;
+}
 }
 
  .navbar-wagon a:hover {

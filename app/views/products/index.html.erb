@@ -1,12 +1,12 @@
-<%= render "shared/header" %>
+<%= render "shared/navbarhome" %>
 
-      <div class="container-fluid">
+      <div class="container-fluid" style="margin-top: 4%;">
         <%= image_tag "tester1.png" %>
        </div>
      </div>
 
 
-<div class="container-fluid" style="margin-top:5%; ">
+<div class="container-fluid" style="margin-top:4%; ">
 
 <div class="wrap">
 
@@ -75,9 +75,16 @@
 
 <!-- filtros -->
 <%= render "shared/filters" %>
+
  &nbsp;<%= link_to products_clear_filters_path("all") do %>
-  <i class="fas fa-backspace" style="color:black; font-size:20px;"></i>
+  <i class="fas fa-backspace filternormal" style="color:black; font-size:20px;"></i>
 <% end %>
+
+
+<!-- mobile display filter clean -->
+<div class="filterdisplay">
+  &nbsp;<%= link_to 'Limpiar filtro', products_clear_filters_path("all") %>
+</div>
 
 <!-- productos -->
 <%== pagy_nav(@pagy) %>&nbsp;&nbsp;
@@ -152,7 +159,7 @@
 
 .pagination {
     display: inline-block;
-    padding-left: 32%;
+    padding-left: 30%;
 }
 }
 

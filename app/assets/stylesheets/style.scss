@@ -3334,3 +3334,38 @@ float: left;
 margin-right: 25% !important;
 }
 
+
+
+
+// navbar-collapse
+
+
+.mobile-version{
+  display:none;
+}
+
+
+@media only screen and (max-width: 768px) {
+.normal-version{
+  display:none;
+}
+.mobile-version{
+  display:initial;
+}
+
+  }
+
+
+
+.filterdisplay{
+  display:none;
+}
+
+@media only screen and (max-width: 768px) {
+.filternormal{
+  display:none;
+}
+.filterdisplay{
+  display:initial;
+}
+}
