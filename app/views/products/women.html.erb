@@ -22,16 +22,20 @@
   <p class="titulo2">ver todos</p>
   <hr class="sabana-line"></hr>
 
+</div>
+
+
+<!-- filters -->
+<div class="container">
+<%= render "shared/filters" %>
+ &nbsp;<%= link_to products_clear_filters_path("women") do %>
+  <i class="fas fa-backspace" style="color:black; font-size:20px;"></i>
+<% end %>
+</div>
 <div class="quantityproducts pagination2">
   <%== pagy_nav(@pagy) %>&nbsp; Productos ( <%= @women_product_items.count %> )
 </div>
-</div>
-  <br>
-
-<!-- filters -->
-<%= render "shared/filters" %>
-<%= link_to "Limpiar Filtros", products_clear_filters_path("women") %>
-
+<br>
 <!-- products -->
 <div class="container">
   <div class="row">
