@@ -3,8 +3,8 @@ require 'pagy/extras/array'
 class ProductsController < ApplicationController
 	include CurrentCart
 
-	before_action :set_cart, only: [:index, :show, :about, :women, :kids, :men, 
-																 :new, :search, :perform_search, :filter, 
+	before_action :set_cart, only: [:index, :show, :about, :women, :kids, :men,
+																 :new, :search, :perform_search, :filter,
 																 :clear_filters]
 
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
 	end
 
 	def create
+    puts params
 		@product = Product.create(product_params)
 		@category_id = params[:category_id]
 		# Creates entries in the stock table to handle the new product.
@@ -51,9 +52,9 @@ class ProductsController < ApplicationController
 			@category = Category.find_by_name(params[:category])
 			@pagy,@women_product_items = pagy(Product.where(category: @category))
 		elsif params.key?(:search)
-			@pagy,@women_product_items = pagy(Product.women.search(params[:search]))
+			@pagy,@women_product_items = pagy(Product.women.search(params[:search]), items:8)
 		else
-			@pagy,@women_product_items = pagy(Product.women)
+			@pagy,@women_product_items = pagy(Product.women.search(params[:search]), items:8)
 		end
 	end
 
@@ -63,7 +64,7 @@ class ProductsController < ApplicationController
 			@pagy,@men_product_items = pagy(Product.where(category: @category))
 		elsif params.key?(:search)
 			@pagy,@men_product_items = pagy(Product.men.search(params[:search]))
-		else 
+		else
 			@pagy,@men_product_items = pagy(Product.men)
 		end
 	end
@@ -74,7 +75,7 @@ class ProductsController < ApplicationController
 			@pagy,@kids_product_items = pagy(Product.where(category: @category))
 		elsif params.key?(:search)
 			@pagy,@kids_product_items = pagy(Product.kids.search(params[:search]))
-		else 
+		else
 			@pagy,@kids_product_items = pagy(Product.kids)
 		end
 	end
@@ -184,8 +185,8 @@ def filter
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def product_params
-		params.require(:product).permit(:title, :photo, :color, 
-																		:description, :price, :category_id, 
+		params.require(:product).permit(:title, :photo, :color,
+																		:description, :price, :category_id,
 																		:category, :subcategory, :promo, :codigo)
 	end
 end
