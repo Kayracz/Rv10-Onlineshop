@@ -10,7 +10,7 @@ class Product < ApplicationRecord
   has_many :photos, :inverse_of => :product, :dependent => :destroy
   accepts_nested_attributes_for :photos, allow_destroy: true
 
-  validates :title, :description, presence: true
+  validates :title, :description, :color, :subcategory, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }
   validates :title, uniqueness: true
 
@@ -47,11 +47,11 @@ class Product < ApplicationRecord
     end
   end
 
-  def self.color
+  def self.colors
     select('DISTINCT color').map(&:color).sort!
   end
 
-  def self.subcategory
+  def self.subcategories
     select('DISTINCT subcategory').map(&:subcategory).sort!
   end
 
