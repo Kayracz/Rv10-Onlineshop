@@ -1,5 +1,5 @@
 <%= select_tag "color",
-	options_for_select(Product.color, @color),
+	options_for_select(Product.colors, @color),
 	include_blank: "Color",
 	onchange: "updateFilters()",
 	class: "filter_opt"

@@ -47,11 +47,11 @@ class Product < ApplicationRecord
     end
   end
 
-  def self.color
+  def self.colors
     select('DISTINCT color').map(&:color).sort!
   end
 
-  def self.subcategory
+  def self.subcategories
     select('DISTINCT subcategory').map(&:subcategory).sort!
   end
 
