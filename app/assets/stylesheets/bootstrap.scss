@@ -5159,9 +5159,9 @@ tbody.collapse.in {
 }
 
 .navbar-nav > li > a {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  line-height: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 1px;
 }
 
 @media (max-width: 767px) {
@@ -5387,6 +5387,7 @@ tbody.collapse.in {
 
 .navbar-default .navbar-toggle {
   border-color: #ddd;
+  padding-left: 41px;
 }
 
 .navbar-default .navbar-toggle:hover,

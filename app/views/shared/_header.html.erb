@@ -1,3 +1,51 @@
+    <div class="container-fluid ultra">
+        <ul>
+
+     <br><a href="/search"><i class="fas fa-search"></i>&nbsp;Buscar</a> &nbsp;
+
+
+              <% if @cart.total_price > 0 %>
+              <%= link_to @cart, class: 'menu-cart' do  %>
+                <i class="fa fa-shopping-cart"></i>
+                <%= number_to_currency_bo @cart.total_price %>
+              <% end %>
+            <% else %>
+              <a href="#" class="menu-cart"><i class="fa fa-shopping-cart"></i> Bs.0.00</a>
+            <% end %>
+
+
+          </ul>
+
+   </div>
+
+
+
+   <style>
+    .ultra {
+      background-color: #f4f4f4;
+      text-align: left;
+    }
+
+    .ultraline{
+      display: inline;
+    }
+
+    .ultra a{
+  color: #c11111;
+ float: right;
+ padding-left: 0%;
+ padding-right: 2%;
+    }
+
+    @media (min-width: 768px){
+.container > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
+    /*margin-right: 286px;*/
+    margin-left: -48px;
+}
+}
+   </style>
+
+
  <div id="sidr">
       <ul>
 
@@ -26,7 +74,7 @@
       </div>
     </div>
 
-    <div class="nav-container">
+    <div class="nav-container" style="margin-left:-5%;">
       <nav class="navbar navbar-default">
         <div class="container" >
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -37,7 +85,7 @@
             <span class="icon-bar"></span>
             </button>
           <%= link_to root_path, class: 'navbar-brand' do %>
-          <%= image_tag "rv10.png", height: 30 %>
+          <%= image_tag "rv10.png", height: 40 %>
           <% end %>
 
     <!--         <a href="#sidr" class="side-menu-opener mobile">
@@ -49,7 +97,7 @@
             </a> -->
           </div>
 
-
+  <br>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="collapse-navigation">
             <ul class="nav navbar-nav">
@@ -59,7 +107,7 @@
               <li><%= link_to 'Niños', kids_path %></li>
               <li><%= link_to 'Todos', products_path %></li>
 
-              <li>
+      <!--         <li>
             <% if @cart.total_price > 0 %>
               <%= link_to @cart, class: 'menu-cart' do  %>
                 <i class="fa fa-shopping-cart"></i>
@@ -68,7 +116,7 @@
             <% else %>
               <a href="#" class="menu-cart"><i class="fa fa-shopping-cart"></i> Bs.0.00</a>
             <% end %>
-          </li>
+          </li> -->
 
             </ul>
   <!--           <ul class="nav navbar-nav navbar-right">

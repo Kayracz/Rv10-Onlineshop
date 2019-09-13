@@ -21,11 +21,12 @@ a:focus {
 }
 
 .navbar-default .navbar-nav li a {
-    padding: 47px 15px !important;
+ padding: 47px 15px !important;
 }
 
 .navbar-default .navbar-nav li a.menu-cart {
   color: #e74c3c !important;
+  margin-top: -6px;
 }
 
 .navbar-default .navbar-nav li a.menu-cart:hover,
@@ -54,6 +55,10 @@ a:focus {
   .navbar-default {
     background: #F5F5F7;
   }
+
+  .navbar-default .navbar-nav li a {
+ padding: 20px 73px !important;
+}
 }
 
 .navbar .open a {

@@ -41,7 +41,8 @@
  @media screen and (max-width: 768px) {
 
     .categorybar{
-      margin-top: 40px;
+     margin-top: -7px;
+
     }
 
 
@@ -64,6 +65,10 @@ select#size.filter_opt{
 
 select#price.filter_opt{
   width: 88px;
+}
+
+.ultra a{
+      padding-right: 5% !important;
 }
 
   }
