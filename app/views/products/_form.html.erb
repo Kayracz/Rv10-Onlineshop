@@ -15,7 +15,7 @@
 
      Genero
     <%= f.input :subcategory, as: :hidden %>
-    <%= f.select :subcategory_picker, Product.subcategory, onchange: "setSubcategory()" %>
+    <%= f.select :subcategory_picker, Product.subcategories %>
     <button type="button" onclick="newSubcategory()">Nueva Categoria</button>
     <br>
 
@@ -26,7 +26,7 @@
 
 		Color
 		<%= f.input :color, as: :hidden %>
-		<%= f.select :color_picker, Product.color, onchange: "setColor()" %>
+		<%= f.select :color_picker, Product.colors %>
 		<button type="button" onclick="newColor()">Nuevo Color</button>
     <br>
     Foto principal
@@ -44,10 +44,18 @@
 <% end %>
 
 	<script>
+		
+		(function(){
+			$("#product_color_picker").on("change", function() { setColor(); });
+			$("#product_subcategory_picker").on("change", function() { setSubcategory(); });
+		})();
+
 		function setColor() {
 			const color = $("#product_color_picker option:selected").val()
 			if (color)
 				$("#product_color").val(color);
+			else
+				console.log("No color");
 		}
 
 		function newColor() {
