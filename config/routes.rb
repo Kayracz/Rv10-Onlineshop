@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'envios' => 'pages#envios'
   get 'pagos' => 'pages#pagos'
   get 'devoluciones' => 'pages#devoluciones'
+  get 'instarv10' => 'pages#instarv10'
 
   get 'search', to: 'products#search', as: :products_search
   get 'search_results', to: 'products#perform_search', as: :perform_products_search

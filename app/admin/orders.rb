@@ -35,7 +35,7 @@ permit_params :shipped
           item.size.name
         end
           column 'Codigo' do |item|
-          item.product.size2
+          item.product.codigo
         end
       end
     end

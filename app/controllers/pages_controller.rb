@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   include CurrentCart
-  before_action :set_cart, only: [:index, :show, :about, :contraentrega, :termsandconditions, :envios, :pagos, :devoluciones]
+  before_action :set_cart, only: [:index, :show, :about, :contraentrega, :termsandconditions, :envios, :pagos, :devoluciones, :instarv10]
 
   def index
     @products = Product.all
@@ -20,6 +20,9 @@ class PagesController < ApplicationController
   end
 
   def devoluciones
+  end
+
+  def instarv10
   end
 
 end

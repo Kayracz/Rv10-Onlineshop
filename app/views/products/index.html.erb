@@ -1,6 +1,6 @@
-<%= render "shared/navbarhome" %>
+<%= render "shared/navbar" %>
 
-      <div class="container-fluid" style="margin-top: 4%;">
+      <div class="container-fluid" style="margin-top: 0%;">
         <%= image_tag "tester1.png" %>
        </div>
      </div>
@@ -100,7 +100,7 @@
 
             <div class="product-grid2">
                 <div class="product-image2" style="height: 442px;">
-                    <a><%= cl_image_tag product.photo %></a>
+                    <a href=""><%= cl_image_tag product.photo %></a>
                     <ul class="social">
                     <!--     <li><a href="#" data-tip="Vista Rapida"><i class="fa fa-eye"></i></a></li>
                         <li><a href="#" data-tip="Carrito"><i class="fa fa-shopping-cart"></i></a></li> -->
@@ -159,7 +159,7 @@
 
 .pagination {
     display: inline-block;
-    padding-left: 30%;
+    padding-left: 26% !important;
 }
 }
 
