@@ -73,9 +73,14 @@ select#price.filter_opt{
 
 .ultra a{
       padding-right: 5% !important;
+      color: #c11111 !important;
+      font-size: 12px !important;
 }
 
+.ultrab{
+  display:none;
   }
+}
 
 
 
@@ -88,6 +93,10 @@ header[role="banner"] {
     display: block;
     margin: 20px auto;
   }
+}
+
+.navbar-nav {
+    margin: 7.5px 0px;
 }
 
 #navbar-primary.navbar-default {
@@ -109,4 +118,6 @@ header[role="banner"] {
   }
 }
 
-
+.card-img{
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

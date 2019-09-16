@@ -2,53 +2,102 @@
 <%= render "shared/navbar" %>
 
 
+<div class="mobilevideo embed-responsive embed-responsive-16by9">
+  <iframe width="853" height="480" src="https://www.youtube.com/embed/9LGWyB3MEcI?controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-  <div class="main-container">
-      <header class="fullscreen-element holder" style="height:800px !important;">
-        <div class="background-image-holder " data-stellar-background-ratio="" >
-            <%= image_tag('tester5.png', class: 'background-image', alt:'Background') %>
+<div class="hero-image">
+  <%= image_tag('tester5.png', class: 'background-image', alt:'Background') %>
+  <div class="hero-text">
 
-
-        </div>
-
-        <div class="container align-vertical hero">
-          <div class="row">
-                              <div class="titan-caption">
-                <div class="caption-content">
-                   <div class="font-alt mb-30 titan-title-size-4"><p class="description" style="font-size:20px; font-weight:200;">Bienvenidos a nuestra tienda online  </p></div>
+                  <div class="font-alt mb-30 titan-title-size-4"><p class="description" style="font-size:20px; font-weight:400;">Bienvenidos a nuestra tienda online  </p></div>
                    <br>
                    <br>
-                  <div class="font-alt mb-30 titan-title-size-4"><p class="description2" style="font-size:80px; color: #ce1414;"><b>50%</b> de  </p></div>
+                  <div class="font-alt mb-30 titan-title-size-4"><p class="description2" style="font-size:80px; color: #c11111;"><b>50%</b> de  </p></div>
                   <br>
-                  <div class="font-alt mb-40 titan-title-size-1"><p class="description2" style="font-size:80px;  color: #ce1414;">descuento </p></div>
+                  <div class="font-alt mb-40 titan-title-size-1"><p class="description2" style="font-size:80px;  color: #c11111;">descuento </p></div>
                   <br>
                   <br>
-                  <div class="font-alt mb-40 titan-title-size-1"><p class="description2" style="font-size:80px;  color: #ce1414;"><b> EN TODO</b></p></div>
+                  <div class="font-alt mb-40 titan-title-size-1"><p class="description2" style="font-size:80px;  color: #c11111;"><b> EN TODO</b></p></div>
                   <br>
                   <br>
                   <div class="font-alt mb-40 titan-title-size-1"><p class="description" style="font-size:20px; font-weight:200;">Usa el codigo <b style="font-size:15px;">SUMMER50</b>, Oferta EXPIRA en <p id="demo"> &#9200</p></p></div>
                   <a href="/products" class="btn btn-primary">Shop Now</a>
-                </div>
-              </div>
-            </div>
-          </div><!--end of row-->
-        </div><!--end of container-->
-      </header>
+  </div>
+</div>
+
+<style>
+.mobilevideo{
+  /*display:none;*/
+}
+
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("tester5.png");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+  </style>
+
+
       <style>
         @media screen and (max-width: 768px) {
         .description2{
-          font-size: 50px !important;
-          line-height: 15px;
-          color: #ac2217 !important;
+          font-size: 40px !important;
+          line-height: 8px;
+          top: 1%;
+        }
+
+         .description2 p{
 
         }
 
+        .hero-text{
+         top: 64% !important;
+         display: none;
+        }
+
+        .hero-image{
+          display:none;
+        }
         .description{
           display:none;
+
         }
 
         .bannerfooter{
           padding-left: 82px !important;
+        }
+
+        .mobilevideo {display: inherit;
         }
       }
 
@@ -122,7 +171,7 @@
 
 
 
-<!-- <div class="embed-responsive embed-responsive-16by9">
+<!-- <div class="mobile video embed-responsive embed-responsive-16by9">
   <iframe width="853" height="480" src="https://www.youtube.com/embed/9LGWyB3MEcI?controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div> -->
 

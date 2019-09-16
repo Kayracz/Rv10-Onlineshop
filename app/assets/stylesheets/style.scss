@@ -96,51 +96,6 @@ header.secondary.small .parallax-background {
   top: -40%;
 }
 
-.background-image-holder {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background-size: cover !important;
-  z-index: 0;
-}
-
-.background-image-holder.on-page {
-  background-position: 50% 50% !important;
-}
-
-.background-image-holder p {
-  margin-bottom: 15px !important;
-}
-
-@media screen and (max-width: 768px) {
-  .background-image-holder.overlay:before {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    content: '';
-    opacity: 0.7;
-    z-index: 2;
-  }
-}
-
-.background-image-holder.parallax-background {
-  height: 120%;
-  top: 8%;
-}
-
-.main-container {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  -webkit-transform: translate3d(0px, 0, 0);
-  -moz-transform: translate3d(0px, 0, 0);
-  transform: translate3d(0px, 0, 0);
-  overflow: hidden;
-  width: 100%;
-}
 
 .thumbnail {
   padding: 0;
