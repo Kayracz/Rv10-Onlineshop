@@ -1,10 +1,10 @@
 
-<%= render "shared/header" %>
+<%= render "shared/navbar" %>
 
 <!-- filters -->
 <input type="hidden" id="subcat" value="men"/>
 
-<div class="container-fluid categorybar">
+<div class="container-fluid categorybar text-center">
   <%= link_to 'Todo', men_path %>&nbsp;
   <% Category.where(display_in_men: true).each do |cat| %>
   <%= link_to cat.name, men_path(category: cat.name)%>
