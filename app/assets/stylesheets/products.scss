@@ -80,11 +80,56 @@ select#price.filter_opt{
 .ultrab{
   display:none;
   }
+
+  .ultra{
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .pagination{
+    padding-left: 35%;
+  }
+}
+
+// IPHONE 5
+@media screen and (device-aspect-ratio: 40/71) {
+html {
+    width: 109%;
+}
+}
+
+// IPAD
+@media screen and (device-aspect-ratio: 3/4) {
+  html {
+    width: 108%;
+  }
+
+  #navbar-primary.navbar-default .navbar-nav > li > a {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    font-weight: 450;
+    letter-spacing: 1px;
+}
+
+.navbar-collapse {
+    margin-left: -3px;
+    margin-top: 23px;
+}
+
+.navbar-nav {
+    margin: 9.5px 22px !important;
+    }
 }
 
 
-
-
+// ipad pro
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+  html {
+    width: 108%;
+  }
+}
 
 // lastnavbar
 
@@ -121,3 +166,14 @@ header[role="banner"] {
 .card-img{
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+
+
+
+
+
+
+
+
+
+

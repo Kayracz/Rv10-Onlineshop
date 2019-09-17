@@ -2,28 +2,29 @@
 <% @sorted_items = @cart.product_items.order(:product_id, :size_id) %>
 <% @sorted_items.each do|item| %>
 
-   <ul>
-
+   <ul class="carritoimgspan">
 <hr>
      <div class="carritoimg">
-     <%= link_to 'x', item, method: :delete, data: { confirm: 'You sure?' } %>
-     &nbsp;&nbsp;&nbsp;&nbsp;
-     <%= cl_image_tag item.product.photo %>&nbsp;&nbsp;
-     <%= item.quantity %>&nbsp;<b><%= item.product.title %></b> =&nbsp;&nbsp;
-     <%= number_to_currency_bo item.total_price %> - &nbsp;<%=item.size.name %>&nbsp;&nbsp;&nbsp;
+     <span><%= link_to 'x', item, method: :delete, data: { confirm: 'You sure?' } %></span>
+     &nbsp;&nbsp;&nbsp;
+     <span><%= cl_image_tag item.product.photo %></span>&nbsp;&nbsp;
+     <span><%= item.quantity %>&nbsp;<b><%= item.product.title %></b></span> =&nbsp;&nbsp;
+     <span><%= number_to_currency_bo item.total_price %> - &nbsp;<%=item.size.name %></span>&nbsp;&nbsp;&nbsp;
 
-     <%= link_to "Agregar", product_items_add_path(item.id), method: :post %>&nbsp;<i class="fas fa-plus-circle" style="color:#c11111;"></i>&nbsp;&nbsp;
+     <span><%= link_to "Agregar", product_items_add_path(item.id), method: :post %>&nbsp;<i class="fas fa-plus-circle" style="color:#c11111;"></i></span>&nbsp;&nbsp;
 
-     <%= link_to "Disminuir", product_items_reduce_path(item.id), method: :post %>&nbsp;<i class="fas fa-minus-circle" style="color:#c11111;"></i>
+     <span><%= link_to "Disminuir", product_items_reduce_path(item.id), method: :post %>&nbsp;<i class="fas fa-minus-circle" style="color:#c11111;"></span></i>
      </div>
    </ul>
 
 <% end %>
+<br>
+<br>
 
 
 <style>
-
-  .carritoimg{
+  @media screen and (max-width: 768px) {
+  .carritoimg span{
 /*background-color: white;
     padding: 2%;
     margin-left: 14%;
@@ -32,6 +33,38 @@
     border-style: groove;
     border-color: black;
     box-shadow: 2px 3px;*/
-}
+      }
   }
+
+@media screen and (max-width: 768px){
+.carritoimg span {
+    font-size: 10px !important;
+    padding: 10px;
+    padding-left: 0px;
+
+}
+
+
+.carritoimg{
+    box-shadow: 0px 1px 2px black;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.carritoimg img{
+  display: none;
+}
+
+ul.carritoimgspan{
+  padding-inline-start: 8px;
+}
+}
+
+.carritoimg{
+    box-shadow: 0px 1px 2px black;
+    padding: 20px;
+border-radius: 20px;
+}
 </style>
+
+
