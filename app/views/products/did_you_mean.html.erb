@@ -1,6 +1,6 @@
-<%= render "shared/header" %>
+<%= render "shared/navbar" %>
 
-<div class="container-fluid searching" style="background-color: #ebebeb;">
+<div class="container-fluid searching searching" style="background-color: #ebebeb;">
   <%= form_tag perform_products_search_path,
   method: :get, style:"width:600px;margin-top:30px;" do %>
       <%= text_field_tag "term", nil,
@@ -48,4 +48,41 @@ input#term{
 .searchimage img{
 height: 100px;
 }
+
+
+    @media screen and (max-width: 768px) {
+.searchingresponsive{
+  display:initial;
+  }
+
+  .searchimage{
+    display: none;
+  }
+
+.searchresulttwo {
+    margin-left: -35px;
+    line-height: 24px;
+    margin-top: -77px;
+}
+
+  .searching{
+    display: none;
+  }
+
+input#term{
+  width: 318px !important;
+   margin-left: 20px;
+}
+
+input[type="submit"]{
+width: 350px !important;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 12px;
+  color: gray;
+}
+  }
+
+
 </style>

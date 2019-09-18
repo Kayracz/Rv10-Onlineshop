@@ -14,7 +14,56 @@
 </div>
 
 
+<div class="container-fluid searchingresponsive">
+  <%= form_tag perform_products_search_path,
+  method: :get, style:"width:255px;margin-top:30px;margin-left:8px;" do %>
+      <%= text_field_tag "term", nil,
+        style:"float:left",
+        placeholder: "Busca el producto que tengas en mente...",
+        autofocus: "",
+        style: "width:500px;" %>
+
+      <%= submit_tag "Buscar", style:"float:right;width:110px;" %>
+    <% end %>
+</div>
+
+
+
 <style>
+
+  .searchingresponsive{
+   display:none;
+  }
+
+    @media screen and (max-width: 768px) {
+.searchingresponsive{
+  display:initial;
+  }
+
+  .searching{
+    display: none;
+  }
+
+input#term{
+   width: 297px !important;
+   margin-left: 20px;
+}
+
+input[type="submit"]{
+width: 350px !important;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 12px;
+  color: gray;
+}
+  }
+
+
+
+
+
+
 
 input#term{
   padding-left: 20px;

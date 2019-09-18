@@ -16,7 +16,7 @@
 </div>
 
 
-<div class="container-fluid text-center" style="min-height:500px;background-color: #ebebeb; padding-bottom: 2% !important;">
+<div class="container-fluid text-center searchresult" style="min-height:500px;background-color: #ebebeb; padding-bottom: 2% !important;">
   <% if @results.any? %>
     <table style="margin:20px;margin-left:100px;;">
       <% @results.each do |r| %>
@@ -36,7 +36,86 @@
 </div>
 
 
+
+
+
+<!-- responsive part -->
+
+<div class="container-fluid text-center searchresulttwo" style="min-height:500px;background-color: #ebebeb;">
+  <% if @results.any? %>
+    <table style="margin:20px;margin-left:100px;;">
+      <% @results.each do |r| %>
+        <tr>
+          <td class="iconing searchimage" style='padding-right:20px; padding-bottom:10px;'> <%= cl_image_tag r.photo %> </td>
+          <td style='padding-right:20px'> <%= link_to r.title, product_path(r.id) %> </td>
+         <!--  <td style='padding-right:20px'> <%= r.description %> </td> -->
+          <td style='padding-right:20px'> <%= number_to_currency_bo r.price %> </td>
+        </tr>
+        <br>
+      <% end %>
+    </table>
+  <% else %>
+    No hay resultados :( <br/>
+    TODO: Sugerir correcciones en los terminos de busqueda, alla' Google.
+  <% end %>
+</div>
+
+
+
 <style>
+
+  .searchresulttwo{
+
+  }
+
+  .searchresult{
+    display: none;
+  }
+
+
+ .searchingresponsive{
+   display:none;
+  }
+
+    @media screen and (max-width: 768px) {
+.searchingresponsive{
+  display:initial;
+  }
+
+  .searchimage{
+    display: none;
+  }
+
+.searchresulttwo {
+    margin-left: -35px;
+    line-height: 24px;
+    margin-top: -77px;
+}
+
+  .searching{
+    display: none;
+  }
+
+input#term{
+  width: 318px !important;
+   margin-left: 20px;
+}
+
+input[type="submit"]{
+width: 350px !important;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 12px;
+  color: gray;
+}
+  }
+
+
+
+
+
+
 
 input#term{
   padding-left: 20px;
