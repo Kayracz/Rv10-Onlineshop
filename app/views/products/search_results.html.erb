@@ -1,8 +1,6 @@
 <%= render "shared/navbar" %>
-<br>
-<br>
-<br>
-<div class="container-fluid searching" style="background-color: #ebebeb;">
+
+<div class="container-fluid searching">
   <%= form_tag perform_products_search_path,
   method: :get, style:"width:600px;margin-top:30px;" do %>
       <%= text_field_tag "term", nil,
@@ -87,9 +85,9 @@
   }
 
 .searchresulttwo {
-    margin-left: -35px;
+    margin-left: -12px;
     line-height: 24px;
-    margin-top: -77px;
+    margin-top: -13px;
 }
 
   .searching{

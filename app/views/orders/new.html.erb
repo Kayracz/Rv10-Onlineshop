@@ -6,7 +6,7 @@ braintree.setup(<%= @client_token %>, 'dropin', {
 
 
 
-<%= render "shared/header" %>
+<%= render "shared/navbar" %>
 
 
 <div id="confirmation-back">
@@ -14,13 +14,38 @@ braintree.setup(<%= @client_token %>, 'dropin', {
 </div>
 
 <div id="confirmation-holder">
-<h1 class="text-center"> Tu Pedido </h1>
+<h1 class="text-center titles"> Tu Pedido </h1>
 <div class="container formorders">
 <%= render 'orders/form' %>
 </div>
 </div>
 
+<br>
+
+<style>
+
+@media screen and (max-width: 768px) {
+
+  #confirmation-back{
+    display: none;
+  }
+
+ #confirmation-holder{
+    margin-top: -20px;
+    width: 100%;
+ }
+
+ .radio label, .checkbox label {
+    padding-top: 5.8%;
+}
+.btn.btn-primary {
+    padding: 10px 5px;
+}
+
+.titles{
+    font-size: 21px;
+}
+}
 
 
-
-
+</style>
