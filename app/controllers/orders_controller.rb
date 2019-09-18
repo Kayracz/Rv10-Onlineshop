@@ -18,24 +18,16 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+    @order.add_product_items_from_cart(@cart)
     if @order.save
-      charge
-      if @result.success?
-        @order.add_product_items_from_cart(@cart)
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        OrderNotifierMailer.recieved(@order).deliver
         redirect_to @order, notice: 'Gracias por su pedido!'
-      else
-        flash[:error] = 'Revisa tu carrito'
-        redirect_to root_url, alert: @result.message
-        @order.destroy
-      end
     else
-      # @client_token = Braintree::ClientToken.generate
-      render :new
+      render :new, notice: 'Porfavor chequea tu informacion'
     end
   end
+
 
   def orderdashboard
      @orders = Order.all
