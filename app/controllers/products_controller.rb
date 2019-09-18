@@ -3,6 +3,8 @@ require 'pagy/extras/array'
 class ProductsController < ApplicationController
 	include CurrentCart
 
+  before_action :authenticate_admin_user!, only: [:new]
+
 	before_action :set_cart, only: [:index, :show, :about, :women, :kids, :men,
 																 :new, :search, :perform_search, :filter,
 																 :clear_filters]

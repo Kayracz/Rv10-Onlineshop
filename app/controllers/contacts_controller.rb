@@ -2,6 +2,7 @@ class ContactsController < ApplicationController
 
   include CurrentCart
   before_action :set_cart, only: [:new, :create]
+  before_action :authenticate_admin_user!
 
   def index
     @contact = Contact.all

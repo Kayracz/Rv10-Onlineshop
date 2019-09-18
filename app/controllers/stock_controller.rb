@@ -2,6 +2,7 @@ class StockController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:index, :show, :about]
   before_action :ensure_admin
+  before_action :authenticate_admin_user!
 
   layout false
   helper_method :units_in_stock
