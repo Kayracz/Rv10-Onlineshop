@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
       return
     end
     @order = Order.new
-    @client_token = Braintree::ClientToken.generate
+    # @client_token = Braintree::ClientToken.generate
   end
 
   def create
@@ -32,7 +32,7 @@ class OrdersController < ApplicationController
         @order.destroy
       end
     else
-      @client_token = Braintree::ClientToken.generate
+      # @client_token = Braintree::ClientToken.generate
       render :new
     end
   end
@@ -59,9 +59,9 @@ class OrdersController < ApplicationController
                                   :city, :country, :Nit, :terminos, :Notas)
   end
 
-  def charge
-    @result = Braintree::Transaction.sale(
-      amount: @cart.total_price,
-      payment_method_nonce: 'fake-valid-nonce')
-  end
+  # def charge
+  #   @result = Braintree::Transaction.sale(
+  #     amount: @cart.total_price,
+  #     payment_method_nonce: 'fake-valid-nonce')
+  # end
 end
