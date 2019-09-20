@@ -1,6 +1,6 @@
 class CategoriesController < InheritedResources::Base
  include CurrentCart
-  before_action :authenticate_admin_user!
+  before_action :authenticate_admin_user!, only: [:new, :show]
   before_action :set_cart, only: [:new, :create, :show, :index, :edit]
   before_action :set_category, only: [:show, :edit, :destroy]
 

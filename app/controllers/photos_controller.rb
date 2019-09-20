@@ -2,6 +2,7 @@ class PhotosController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:index, :show, :about]
   before_action :set_product, only: [:new, :show, :edit, :update, :destroy]
+  before_action :authenticate_admin_user!
   # GET /albums
   # GET /albums.json
   def index

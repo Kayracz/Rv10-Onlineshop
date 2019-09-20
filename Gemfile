@@ -38,8 +38,6 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'turbolinks', '~> 5'
 
-gem 'country_select'
-
 gem 'toastr-rails'
 
 gem 'activeadmin', github: 'activeadmin/activeadmin'
