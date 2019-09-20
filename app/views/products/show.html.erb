@@ -25,56 +25,59 @@
       <% end %>
    <hr>
 
-    <%= label_tag :size_id, 'Seleciona tu talle' %>
+    <%= label_tag :size_id, 'Seleciona tu talla' %>
      <%= form_tag product_items_path(product_id: @product.id) do %>
     <%= select_tag :size_id,
         options_for_select(Size.options_for(@product.id)),
-        prompt: "Seleciona tu talle" %>
+        prompt: "Seleciona tu talla" %>
 
       <br>
 
-
-      <button class="btn btn-danger ">
+      <br>
+      <button class="btn btn-danger">
       <i class="fa fa-shopping-cart"></i>
       Añadir al carrito
       </button>
       <br>
       <hr>
 
+
+<div class="container" style="padding-left: 23%;">
  <div class="text-left">
   <div class='toggle'>
   <div class='tabs'>
     <div class='tab active'>Descripcion</div>
     <div class='tab'>Composicion</div>
-    <div class='tab'>Cuidados</div>
+   <!--  <div class='tab'>Cuidados</div> -->
   </div>
   <div class='panels1'>
     <div class='panel1'><%= @product.description %></div>
     <div class='panel1'>60% Algodón 37% Poliester 3% Spdx</div>
-    <div class='panel1'> Limpieza a seco </div>
+    <!-- <div class='panel1'> Limpieza a seco </div> -->
   </div>
 </div>
 </div>
       <%end%>
-
-<div class="other-details postop20">
-<a class="col-md-3 col-xs-6 text-center" href="#">
+</div>
+<div class="other-details postop20 text-center">
+<!-- <a class="col-md-3 col-xs-6 text-center" href="#">
 <img src="https://markova.com/assets/markova/regla-4a198cbdfab84333ffe2843d043fce03f7ece104770562f4cf33c17b45d086f0.svg">
-</a>
-<a class="col-md-3 col-xs-6 text-center"href="#">
+</a> -->
+<a class="cartitas"href="/pagos">
 <img src="https://markova.com/assets/markova/credit-cards-b94c6ea938631307ed599abf12f8c23eba6086c135f8e391f1e5669d28a922d2.svg">
 </a>
-<a class="col-md-3 col-xs-6 text-center" href="#">
+<a class="cartitas" href="/envios">
 <img src="https://markova.com/assets/markova/send-car-828f951f1eb838d484bc3136c50142d49180d37e6542243ce6a463017046887b.svg">
 </a>
-<a class="col-md-3 col-xs-6 text-center" href=""><img src="https://markova.com/assets/markova/help_item-0cdef919c8260efbdf06acaf4d306fa202f93639366d1b6f9664102a08b42145.svg"></a>
-
-</div>
-   </div>
-</div>
+<a class="cartitas" href="/termsandconditions"><img src="https://markova.com/assets/markova/help_item-0cdef919c8260efbdf06acaf4d306fa202f93639366d1b6f9664102a08b42145.svg"></a>
 
 </div>
 
+
+</div>
+
+</div>
+</div>
 
 
 
@@ -122,7 +125,27 @@
       <%end%>
       </div>
    </div>
+
+<div class="other-details postop20 text-center" style="margin-bottom: 10%;">
+<!-- <a class="col-md-3 col-xs-6 text-center" href="#">
+<img src="https://markova.com/assets/markova/regla-4a198cbdfab84333ffe2843d043fce03f7ece104770562f4cf33c17b45d086f0.svg">
+</a> -->
+<a class="cartitas"href="/pagos">
+<img src="https://markova.com/assets/markova/credit-cards-b94c6ea938631307ed599abf12f8c23eba6086c135f8e391f1e5669d28a922d2.svg">
+</a>
+<a class="cartitas" href="/envios">
+<img src="https://markova.com/assets/markova/send-car-828f951f1eb838d484bc3136c50142d49180d37e6542243ce6a463017046887b.svg">
+</a>
+<a class="cartitas" href="/termsandconditions"><img src="https://markova.com/assets/markova/help_item-0cdef919c8260efbdf06acaf4d306fa202f93639366d1b6f9664102a08b42145.svg"></a>
+
+</div>
 </div>
 
-<!-- end mobile devices -->
 
+<!-- end mobile devices -->
+<style>
+  .btn-danger {
+    padding: 17px;
+    border-radius: 15px;
+  }
+</style>
