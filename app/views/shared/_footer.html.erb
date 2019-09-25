@@ -26,14 +26,25 @@
     <footer class="site-footer">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <h6>Sobre Nosotros</h6>
+          <div class="col-sm-12 col-md-6 directions">
+            <h6>Encuéntranos en</h6>
             <p class="text-justify">
-              Rv10.com es una marca que <i>ofrece los mejores diseños en ropa deportiva y casual</i>, con materiales de alta calidad que están hechos y diseñados en Bolivia. Creemos en mejorar y crear la mejor versión de ti mismo viviendo un estilo de vida saludable. Amamos a nuestros clientes y nuestro objetivo es proporcionar a todos estilos únicos y limitados que puedan mejorar su personalidad y singularidad.</p>
+              <p>(+591) 755-630-82</p>
+              <p>Atencion de 10:00 a 20h00</p>
+              <p>Rv10 Showroom</p>
+              <p>Calle 21 de Mayo entre Busch y Canada Strongest</p>
           </div>
 
+
+<style>
+  @media screen and (max-width: 768px) {
+  .directions{
+    display:none;
+  }
+}
+</style>
           <div class="col-xs-6 col-md-3">
-            <h6>Categorias</h6>
+            <h6>Atención al cliente</h6>
             <ul class="footer-links">
               <li><a href="/termsandconditions">Terminos & Condiciones</a></li>
               <li><a href="/envios">Envios</a></li>
@@ -44,12 +55,10 @@
           </div>
 
           <div class="col-xs-6 col-md-3">
-            <h6>Quick Links</h6>
+            <h6>Enlaces rápidos</h6>
             <ul class="footer-links">
-                <li class="active"><a href="/products">Inicio</a></li>
+                <li class="active"><a href="/products">Todos los productos</a></li>
                 <li><%=link_to 'Sobre Nosotros', about_path %></li>
-                <li> <%=link_to 'Tienda', products_path %></li>
-
                 <li>
             <%= link_to new_contact_path do  %>
               <i class="fa fa-paper-plane"></i> Contáctenos
