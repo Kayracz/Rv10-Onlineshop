@@ -4,7 +4,6 @@
     <title>Rv10</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'http://fonts.googleapis.com/css?family=Raleway:400,700,600,500,300' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -18,8 +17,18 @@
 
   <script src="https://kit.fontawesome.com/0671cb6605.js"></script>
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148823751-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-<%= javascript_include_tag 'https://js.braintreegateway.com/js/braintree-2.32.1.min.js' %>
+    gtag('config', 'UA-148823751-1');
+  </script>
+
+
+    <%= javascript_include_tag 'https://js.braintreegateway.com/js/braintree-2.32.1.min.js' %>
     <!--Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,600,500,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -35,7 +44,6 @@
     <script type="text/javascript" src="js/modernizr.min.js"></script>
     -->
     <script src="//code.jivosite.com/widget.js" jv-id="dg5mvtSyKH" async></script>
-
    <!--  <script src="https://js.braintreegateway.com/js/braintree-2.32.1.min.js"></script> -->
     <script>
 // We generated a client token for you so you can test out this code
@@ -46,6 +54,7 @@ var clientToken = "eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiJleUowZ
 braintree.setup(clientToken, "dropin", {
   container: "payment-form"
 });
+
 </script>
 
   </head>
