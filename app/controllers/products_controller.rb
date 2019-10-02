@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 
 	before_action :set_cart, only: [:index, :show, :about, :women, :kids, :men,
 																 :new, :search, :perform_search, :filter,
-																 :clear_filters]
+																 :clear_filters, :edit]
 
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
 
