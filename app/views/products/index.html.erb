@@ -6,13 +6,12 @@
      </div>
 
 
-<div class="container-fluid" style="margin-top:4%; ">
+<div class="container-fluid" style="margin-top:4%;">
 
 <div class="wrap">
 
-
 <div class="left">
-<!-- Navbar for categories -->
+
 <div class="categories" style="display:inline-block;">
 
 <b class="titulos">Buscar por Codigo:</b> <br>
@@ -31,7 +30,7 @@
 <%= link_to cat.name, products_path(category: cat.name) %>
 <br>
 <% end %>
-<!-- end -->
+
 <br>
 
 <b class="titulos">MUJERES</b> <br>
@@ -63,17 +62,17 @@
 <br>
 <br>
 
-</div><!-- close left -->
+</div>
 
 
 <h4 class="titulo" style="font-size:22px;font-weight: 800;"><b>TODOS LOS PRODUCTOS</b></h4>
 <div class="searcher">
-<!--   <h5>La mejor version de ti mismo. Moda boliviana inspirada en gente activa.</h5> -->
+
 </div>
 
 <br>
 
-<!-- filtros -->
+
 <%= render "shared/filters" %>
 
  &nbsp;<%= link_to products_clear_filters_path("all") do %>
@@ -86,7 +85,7 @@
   &nbsp;<%= link_to 'Limpiar filtro', products_clear_filters_path("all") %>
 </div>
 
-<!-- productos -->
+
 <%== pagy_nav(@pagy) %>&nbsp;&nbsp;
 <div class="quantityproducts">Productos ( <%= @products.count %> )
 </div>
@@ -101,10 +100,6 @@
             <div class="product-grid2">
                 <div class="product-image2" style="height: 442px;">
                     <a href=""><%= cl_image_tag product.photo %></a>
-                    <ul class="social">
-                    <!--     <li><a href="#" data-tip="Vista Rapida"><i class="fa fa-eye"></i></a></li>
-                        <li><a href="#" data-tip="Carrito"><i class="fa fa-shopping-cart"></i></a></li> -->
-                    </ul>
                 </div>
                 <div class="product-content">
                     <h3 class="title"><a href="#"><%= link_to product.title, product %></a></h3>
@@ -129,7 +124,6 @@
  </div>
 </div>
 
-<!-- end productos -->
 
 
 

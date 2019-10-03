@@ -1,79 +1,56 @@
-
 <%= render "shared/navbar" %>
 
-<!-- filters -->
 <input type="hidden" id="subcat" value="women"/>
-
 <div class="container-fluid categorybar text-center">
-  <%= link_to 'Todo', women_path %>&nbsp;
-  <% Category.where(display_in_women: true).each do |cat| %>
-  <%= link_to cat.name, women_path(category: cat.name)%>
-  <% end %>
-</div>
-
-<div class="container-fluid" style=" margin-top:2%;">
-  <%= image_tag "tester1.png" %>
-</div>
-
-
-<div class="container" style="margin-top:5%; ">
-  <h4 class="titulo text-center"> Selección Mujeres</h4>
-  <br>
-  <p class="titulo2">ver todos</p>
-  <hr class="sabana-line"></hr>
-
-</div>
-
-
-<!-- filters -->
-<div class="container">
-<%= render "shared/filters" %>
- &nbsp;<%= link_to products_clear_filters_path("women") do %>
-  <i class="fas fa-backspace" style="color:black; font-size:20px;"></i>
-<% end %>
-</div>
-<div class="quantityproducts pagination2">
-  <%== pagy_nav(@pagy) %>&nbsp; Productos ( <%= @women_product_items.count %> )
-</div>
-<br>
-<!-- products -->
-<div class="container">
-  <div class="row">
-  <% @women_product_items.each do |product| %>
-        <div class="col-md-3">
-            <div class="product-grid2">
-                <div class="product-image2" style="height: 393px;">
-                    <a><%= cl_image_tag product.photo %></a>
-                    <ul class="social">
-                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                        <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#"><%= link_to product.title, product %></a></h3>
-                       <% if product.sale_price == 0 %>
-                    <p style="font-size:12px;"><%= number_to_currency_bo product.price %></p>
-                    <% else %>
-                    <p style="display: inline-block; font-size: 12px;"><i style="text-decoration: line-through;"><%= number_to_currency_bo product.sale_price %></i>&nbsp;&nbsp;<b style="font-weight: 600;"><%= number_to_currency_bo product.price %></b></p>
-                     <% end %>
-                </div>
-            </div>
-        </div>
+   <%= link_to 'Todo', women_path %>&nbsp;
+   <% Category.where(display_in_women: true).each do |cat| %>
+   <%= link_to cat.name, women_path(category: cat.name)%>
    <% end %>
 </div>
+<div class="container-fluid bannerproducts">
+   <%= image_tag "tester1.png" %>
 </div>
+<div class="container titlebanner">
+   <h4 class="titulo text-center"> Selección Mujeres</h4>
+   <br>
+   <p class="titulo2">ver todos</p>
+   <hr class="sabana-line">
+   </hr>
 </div>
-</div>
- <hr>
 
+<div class="container">
+   <%= render "shared/filters" %>
+   &nbsp;<%= link_to products_clear_filters_path("women") do %>
+   <i class="fas fa-backspace" style="color:black; font-size:20px;"></i>
+   <% end %>
+</div>
+<div class="quantityproducts pagination2">
+   <%== pagy_nav(@pagy) %>&nbsp; Productos ( <%= @women_product_items.count %> )
+</div>
+<br>
+
+<div class="container">
+   <div class="row">
+      <% @women_product_items.each do |product| %>
+      <div class="col-md-3">
+         <div class="product-grid2">
+            <div class="product-image2">
+               <a><%= cl_image_tag product.photo %></a>
+            </div>
+            <div class="product-content">
+               <h3 class="title"><a href="#"><%= link_to product.title, product %></a></h3>
+               <% if product.sale_price == 0 %>
+               <p style="font-size:12px;"><%= number_to_currency_bo product.price %></p>
+               <% else %>
+               <p style="display: inline-block; font-size: 12px;"><i style="text-decoration: line-through;"><%= number_to_currency_bo product.sale_price %></i>&nbsp;&nbsp;<b style="font-weight: 600;"><%= number_to_currency_bo product.price %></b></p>
+               <% end %>
+            </div>
+         </div>
+      </div>
+      <% end %>
+   </div>
+</div>
+</div>
+</div>
+<hr>
 <%= render "shared/update_filters" %>
-
-
-<style>
-
-      .filter_opt {
-    width: 100px;
-    margin: 3px;
-  }
-
-  </style>
