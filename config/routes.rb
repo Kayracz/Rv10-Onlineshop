@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get 'women', to: 'products#women'
   get 'men', to: 'products#men'
   get 'kids', to: 'products#kids'
-  get 'orderdashboard' => 'orders#orderdashboard'
   get 'about' => 'pages#about'
   get 'termsandconditions' => 'pages#termsandconditions'
   get 'envios' => 'pages#envios'

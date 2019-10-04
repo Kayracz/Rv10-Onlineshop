@@ -13,13 +13,13 @@
     <%= f.input :price %>
 
 
-     Genero
+    Genero
     <%= f.input :subcategory, as: :hidden %>
     <%= f.select :subcategory_picker, Product.subcategories %>
     <button type="button" onclick="newSubcategory()">Nueva Categoria</button>
     <br>
 
-     Codigo de Promo
+    Codigo de Promo
     <%= f.input :promo %>
     Codigo de producto
     <%= f.input :codigo %>
@@ -44,7 +44,7 @@
 <% end %>
 
 	<script>
-		
+
 		(function(){
 			$("#product_color_picker").on("change", function() { setColor(); });
 			$("#product_subcategory_picker").on("change", function() { setSubcategory(); });

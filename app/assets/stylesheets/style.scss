@@ -2858,6 +2858,12 @@ img.mfp-img {
 
 .product-grid2 .title a:hover{color:gray}
 .product-grid2 .price{color:#303030;font-size:15px}
+
+.titulo{
+font-size:22px;
+font-weight: 800;
+}
+
 @media screen and (max-width:990px){.product-grid2{margin-bottom:30px}
 }
 .sizecart{
@@ -3166,7 +3172,7 @@ float: left;
 
 #confirmation-back {
     margin-top: -12px;
-    background-color: #CE1414;
+    background-color: #AD2C10;
     height: 225px;
 }
 
@@ -3316,6 +3322,10 @@ margin-right: 25% !important;
   display:none;
 }
 
+.filternormal{
+color:black; font-size:20px;
+}
+
 @media only screen and (max-width: 768px) {
 .filternormal{
   display:none;
@@ -3323,4 +3333,243 @@ margin-right: 25% !important;
 .filterdisplay{
   display:initial;
 }
+}
+
+
+
+
+// search
+
+
+  .searchresult{
+    display: none;
+  }
+
+
+ .searchingresponsive{
+   display:none;
+  }
+
+    @media screen and (max-width: 768px) {
+.searchingresponsive{
+  display:initial;
+  }
+
+  .searchimage{
+    display: none;
+  }
+
+.searchresulttwo {
+    margin-left: -12px;
+    line-height: 24px;
+    margin-top: -13px;
+}
+
+  .searching{
+    display: none;
+  }
+
+input#term{
+  width: 318px !important;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-radius: 20px;
+}
+
+input[type="submit"]{
+width: 350px !important;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 12px;
+  color: gray;
+}
+  }
+
+
+input#term{
+  padding-left: 20px;
+  border-radius: 20px;
+}
+
+.searching{
+    background-color: #ebebeb;
+    padding-left: 27%;
+    margin-bottom: -5%;
+    padding-top: 2%;
+  }
+
+.searching3{
+    background-color: #ebebeb;
+    padding-bottom: 17% !important;
+    padding-left: 24%;
+    padding-top: 10%;
+  }
+
+.searchimage img{
+height: 100px;
+}
+
+.footerh2 h2{
+  color: #AD2C10;
+}
+
+
+   .display-3{
+   color: white;
+   font-weight: bold;
+   margin-top: -181px;
+   font-size: 50px;
+   margin-bottom: 182px;
+   text-shadow: 1px 1px 2px black;
+   }
+   .landing-more-info__container{
+   background-color: #ce1414;
+   color:white;
+   }
+   .propa{
+   margin: 0 0 15px 0;
+   font-weight: bold;
+   font-size: 0.8em;
+   letter-spacing: 3px;
+   }
+   /* Caption */
+   .titan-caption {
+   position: relative;
+   display: table;
+   height: 100%;
+   width: 70%;
+   margin: 0 auto;
+   }
+   .titan-caption {
+   position: relative;
+   display: table;
+   height: 100%;
+   width: 100%;
+   margin: 0 auto;
+   }
+   .caption-content {
+   display: table-cell;
+   vertical-align: middle;
+   text-align: center;
+   }
+   #demo {
+   color:#ce1414;
+   font-weight: bolder;
+   }
+   .shadow {
+   box-shadow: 0 0 1rem rgba(0,0,0,0.15) !important;
+   }
+   .bannerlittle{
+   font-size: 13px;
+   }
+   .bannerfooter{
+   padding-top: 6rem !important;
+   padding-bottom: 6rem;
+   background-color: #f8f9fa !important;
+   margin-bottom: 40px !important;
+   padding-left: 133px;
+   }
+
+   .mobilevideo{
+   display:none;
+   }
+   .hero-image {
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("tester5.png");
+   height: 50%;
+   width: 100% !important;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: relative;
+   }
+   .background-image{
+   width: 100%;
+   }
+   .hero-text {
+   text-align: center;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: black;
+   }
+   .hero-text button {
+   border: none;
+   outline: 0;
+   display: inline-block;
+   padding: 10px 25px;
+   color: black;
+   background-color: #ddd;
+   text-align: center;
+   cursor: pointer;
+   }
+   .hero-text button:hover {
+   background-color: #555;
+   color: white;
+   }
+
+   @media screen and (max-width: 768px) {
+   .description2{
+   font-size: 40px !important;
+   line-height: 8px;
+   top: 1%;
+   }
+   .bannerfooter{
+   display:none;
+   }
+   .description2 p{
+   }
+   .hero-text{
+   top: 64% !important;
+   display: none;
+   }
+   .hero-image{
+   display:none;
+   }
+   .description{
+   display:none;
+   }
+   .bannerfooter{
+   padding-left: 82px !important;
+   }
+   .mobilevideo {display: inherit;
+   }
+   }
+   @media screen and (device-aspect-ratio: 3/4) {
+   .mobilevideo{
+   display: none;
+   }
+   }
+
+.about{
+  margin-top:-60px
+}
+
+@media screen and (max-width: 768px) {
+
+  #confirmation-back{
+    display: none;
+  }
+
+ #confirmation-holder{
+    margin-top: -20px;
+    width: 100%;
+ }
+
+ .radio label, .checkbox label {
+    padding-top: 5.8%;
+}
+.btn.btn-primary {
+    padding: 10px 5px;
+}
+
+.titles{
+    font-size: 21px;
+}
+}
+
+.cartfun{
+  font-weight: 400;
+  text-align: center;
 }

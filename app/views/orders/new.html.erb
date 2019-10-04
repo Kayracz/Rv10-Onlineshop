@@ -1,13 +1,10 @@
-<!--Script for Braintree -->
 <script>
 braintree.setup(<%= @client_token %>, 'dropin', {
   container: 'payment-form'
 }); </script>
 
 
-
 <%= render "shared/navbar" %>
-
 
 <div id="confirmation-back">
   <p></p>
@@ -21,31 +18,3 @@ braintree.setup(<%= @client_token %>, 'dropin', {
 </div>
 
 <br>
-
-<style>
-
-@media screen and (max-width: 768px) {
-
-  #confirmation-back{
-    display: none;
-  }
-
- #confirmation-holder{
-    margin-top: -20px;
-    width: 100%;
- }
-
- .radio label, .checkbox label {
-    padding-top: 5.8%;
-}
-.btn.btn-primary {
-    padding: 10px 5px;
-}
-
-.titles{
-    font-size: 21px;
-}
-}
-
-
-</style>

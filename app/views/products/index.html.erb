@@ -1,6 +1,6 @@
 <%= render "shared/navbar" %>
 
-      <div class="container-fluid" style="margin-top: 0%;">
+      <div class="container-fluid indexbanner">
         <%= image_tag "tester1.png" %>
        </div>
      </div>
@@ -20,7 +20,7 @@
 <%= text_field_tag :search, params[:search] %>
 <% end %>
 
-&nbsp;<a href="/search"><i class="fab fa-searchengin" style="font-size: 20px;"></i></i>&nbsp;Busqueda Avanzada</a>
+&nbsp;<a href="/search"><i class="fab fa-searchengin"></i></i>&nbsp;Busqueda Avanzada</a>
 <br>
 <br>
 
@@ -65,9 +65,8 @@
 </div>
 
 
-<h4 class="titulo" style="font-size:22px;font-weight: 800;"><b>TODOS LOS PRODUCTOS</b></h4>
+<h4 class="titulo"><b>TODOS LOS PRODUCTOS</b></h4>
 <div class="searcher">
-
 </div>
 
 <br>
@@ -76,7 +75,7 @@
 <%= render "shared/filters" %>
 
  &nbsp;<%= link_to products_clear_filters_path("all") do %>
-  <i class="fas fa-backspace filternormal" style="color:black; font-size:20px;"></i>
+  <i class="fas fa-backspace filternormal"></i>
 <% end %>
 
 
@@ -117,7 +116,8 @@
 </div>
 </div>
 </div>
-<div class="text-center">
+
+<div class="text-center pagyy">
 <%== pagy_nav(@pagy) %>
 </div>
    <hr>
@@ -125,56 +125,15 @@
 </div>
 
 
-
-
-
+<%= render "shared/update_filters" %>
 
 
 <style>
-
-  @media screen and (max-width: 768px) {
-  .left{
-    display:none;
-  }
-
-  .wrap{
-    margin-bottom: 40%;
-    height:auto !important;
-  }
-
-  .product-grid2 .product-image2 img {
-    width: 100%;
-    height: auto;
-}
-
-.text-center{
-  margin-top: 37px;
-}
-
-.pagination {
-    display: inline-block;
-    padding-left: 26% !important;
-}
-}
-
-.titulos {
-font-weight: 700;
-    letter-spacing: 0px;
-}
-
-input[type="text"], input[type="email"] {
+  input[type="text"], input[type="email"] {
     height: 50px;
     border-radius: 10px;
     border-color: #1a1a1a;
     height: 47px;
     width: 160px;
     }
-
-
-  .filter_opt {
-    width: 100px;
-    margin: 3px;
-  }
 </style>
-
-<%= render "shared/update_filters" %>

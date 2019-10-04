@@ -1,309 +1,91 @@
 <%= form_for @transfer do |f| %>
-  <%= render 'shared/msg2' %>
-  <div class="container">
-    <div class="col-md-10">
+<%= render 'shared/msg2' %>
+<div class="container">
+   <div class="col-md-10">
       <h3 class="text-center titles" style="font-weight:400;">Por favor, introduzca sus datos</h3>
-   <br>
-   <br>
-    </div>
-
-
-    <div class="form-group">
+      <br>
+      <br>
+   </div>
+   <div class="form-group">
       <div class="col-md-10">
-        <%= f.label :name, 'Nombre Completo' %>
-        <%= f.text_field :name, size: 40, class: 'form-control' %>
+         <%= f.label :name, 'Nombre Completo' %>
+         <%= f.text_field :name, size: 40, class: 'form-control' %>
       </div>
-    </div>
-
-    <div class="form-group">
+   </div>
+   <div class="form-group">
       <div class="col-md-10">
-        <%= f.label :email %>
-        <%= f.email_field :email, size: 40, class: 'form-control' %>
+         <%= f.label :email %>
+         <%= f.email_field :email, size: 40, class: 'form-control' %>
       </div>
-    </div>
-
-      <div class="form-group">
+   </div>
+   <div class="form-group">
       <div class="col-md-10">
-        <%= f.label :phone, 'Telefono' %>
-        <%= f.phone_field :phone, size: 40, class: 'form-control' %>
+         <%= f.label :phone, 'Telefono' %>
+         <%= f.phone_field :phone, size: 40, class: 'form-control' %>
       </div>
-    </div>
-
-
-    <div class="form-group">
+   </div>
+   <div class="form-group">
       <div class="col-md-10">
-        <%= f.label :city, 'Ciudad' %>
-        <%= f.text_field :city, size: 40, class: 'form-control' %>
+         <%= f.label :city, 'Ciudad' %>
+         <%= f.text_field :city, size: 40, class: 'form-control' %>
       </div>
-    </div>
-
-       <div class="form-group">
+   </div>
+   <div class="form-group">
       <div class="col-md-10" style="margin-bottom: 2%;">
-        <%= f.label :address, 'Direccion' %>
-        <%= f.text_area :address, cols: 35, class: 'form-control' %>
+         <%= f.label :address, 'Direccion' %>
+         <%= f.text_area :address, cols: 35, class: 'form-control' %>
       </div>
-    </div>
-
-
-      <div class="form-group">
+   </div>
+   <div class="form-group">
       <div class="col-md-10">
-        <%= f.label :Notas, 'Notas Adicionales' %>
-        <%= f.text_field :Notas, cols: 40, class: 'form-control' %>
+         <%= f.label :Notas, 'Notas Adicionales' %>
+         <%= f.text_field :Notas, cols: 40, class: 'form-control' %>
       </div>
-    </div>
-
-
-      <div class="form-group">
+   </div>
+   <div class="form-group">
       <div class="col-md-10">
-        <%= f.label :Nit, 'CI/NIT' %>
-        <%= f.text_field :Nit, cols: 40, class: 'form-control' %>
+         <%= f.label :Nit, 'CI/NIT' %>
+         <%= f.text_field :Nit, cols: 40, class: 'form-control' %>
       </div>
-    </div>
-
-      <div class="form-group">
+   </div>
+   <div class="form-group">
       <div class="col-md-11">
-        <span class="checkbox inline">
-          <%= f.check_box :terminos %>
-          <%= f.label "Acepto Los Terminos & Condiciones" %>
-        </span>
+         <span class="checkbox inline">
+         <%= f.check_box :terminos %>
+         <%= f.label "Acepto Los Terminos & Condiciones" %>
+         </span>
       </div>
-    </div>
-
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
- Terminos y Condiciones
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Terminos & Condiciones</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+   </div>
+   <!-- Button trigger modal -->
+   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+   Terminos y Condiciones
+   </button>
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLongTitle">Terminos & Condiciones</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <%= render "shared/terminos" %>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+         </div>
       </div>
-      <div class="modal-body">
-       El USUARIO debe leer, entender y aceptar todas las condiciones establecidas en los Términos y Condiciones de LA EMPRESA, previo a su registración como miembro de RV10. Quién haga uso del sitio acepta las condiciones del servicio quedando sujeta a ellas.
-CUALQUIER PERSONA QUE NO ACEPTE ESTOS TÉRMINOS Y CONDICIONES GENERALES, LOS CUALES TIENEN UN CARÁCTER OBLIGATORIO Y VINCULANTE, DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO Y/O LOS SERVICIOS.
-
-<h2 class="text-center">TÉRMINOS Y CONDICIONES GENERALES</h2>
-
-<p>Este documento describe los términos y condiciones generales y las políticas deprivacidad aplicables al acceso y uso de los servicios y productos ofrecidos por RV10. dentro del sitio www.rv10.com.bo, y/u otros dominios (urls) relacionados, en adelante www.rv10.com.bo o el sitio en donde éstos Términos y Condiciones se encuentren.<p>
-
-<p>Cualquier persona que desee acceder y/o suscribirse y/o usar el sitio o los servicios podrá hacerlo sujetándose a los Términos y Condiciones Generales, junto con todas las demás políticas y principios que rigen www.rv10.com.bo y que son incorporados al presente directamente o por referencia o que son explicados y/o detallados en otras secciones del sitio. En consecuencia, todas las visitas y todos los contratos y transacciones que se realicen en este sitio, como asimismo sus efectos jurídicos, quedarán regidos por estas reglas y sometidos a la legislación aplicable Bolivia.</p>
-
-<p>Los términos y condiciones contenidos en este instrumento se aplicarán y se entenderán como formando parte de todos los actos y contratos que se ejecuten o celebren mediante los sistemas de oferta y comercialización comprendidos en este sitio entre los usuarios de este sitio y www.rv10.com.bo, y por cualquiera de las otras sociedades o empresas que sean filiales o coligadas con ella, y que hagan uso de este sitio, a las cuales se las denominará en adelante también en forma indistinta como «las empresas», o bien «la empresa oferente», el «proveedor» o la «empresa proveedora», según convenga al sentido del texto.</p>
-
-<br>
-
-<p>
-<b>CUALQUIER PERSONA QUE NO ACEPTE ESTOS TÉRMINOS Y CONDICIONES GENERALES, LOS CUALES TIENEN UN CARÁCTER OBLIGATORIO Y VINCULANTE, DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO Y/O LOS SERVICIOS.</b></p>
-<br>
-<p>El Usuario debe leer, entender y aceptar todas las condiciones establecidas en los Términos y Condiciones Generales de www.rv10.com.bo, así como en los demás documentos incorporados a los mismos por referencia, previo a su registración como Usuario de www.rv10.com.bo y/o a la adquisición de productos y/o entrega de cualquier dato con cualquier fin.</p>
-
-<p>Si el usuario hiciera uso del Sitio de www.rv10.com.bo, ello implicará la aceptación plena de las condiciones establecidas en los Términos y Condiciones Generales y en las Políticas de www.rv10.com.bo. Por dicha utilización del sitio y/o sus servicios, el usuario se obligará a cumplir expresamente con las mismas, no pudiendo alegar el desconocimiento de tales Términos y Condiciones Generales.</p>
-
-<br>
-<br>
-
-<h2>CAPACIDAD LEGAL</h2>
-
-<p>Los Servicios sólo están disponibles para personas que tengan capacidad legal para contratar. No podrán utilizar los servicios las personas que no tengan esa capacidad y los menores de edad. Los actos que éstos realicen en este sitio serán responsabilidad de sus padres, tutores, encargados o curadores, y por tanto se considerarán realizados por éstos en ejercicio de la representación legal con la que cuentan. Quien registre un Usuario como empresa, deberá tener capacidad para contratar a nombre de tal entidad y de obligar a la misma en los términos de este acuerdo.</p>
-
-<br>
-<br>
-
-<h2>PRIVACIDAD DE LA INFORMACION</h2>
-
-<p>Para utilizar los Servicios ofrecidos por www.rv10.com.bo y sus sitios relacionados, los Usuarios deberán facilitar determinados datos de carácter personal. Su información personal se procesa manteniendo altos estándares de seguridad y protección tanto física como tecnológica. Para mayor información sobre la privacidad de los Datos Personales y casos en los que será revelada la información personal, se pueden consultar nuestras Políticas de Privacidad.</p>
-
-<br>
-<br>
-
-<h2>MODIFICACION DEL ACUERDO</h2>
-
-<p>www.rv10.com.bo podrá modificar los Términos y Condiciones Generales en cualquier momento haciendo públicos en el Sitio los términos modificados. Todos los términos modificados entrarán en vigor a los 10 (diez) días de su publicación. Dentro de los 5 (cinco) días siguientes a la publicación de las modificaciones introducidas, el Usuario deberá comunicar por e-mail haciendo clic aquí si no acepta las mismas; en ese caso quedará disuelto el vínculo contractual y será inhabilitado como Miembro. Vencido este plazo, se considerará que el Usuario acepta los nuevos términos y el contrato continuará vinculando a ambas partes.</p>
-
-<br>
-<br>
-
-<h2>PROCEDIMIENTO PARA HACER USO DEL SITIO WEB</h2>
-
-<p>En los contratos ofrecidos por medio de este sitio, la empresa oferente informará, de manera inequívoca y fácilmente accesible, los pasos que deberán seguirse para celebrarlos, e informará, cuando corresponda, si el documento electrónico en que se formalice el contrato será archivado y si éste será accesible al consumidor. El sólo hecho de seguir los pasos que para tales efectos se indiquen en este sitio para efectuar una suscripción o una compra, equivale a aceptar que efectivamente la empresa oferente ha dado cumplimiento a las condiciones contenidas en este apartado. Indicará, además, su dirección de correo postal o electrónico y los medios técnicos a disposición del consumidor para identificar y corregir errores en el envío o en sus datos.</p>
-
-<br>
-<br>
-
-<h2>MEDIOS DE PAGO</h2>
-
-<p>Los productos y servicios ofrecidos en este sitio, salvo que se señale una forma diferente para casos particulares u ofertas de determinados bienes o servicios, sólo pueden ser pagados con los medios que en cada caso específicamente se indiquen. Tratándose de tarjetas bancarias aceptadas en el Sitio, El Sitio podrá indicar determinadas condiciones de compra según el medio de pago que se utilice por el usuario.</p>
-
-<br>
-<br>
-
-<h2>FORMACION DEL CONSENTIMIENTO EN LOS CONTRATOS CELEBRADOS ATRAVES DE ESTE SITIO</h2>
-
-<p>A través de este sitio web www.rv10.com.bo realizará ofertas de bienes y suscripciones, que podrán ser aceptadas a través de la aceptación, por vía electrónica, y utilizando los mecanismos que el mismo sitio ofrece para ello. Toda aceptación de oferta quedará sujeta a la condición suspensiva de que www.rv10.com.bo valide la transacción. En consecuencia, para toda operación que se efectúe en este sitio, la confirmación y/o validación o verificación por parte de www.rv10.com.bo, será requisito para la formación del consentimiento. Para validar la transacción www.rv10.com.bo deberá verificar:</p>
-<br>
-<p>
-  <ul>a) Que dispone, en el momento de la aceptación de oferta en stock.</ul>
-  <ul>b) Que valida y acepta el medio de pago ofrecido por el usuario.</ul>
-  <ul>c) Que los datos registrados por el cliente en el sitio coinciden con los proporcionados al efectuar su aceptación de oferta.</ul>
-  <ul>d) Que el pago es acreditado por el usuario.</ul>
-</p>
-<br>
-
-<p>Para informar al usuario o consumidor acerca de esta validación, www.rv10.com.bo enviará una confirmación escrita a la misma dirección electrónica que haya registrado el usuario aceptante de la oferta, o por cualquier medio de comunicación que garantice el debido y oportuno conocimiento del consumidor, o mediante el envío efectivo del producto. El consentimiento se entenderá formado desde el momento en que se envía esta confirmación escrita al usuario y en el lugar en que fue expedida.</p>
-
-<p>La oferta efectuada por el usuario es irrevocable salvo en circunstancias excepcionales, tales como que www.rv10.com.bo cambie sustancialmente la descripción del artículo después de realizada alguna oferta, o que exista un claro error tipográfico.</p>
-
-<p>Aviso Legal: La venta y despacho de los productos está condicionada a su disponibilidad y a las existencias de producto. Cuando el producto no se encuentre disponible, www.rv10.com.bo lo notificará de inmediato al cliente y devolverá el valor total del precio pagado en un plazo de 5 días hábiles.</p>
-
-<br>
-<br>
-
-<h2>CANCELACION DE PEDIDOS</h2>
-
-<p>Los pedidos podrán cancelarse hasta 24horas antes de entregar el pedido. Pasado ese plazo, www.rv10.com.bo podrá buscar la mejor solución posible en pos de la satisfacción del consumidor, sin que esto sea obligatorio para ella. El consumidor deberá comunicar fehacientemente dicha revocación a www.rv10.com.bo. La cancelación de un pedido da derecho a la reintegración total del monto del pedido.</p>
-
-<br>
-<br>
-
-<h2>DERECHOS DE REVOCACION</h2>
-
-<p>www.rv10.com.bo, así como aquellos terceros que utilizan el portal para comercializar productos, ofrecen a sus clientes la posibilidad de retractarse de la compra durante los primeros 2 días naturales después de la entrega del producto.  Los retractos antes mencionados deberán ser solicitados por medio de la página Web, enviando un <a href="mailto:kayracz@gmail.com?subject=PortfolioContact" "email me">correo electrónico</a> o contáctanos directamente via telefónica.</p>
-
-<p>La devolucion tendra que efectuarse directamente en la tienda RV10 SHOWROOM. Calle 21 de Mayo entre Busch y Canada Strongest, Santa Cruz de la Sierra, Bolivia.  Los envíos desde otra ciudad será a cargo del cliente y el plazo para reclamaciones son quince días hábiles a partir de la notificación por nuestra parte.</p>
-
-<p>Para poder ejercer el derecho de retracto el consumidor deberá cumplir con unas condiciones generales. Cuando un producto tenga unas condiciones específicas para poder ejercer el derecho de retracto, esto será especificado en las características del producto.</p>
-
-<br>
-<br>
-
-<h2>CONDICIONES GENERALES PARA UN RETRACTO:</h2>
-<br>
-<ul>a) El producto no debe estar averiado o deteriorado por acciones correspondientes a los clientes.</ul>
-<ul>b) El producto debe tener etiquetas, factura de venta, accesorios y empaques originales (incluyendo manuales, guías de uso, certificados de garantía, etc.).</ul>
-<ul>c) El producto no debe mostrar señales de uso, suciedad o desgaste.</ul>
-<ul>d) El producto no debe tener más de DOS (2) días naturales de entregado.</ul>
-<ul>e) Debes enviar el producto que quieras devolver o cambiar a: Calle 21 de Mayo entre Busch y Canada Strongest, Santa Cruz de la Sierra, Bolivia. </ul>
-<ul>f) Junto con tus datos, los datos de tu pedido y una breve explicación de lo que te ha pasado con él.</ul>
-
-<br>
-<br>
-
-<h2>CONDICIONES DE REEMBOLSO DEL RETRACTO:</h2>
-<p>Si el producto fue pagado con tarjeta de crédito o debito, se hará reversión a su tarjeta de crédito o se reembolsará el dinero a través de transacion bancaria a la cuenta bancaria proporcionada por el cliente. Estos tiempos de reversión dependen directamente de la entidad bancaria del consumidor. Solo cumpliendo estas condiciones el cliente recibirá la totalidad del dinero del producto</p>
-
-<br>
-<br>
-
-<h2>POLITICA DE CAMBIOS</h2>
-
-<p>Los cambios podrán hacerse por un producto de igual o mayor valor. En caso de mayor valor, deberán abonar la diferencia, en caso de menor valor se emitirá un VALE por la diferencia.</p>
-
-<p>En caso de no disponer de stock del tallaje deseado se emitirá un VALE, si no es posible conseguir la talla.</p>
-
-<p>Es indispensable que los productos estén en su embalaje original y en las mismas condiciones en que te los enviamos. De no ser así (en caso de que recibamos el producto sucio, dañado, usado... ) no se realizará ningún VALE del producto, siendo la única solución posible un nuevo envío de la misma mercancía. El nuevo envío será a cargo del cliente y el plazo para reclamaciones son quince días hábiles a partir de la notificación por nuestra parte.</p>
-
-<br>
-<br>
-
-<h2>POLITICAS DE PRIVACIDAD</h2>
-
-<p>Como parte normal de su actividad www.rv10.com.bo recoge y en algunos casos comunica información sobre sus Usuarios y visitantes de su sitio Web. En esta Política de Privacidad se describe la información que www.rv10.com.bo recoge sobre sus Usuarios y visitantes y lo que puede ocurrir con dicha información. Esta política es muy detallada porque es importante que los Usuarios y visitantes de su sitio Web conozcan las prácticas de www.rv10.com.bo de la forma más precisa posible. Al registrarse y/o navegar el sitio Web de www.rv10.com.bo, se presta conformidad para que se utilice su información personal de acuerdo a las políticas que se describen a continuación.</p>
-
-<p>La privacidad de la información de los Usuarios es muy importante para www.rv10.com.bo. Es por esa razón que se toman las precauciones y recaudos necesarios para mantener resguardada y segura la información, utilizando los mecanismos de seguridad informática de protección de la información más completos y eficaces disponibles en la actualidad. Este documento es parte integrante de los Términos y Condiciones Generales de www.rv10.com.bo. Mediante la aceptación de los Términos y Condiciones Generales en el momento de la registración el Usuario acepta las políticas aquí contenidas.</p>
-
-<p>www.rv10.com.bo permite a sus clientes, subscritores que tienen los siguientes derechos:</p>
-<br>
-<ul>a) Conocer, actualizar y rectificar sus datos personales</ul>
-<ul>b) Verificar la autorización otorgada</ul>
-<ul>c) Ser informado acerca del uso que se le ha dado a sus datos personales.</ul>
-<ul>d) Revocar la autorización y solicitar la eliminación de algún dato cuando considere que no se le han respetado sus derechos.</ul>
-<ul>e) Acceder en forma gratuita a los datos personales que voluntariamente y a  través de éste formato decide compartir con www.rv10.com.bo</ul>
-<br>
-<p>Para suministrar un excelente servicio y para que los Usuarios puedan realizar operaciones en forma ágil y segura, www.rv10.com.bo requiere ciertos datos de carácter personal. La recolección de información permite ofrecer a sus Usuarios servicios y funcionalidades que se adecuan mejor a sus necesidades y personalizar los servicios de www.rv10.com.bo para hacer que sus experiencias con www.rv10.com.bo sean lo más cómodas posible. Asimismo le permite hacerle llegar a los Usuarios por distintos medios y vías (incluyendo mail, SMS, etc.) ofertas de productos y servicios que se considera que pueden serle de interés. La Información Personal que recaba www.rv10.com.bo tiene las siguientes finalidades:</p>
-<br>
-<ul>a) Proceder a la entrega, facturación y cobro del producto y/o servicio solicitado por el Usuario.</ul>
-<ul>b) Ponerse en contacto directo con el Usuario cada vez que en www.rv10.com.bo lo consideren conveniente con el fin de ofrecerle por distintos medios y vías (incluyendo mail, SMS, etc.) productos y/o servicios.</ul>
-<ul>c) Contactar al Usuario interesado en utilizar la plataforma brindada por Rv10.com.</ul>
-<ul>d) Desarrollar estudios internos sobre los intereses, el comportamiento y la demografía de los Usuarios con el objetivo de comprender mejor sus necesidades intereses y darle un mejor servicio o proveerles información relacionada.</ul>
-<ul>e) Mejorar las iniciativas comerciales y promocionales para analizar las páginas más visitadas por el Usuario, las búsquedas realizadas, perfeccionar su oferta de contenidos y artículos, personalizar dichos contenidos, presentación y servicios.</ul>
-
-<br>
-<br>
-
-<h2>CONFIDENCIALIDAD DE LA INFORMACION:</h2>
-<p>Una vez registrado en www.rv10.com.bo los datos de los Usuarios serán suministrados únicamente en las formas establecidas en estas políticas. www.rv10.com.bo hará todo lo que esté a su alcance para proteger la privacidad de la información. Puede suceder que en virtud de órdenes judiciales, o de regulaciones legales, www.rv10.com.bo se vea compelida a revelar información a las autoridades o terceras partes bajo ciertas circunstancias, o bien en casos que terceras partes puedan interceptar o acceder a cierta información o transmisiones de datos, en cuyo caso www.rv10.com.bo no responderá por la información que sea revelada.</p>
-
-<br>
-<br>
-
-<h2>MENORES DE EDAD:</h2>
-<p>Los servicios de www.rv10.com.bo sólo están disponibles para aquellas personas que tengan capacidad legal para contratar. Por lo tanto, quienes no cumplan con esta condición deberán abstenerse de suministrar información personal para ser incluida en las bases de datos de www.rv10.com.bo. Sin embargo, podrán hacerlo a través de sus padres, tutores o curadores, conforme lo establecido en los Términos y Condiciones Generales.</p>
-
-<br>
-<br>
-
-<h2>DERECHOS DE ACCESO, CANCELACION Y RECTIFICACION DE LA INFORMACION PERSONAL:</h2>
-<p>Los Usuarios tienen derechos reconocidos y podrán ejercitar los derechos de acceder, cancelar y actualizar su Información Personal, así como a oponerse al  tratamiento de la misma y a ser informado de las cesiones llevadas a cabo, todo ello de conformidad a lo dispuesto en la normativa aplicable. Los Usuarios garantizan y responden, en cualquier caso, de la exactitud, veracidad, vigencia y autenticidad de los Datos Personales facilitados, y se comprometen a mantenerlos debidamente actualizados.</p>
-
-<p>En determinados casos, www.rv10.com.bo mantendrá en sus archivos Información Personal cuyo retiro no haya sido solicitado por el Usuario, y ello con la finalidad de resolver disputas o reclamaciones, detectar problemas o incidencias y solucionarlos, y dar cumplimiento a lo dispuesto en los Términos y Condiciones Generales por un período de tiempo determinado por la ley. En cualquier caso, la Información Personal de un Usuario no será inmediatamente retirada de los archivos de www.rv10.com.bo por motivos legales y técnicos, incluyendo sistemas de soportes de seguridad. Por lo tanto, no se debe esperar que toda la Información Personal sea definitivamente borrada de las bases de datos de www.rv10.com.bo.</p>
-
-<p>Los Usuarios deben actualizar su Información Personal periódicamente conforme vaya cambiando para que puedan ser ubicados cuando realicen una operación. www.rv10.com.bo no se responsabiliza por la imposibilidad de realizar la entrega de un pedido si la información del Usuario no se encuentra actualizada. Elecciones respecto a su información personal www.rv10.com.bo. se comunica con sus clientes a través de múltiples canales y medios para mantenerlos actualizado en temas como promociones, ofertas, contenido de la experiencia del cliente y productos o servicios nuevos. Una vez que usted proporciona su información personal, podemos ponernos en contacto con usted por correo directo, correo electrónico o teléfono. Podremos seguir comunicándonos por medio de estos canales a no ser que usted solicite.</p>
-
-<br>
-<br>
-
-<h2>VIOLACION DEL SISTEMA O BASES DE DATOS</h2>
-
-<p>No está permitida ninguna acción o uso de dispositivo, software, u otro medio tendiente a interferir tanto en las actividades y operatoria de www.rv10.com.bo como en las ofertas, descripciones, perfiles de los Usuarios, cuentas o bases de datos de www.rv10.com.bo. Cualquier intromisión, tentativa o actividad violatoria o contraria a las leyes sobre derecho de propiedad intelectual y/o a las prohibiciones estipuladas en este contrato harán pasible a su responsable de las acciones legales pertinentes, y a las sanciones previstas por este acuerdo, así como lo hará responsable de indemnizar los daños ocasionados.</p>
-
-<br>
-<br>
-
-<h2>FALLAS EN EL SISTEMA</h2>
-
-<p>www.rv10.com.bo no se responsabiliza por cualquier daño, perjuicio o pérdida al Usuario causados por fallas en el sistema, en el servidor o en Internet. www.rv10.com.bo tampoco será responsable por cualquier virus que pudiera infectar el equipo del Usuario como consecuencia del acceso, uso o examen de su sitio web o a raíz de cualquier transferencia de datos, archivos, imágenes, textos, o audio contenidos en el mismo. Es responsabilidad absoluta de los Usuarios el mantener sus computadoras protegidas de esta clase de eventos con los sistemas, softwars y precauciones que se encuentran a su alcance. Los Usuarios no podrán imputarle responsabilidad alguna ni exigir pago por lucro cesante ni resarcimiento ni indemnización alguna, en virtud de perjuicios resultantes de dificultades técnicas o fallas en los sistemas o en Internet. www.rv10.com.bo no garantiza el acceso y uso continuado o ininterrumpido de su sitio. El sistema puede eventualmente no estar disponible debido a dificultades técnicas o fallas de Internet, o por cualquier tracircunstancia ajena a www.rv10.com.bo; en tales casos se procurará restablecerlo con la mayor celeridad posible sin que por ello pueda imputársele algún tipo de responsabilidad. www.rv10.com.bo no será responsable por ningún error u omisión contenidos en su sitio web.</p>
-
-<br>
-<br>
-
-<h2>TERMINOS DE LEY</h2>
-
-<p>Este acuerdo será gobernado e interpretado de acuerdo con las leyes del Estado Plurinacional de Bolivia, sin dar efecto a cualquier principio de conflictos de ley. Si alguna disposición de estos Términos y Condiciones es declarada ilegal, o presenta un vacío, o por cualquier razón resulta inaplicable, la misma deberá ser interpretada dentro del marco del mismo y en cualquier caso no afectará la validez y la aplicabilidad de las provisiones restantes.</p>
-
-<br>
-<br>
-<br>
-<br>
-
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
+   </div>
 </div>
- </div>
 <br>
 <br>
-
 <br>
-  <div class="form-group">
-      <div class="col-md-10">
-        <%= f.submit 'Comprar' %>
-      </div>
-    </div>
-
-
+<div class="form-group">
+   <div class="col-md-10">
+      <%= f.submit 'Comprar' %>
+   </div>
+</div>
 </div>
 <% end %>
-
 
