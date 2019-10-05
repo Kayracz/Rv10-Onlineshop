@@ -1,0 +1,36 @@
+   .ultra {
+   background-color: white;
+   text-align: left;
+   }
+   .ultraline{
+   display: inline;
+   }
+   .headbanner{
+   display: none;
+   }
+   .ultra a{
+   color: black;
+   float: right;
+   font-size:15px;
+   padding-left: 0%;
+   padding-right: 2%;
+   font-weight: 400;
+   }
+   .ultrab a{
+   color: black;
+   float: left;
+   font-weight: 200;
+   }
+   @media (min-width: 768px){
+   .container > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
+   /*margin-right: 286px;*/
+   margin-left: -48px;
+   }
+   }
+   @media screen and (max-width: 768px) {
+   .headbanner{
+   display: inherit;
+   background-color: darkred;
+   color: white;
+   }
+   }

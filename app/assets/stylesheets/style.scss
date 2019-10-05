@@ -3341,8 +3341,9 @@ color:black; font-size:20px;
 // search
 
 
-  .searchresult{
+.searchresult{
     display: none;
+    background-color: #ebebeb;
   }
 
 
@@ -3352,7 +3353,7 @@ color:black; font-size:20px;
 
     @media screen and (max-width: 768px) {
 .searchingresponsive{
-  display:initial;
+  display:initial !important;
   }
 
   .searchimage{
@@ -3378,6 +3379,7 @@ input#term{
 
 input[type="submit"]{
 width: 350px !important;
+background-color: #AD2C10;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

@@ -1,6 +1,6 @@
 <%= render "shared/navbar" %>
 
-<div class="container-fluid searching" style="background-color: #ebebeb;">
+<div class="container-fluid searching">
   <%= form_tag perform_products_search_path,
   method: :get, style:"width:600px;margin-top:30px;" do %>
       <%= text_field_tag "term", nil,
@@ -16,7 +16,7 @@
 
 <div class="container-fluid searchingresponsive">
   <%= form_tag perform_products_search_path,
-  method: :get, style:"width:255px;margin-top:30px;margin-left:8px;" do %>
+  method: :get, style:"width:71%;margin-top:30px;margin-left:10px;" do %>
       <%= text_field_tag "term", nil,
         style:"float:left",
         placeholder: "Busca el producto que tengas en mente...",
@@ -31,18 +31,11 @@
 
 <style>
 
-  .searchingresponsive{
-   display:none;
-  }
-
-    @media screen and (max-width: 768px) {
 .searchingresponsive{
-  display:initial;
-  }
+   display:none;
+}
 
-  .searching{
-    display: none;
-  }
+@media screen and (max-width: 768px) {
 
 input#term{
    width: 297px !important;

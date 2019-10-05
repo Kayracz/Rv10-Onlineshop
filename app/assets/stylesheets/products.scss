@@ -61,6 +61,9 @@
 
 }
 
+.ultrac a{
+  display:none !important;
+}
 
  @media screen and (max-width: 768px) {
 select#color.filter_opt{
@@ -81,12 +84,17 @@ select#price.filter_opt{
       font-size: 12px !important;
 }
 
+.ultrac a{
+  display:inline !important;
+}
+
 .ultrab{
   display:none;
   }
 
   .ultra{
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  padding-bottom: 7px;
   }
 
   .pagination{
@@ -140,7 +148,6 @@ html {
 .searchresulttwo {
     margin-top: -27px !important;
 }
-
 }
 
 // lastnavbar
@@ -287,4 +294,6 @@ border-radius: 20px;
 }
 
 
-
+  .pedidoslinks a{
+    color:black;
+  }
