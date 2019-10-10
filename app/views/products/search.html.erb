@@ -4,12 +4,12 @@
   <%= form_tag perform_products_search_path,
   method: :get, style:"" do %>
       <%= text_field_tag "term", nil,
-        style: "",
+        style: "float:left",
         placeholder: "Busca el producto que tengas en mente...",
         autofocus: "",
         style: "" %>
 
-      <%= submit_tag "Buscar", style:"" %>
+      <%= submit_tag "Buscar", style:"float:right; margin-right: 32%;" %>
     <% end %>
 </div>
 
@@ -34,7 +34,27 @@
 <style>
   .searchingresponsive{
     display: none;
+    margin-bottom: 70% !important;
+    margin-top: 10%;
   }
+
+    input#term{
+  width: 53% !important;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-radius: 10px;
+  border: 1px solid #ad2c10 !important;
+}
+
+input[type="submit"]{
+width: 35% !important;
+height: 48px;
+background-color: #AD2C10;
+border-radius: 10px;
+}
+
+
+
 
 
     @media screen and (max-width: 768px) {
@@ -60,7 +80,7 @@
         margin: 0%;
       }
 
-      input#term{
+  input#term{
   width: 53% !important;
   margin-left: 10px;
   padding-left: 10px;

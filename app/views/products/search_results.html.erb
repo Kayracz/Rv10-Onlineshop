@@ -1,5 +1,6 @@
 <%= render "shared/navbar" %>
 
+
 <div class="container-fluid searching">
   <%= form_tag perform_products_search_path,
   method: :get, style:"" do %>
@@ -13,23 +14,8 @@
     <% end %>
 </div>
 
-<!-- responsive -->
 
-<div class="container searchingresponsive2">
-  <p class="text-center titlesearcher2"> Resultados </p>
-  <%= form_tag perform_products_search_path,
-  method: :get, style:"" do %>
-      <%= text_field_tag "term", nil,
-        style:"",
-        placeholder: "Buscar...",
-        autofocus: "",
-        style: "" %>
-      <%= submit_tag "Buscar", style:"float:right; margin-right: 20px;" %>
-    <% end %>
-</div>
-
-
-<div class="container-fluid text-center searchresult" style="min-height:500px;background-color: #ebebeb; padding-bottom: 2% !important;">
+<div class="container-fluid text-center searchresult" style="min-height:500px; padding-bottom: 2% !important;">
   <% if @results.any? %>
     <table style="margin:20px;margin-left:100px;;">
       <% @results.each do |r| %>
@@ -51,7 +37,21 @@
 
 <!-- responsive part -->
 
+
+<div class="container searchingresponsive2">
+  <%= form_tag perform_products_search_path,
+  method: :get, style:"" do %>
+      <%= text_field_tag "term", nil,
+        style:"",
+        placeholder: "Buscar...",
+        autofocus: "",
+        style: "" %>
+      <%= submit_tag "Buscar", style:"float:right; margin-right: 20px;" %>
+    <% end %>
+</div>
+
 <div class="container-fluid text-center searchresulttwo">
+    <p class="text-center titlesearcher2"> Resultados: </p>
   <% if @results.any? %>
     <table style="">
       <% @results.each do |r| %>
@@ -72,13 +72,19 @@
 </div>
 
 
+
+
 <style>
 
   .searchresulttwo{
    display:none;
   }
-  .searchingresponsive{
-    display: none;
+  .searchingresponsive2{
+    display:none;
+  }
+
+  .searchresult img{
+    height:100px;
   }
 
 
@@ -105,6 +111,7 @@
 
       .titlesearcher2{
         margin-top: 10%;
+        margin-bottom: -40px;
         font-weight: 400;
         color: #ad2c10;
       }

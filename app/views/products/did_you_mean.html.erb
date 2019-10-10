@@ -1,6 +1,18 @@
 <%= render "shared/navbar" %>
+<div class="container searchingresponsive2">
+  <p class="text-center titlesearcher"> </p>
+  <%= form_tag perform_products_search_path,
+  method: :get, style:"" do %>
+      <%= text_field_tag "term", nil,
+        style:"",
+        placeholder: "Buscar...",
+        autofocus: "",
+        style: "" %>
+      <%= submit_tag "Buscar", style:"float:right; margin-right: 20px;" %>
+    <% end %>
+</div>
 
-<div class="container-fluid searching searching" style="background-color: #ebebeb;">
+<div class="container-fluid searching">
   <%= form_tag perform_products_search_path,
   method: :get, style:"width:600px;margin-top:30px;" do %>
       <%= text_field_tag "term", nil,
@@ -13,9 +25,9 @@
     <% end %>
 </div>
 
-<div class="containe-fluid" style="background-color: #ebebeb; padding-bottom: 2% !important;">
+<div class="container" style="padding-bottom: 2% !important;">
   <div class="caption-content text-center">
-    <div style="text-align:left;margin-left:100px;">
+    <div style="text-align:left;font-size:30px;color:#ad2c10">
       <% if @suggestions.any? %>
       <div style="min-height:400px;padding-top:40px;">
         <b>Quisiste decir...?</b>
@@ -35,51 +47,68 @@
 
 <style>
 
-input#term{
-  padding-left: 20px;
-  border-radius: 20px;
-}
 
-.searching{
-    background-color: #ebebeb;
-    padding-left: 27%;
+  .searchresulttwo{
+   display:none;
+  }
+  .searchingresponsive2{
+    display:none;
   }
 
-.searchimage img{
-height: 100px;
-}
+  .searchresult img{
+    height:100px;
+  }
 
 
     @media screen and (max-width: 768px) {
-.searchingresponsive{
-  display:initial;
-  }
 
-  .searchimage{
-    display: none;
-  }
+      .searchingresponsive2{
+        display:initial;
+      }
 
-.searchresulttwo {
-    margin-left: -35px;
-    line-height: 24px;
-    margin-top: -77px;
-}
+      .searchresulttwo{
+        display:inline;
+      }
 
-  .searching{
-    display: none;
-  }
+      .searchresult{
+        display:none;
+      }
+      .searchingresponsive2 form{
+        margin-bottom: -15% !important;
+        margin-top: 10%;
+      }
+      .searching{
+        display: none;
+      }
 
-input#term{
-  width: 318px !important;
-   margin-left: 20px;
+      .titlesearcher2{
+        margin-top: 10%;
+        font-weight: 400;
+        color: #ad2c10;
+      }
+
+      .buttons{
+        margin: 0%;
+      }
+
+      input#term{
+  width: 53% !important;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-radius: 10px;
+  border: 1px solid #ad2c10 !important;
 }
 
 input[type="submit"]{
-width: 350px !important;
+width: 35% !important;
+height: 48px;
+background-color: #AD2C10;
+border-radius: 10px;
+
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  font-size: 12px;
+  font-size: 15px;
   color: gray;
 }
   }
