@@ -2,14 +2,29 @@
 
 <div class="container-fluid searching">
   <%= form_tag perform_products_search_path,
-  method: :get, style:"width:600px;margin-top:30px;" do %>
+  method: :get, style:"" do %>
       <%= text_field_tag "term", nil,
         style: "float:left",
         placeholder: "Busca el producto que tengas en mente...",
         autofocus: "",
-        style: "width:500px;" %>
+        style: "" %>
 
-      <%= submit_tag "Buscar", style:"float:right;width:95px;" %>
+      <%= submit_tag "Buscar", style:"float:right;" %>
+    <% end %>
+</div>
+
+<!-- responsive -->
+
+<div class="container searchingresponsive2">
+  <p class="text-center titlesearcher2"> Resultados </p>
+  <%= form_tag perform_products_search_path,
+  method: :get, style:"" do %>
+      <%= text_field_tag "term", nil,
+        style:"",
+        placeholder: "Buscar...",
+        autofocus: "",
+        style: "" %>
+      <%= submit_tag "Buscar", style:"float:right; margin-right: 20px;" %>
     <% end %>
 </div>
 
@@ -34,12 +49,11 @@
 </div>
 
 
-
 <!-- responsive part -->
 
-<div class="container-fluid text-center searchresulttwo" style="min-height:500px;background-color: #ebebeb;">
+<div class="container-fluid text-center searchresulttwo">
   <% if @results.any? %>
-    <table style="margin:20px;margin-left:100px;;">
+    <table style="">
       <% @results.each do |r| %>
         <tr>
           <td class="iconing searchimage" style='padding-right:20px; padding-bottom:10px;'> <%= cl_image_tag r.photo %> </td>
@@ -55,6 +69,72 @@
     TODO: Sugerir correcciones en los terminos de busqueda, alla' Google.
   <% end %>
 </div>
+</div>
 
+
+<style>
+
+  .searchresulttwo{
+   display:none;
+  }
+  .searchingresponsive{
+    display: none;
+  }
+
+
+    @media screen and (max-width: 768px) {
+
+      .searchingresponsive2{
+        display:initial;
+      }
+
+      .searchresulttwo{
+        display:inline;
+      }
+
+      .searchresult{
+        display:none;
+      }
+      .searchingresponsive2 form{
+        margin-bottom: -15% !important;
+        margin-top: 10%;
+      }
+      .searching{
+        display: none;
+      }
+
+      .titlesearcher2{
+        margin-top: 10%;
+        font-weight: 400;
+        color: #ad2c10;
+      }
+
+      .buttons{
+        margin: 0%;
+      }
+
+      input#term{
+  width: 53% !important;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-radius: 10px;
+  border: 1px solid #ad2c10 !important;
+}
+
+input[type="submit"]{
+width: 35% !important;
+height: 48px;
+background-color: #AD2C10;
+border-radius: 10px;
+
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 15px;
+  color: gray;
+}
+  }
+
+    }
 
 

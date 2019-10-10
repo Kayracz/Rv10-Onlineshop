@@ -2,85 +2,85 @@
 
 <div class="container-fluid searching">
   <%= form_tag perform_products_search_path,
-  method: :get, style:"width:600px;margin-top:30px;" do %>
+  method: :get, style:"" do %>
       <%= text_field_tag "term", nil,
-        style: "float:left",
+        style: "",
         placeholder: "Busca el producto que tengas en mente...",
         autofocus: "",
-        style: "width:500px;" %>
+        style: "" %>
 
-      <%= submit_tag "Buscar", style:"float:right;width:95px;" %>
+      <%= submit_tag "Buscar", style:"" %>
     <% end %>
 </div>
 
 
-<div class="container-fluid searchingresponsive">
+<div class="container searchingresponsive">
+  <p class="text-center titlesearcher"> ¿Queres encontrar algo más específico? </p>
   <%= form_tag perform_products_search_path,
-  method: :get, style:"width:71%;margin-top:30px;margin-left:10px;" do %>
+  method: :get, style:"" do %>
       <%= text_field_tag "term", nil,
-        style:"float:left",
-        placeholder: "Busca el producto que tengas en mente...",
+        style:"",
+        placeholder: "Buscar...",
         autofocus: "",
-        style: "width:500px;" %>
-
-      <%= submit_tag "Buscar", style:"float:right;width:110px;" %>
+        style: "" %>
+      <%= submit_tag "Buscar", style:"float:right; margin-right: 20px;" %>
     <% end %>
 </div>
+
+
 
 
 
 <style>
+  .searchingresponsive{
+    display: none;
+  }
 
-.searchingresponsive{
-   display:none;
-}
 
-@media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px) {
 
-input#term{
-   width: 297px !important;
-   margin-left: 20px;
+      .searchingresponsive{
+        display:initial;
+      }
+      .searchingresponsive form{
+        margin-bottom: 70% !important;
+        margin-top: 10%;
+      }
+      .searching{
+        display: none;
+      }
+
+      .titlesearcher{
+        margin-top: 25%;
+        font-weight: 400;
+        color: #ad2c10;
+      }
+
+      .buttons{
+        margin: 0%;
+      }
+
+      input#term{
+  width: 53% !important;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-radius: 10px;
+  border: 1px solid #ad2c10 !important;
 }
 
 input[type="submit"]{
-width: 350px !important;
+width: 35% !important;
+height: 48px;
+background-color: #AD2C10;
+border-radius: 10px;
+
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  font-size: 12px;
+  font-size: 15px;
   color: gray;
 }
   }
 
-input#term{
-  padding-left: 20px;
-  border-radius: 20px;
-}
-
-.searching{
-    background-color: #ebebeb;
-    padding-bottom: 17% !important;
-    padding-left: 24%;
-    padding-top: 10%;
-  }
-
-
-  @media screen and (max-width: 768px) {
-.searching{
-    background-color: #ebebeb;
-    padding-bottom: 5% !important;
-    padding-left: 5%;
-    padding-top: 10%;
-  }
-input#term{
-    width: 290px !important;
-}
-
-input[type="submit"]{
-  width: 195px;
-    margin-top: 31px;
-}
-
-  }
-
+    }
 </style>
