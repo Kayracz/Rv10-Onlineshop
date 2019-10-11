@@ -1,6 +1,7 @@
 <%= render "shared/navbar" %>
 
-<div class="container-fluid searching">
+<div class="container searching ">
+    <p class="text-center titlesearcher"> ¿Queres encontrar algo más específico? </p>
   <%= form_tag perform_products_search_path,
   method: :get, style:"" do %>
       <%= text_field_tag "term", nil,
@@ -8,8 +9,7 @@
         placeholder: "Busca el producto que tengas en mente...",
         autofocus: "",
         style: "" %>
-
-      <%= submit_tag "Buscar", style:"float:right; margin-right: 32%;" %>
+      <%= submit_tag "Buscar", style:"float:right; margin-right: 15%;" %>
     <% end %>
 </div>
 
@@ -23,7 +23,7 @@
         placeholder: "Buscar...",
         autofocus: "",
         style: "" %>
-      <%= submit_tag "Buscar", style:"float:right; margin-right: 20px;" %>
+      <%= submit_tag "Buscar", style:"float:right; margin-right: 10px;" %>
     <% end %>
 </div>
 
@@ -32,6 +32,18 @@
 
 
 <style>
+   .titlesearcher{
+        margin-bottom: 5%;
+        font-weight: 400;
+        color: #ad2c10;
+      }
+
+  .searching{
+   margin-top: 5%;
+   margin-bottom: 10%;
+  }
+
+
   .searchingresponsive{
     display: none;
     margin-bottom: 70% !important;
@@ -39,7 +51,7 @@
   }
 
     input#term{
-  width: 53% !important;
+  width: 60% !important;
   margin-left: 10px;
   padding-left: 10px;
   border-radius: 10px;
@@ -47,13 +59,11 @@
 }
 
 input[type="submit"]{
-width: 35% !important;
+width: 40% !important;
 height: 48px;
 background-color: #AD2C10;
 border-radius: 10px;
 }
-
-
 
 
 
@@ -71,7 +81,7 @@ border-radius: 10px;
       }
 
       .titlesearcher{
-        margin-top: 25%;
+        margin-top: 28%;
         font-weight: 400;
         color: #ad2c10;
       }

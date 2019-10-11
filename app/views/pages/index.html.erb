@@ -1,4 +1,6 @@
 <%= render "shared/navbar" %>
+
+<%= cache do %>
 <div class="hero-image">
    <%= image_tag('tester5.png', class: 'background-image', alt:'Background') %>
    <div class="hero-text">
@@ -29,6 +31,8 @@
    </div>
 </div>
 <br>
+
+
 <div class="mobilevideo">
    <div class="col-sm-6 mb-5 mb-sm-0">
       <div class="card card-scale shadow-0 border-0 text-white text-hover-gray-900 overlay-hover-light text-center">
@@ -128,3 +132,5 @@
       </div>
    </div>
 </div>
+
+<% end %>
