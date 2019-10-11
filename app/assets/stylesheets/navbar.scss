@@ -30,7 +30,12 @@
    @media screen and (max-width: 768px) {
    .headbanner{
    display: inherit;
-   background-color: darkred;
+   background-color: #AD2C10;
    color: white;
    }
+   }
+
+
+   .navbar-toggle:hover{
+    color:#AD2C10;
    }
