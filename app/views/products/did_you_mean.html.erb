@@ -1,4 +1,5 @@
 <%= render "shared/navbar" %>
+
 <div class="container searchingresponsive2">
   <p class="text-center titlesearcher"> </p>
   <%= form_tag perform_products_search_path,
@@ -25,9 +26,9 @@
     <% end %>
 </div>
 
-<div class="container" style="padding-bottom: 2% !important;">
+<div class="container question" style="padding-bottom: 2% !important;">
   <div class="caption-content text-center">
-    <div style="text-align:left;font-size:30px;color:#ad2c10">
+    <div style="text-align:left;font-size:20px;">
       <% if @suggestions.any? %>
       <div style="min-height:400px;padding-top:40px;">
         <b>Quisiste decir...?</b>
@@ -36,7 +37,7 @@
         <% end %>
       </div>
       <% else %>
-      <div style="min-height:400px;padding-top:40px;">
+      <div class="results" style="min-height:400px;">
         <b>No hay resultados para "<%= @term %>".
       </div>
       <% end %>
@@ -46,6 +47,38 @@
 
 
 <style>
+
+  .results{
+    padding-top: -30px;
+  }
+
+  .searching{
+   margin-top: 5%;
+   margin-bottom: 10%;
+   margin-left: 25%;
+  }
+  .question{
+   margin-top: -10%;
+  }
+
+  .searchingresponsive{
+    display: none;
+  }
+
+  input#term{
+  width: 60% !important;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-radius: 10px;
+  border: 1px solid #ad2c10 !important;
+}
+
+input[type="submit"]{
+width: 40% !important;
+height: 48px;
+background-color: #AD2C10;
+border-radius: 10px;
+}
 
 
   .searchresulttwo{
@@ -69,6 +102,9 @@
       .searchresulttwo{
         display:inline;
       }
+      .results{
+       padding-top:40px;
+       }
 
       .searchresult{
         display:none;

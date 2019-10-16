@@ -1,7 +1,7 @@
 <%= render "shared/navbar" %>
 
 
-<div class="container-fluid searching">
+<div class="container searching">
   <%= form_tag perform_products_search_path,
   method: :get, style:"" do %>
       <%= text_field_tag "term", nil,
@@ -10,12 +10,12 @@
         autofocus: "",
         style: "" %>
 
-      <%= submit_tag "Buscar", style:"float:right;" %>
+      <%= submit_tag "Buscar", style:"float:right; margin-right: 15%;" %>
     <% end %>
 </div>
 
 
-<div class="container-fluid text-center searchresult" style="min-height:500px; padding-bottom: 2% !important;">
+<div class="container text-center searchresult">
   <% if @results.any? %>
     <table style="margin:20px;margin-left:100px;;">
       <% @results.each do |r| %>
@@ -33,6 +33,8 @@
     TODO: Sugerir correcciones en los terminos de busqueda, alla' Google.
   <% end %>
 </div>
+</div>
+</div>
 
 
 <!-- responsive part -->
@@ -46,7 +48,7 @@
         placeholder: "Buscar...",
         autofocus: "",
         style: "" %>
-      <%= submit_tag "Buscar", style:"float:right; margin-right: 20px;" %>
+      <%= submit_tag "Buscar", style:"float:right; margin-right: 21px;" %>
     <% end %>
 </div>
 
@@ -76,6 +78,43 @@
 
 <style>
 
+     .titlesearcher{
+        margin-bottom: 5%;
+        font-weight: 400;
+        color: #ad2c10;
+      }
+
+  .searching{
+   margin-top: 5%;
+   margin-bottom: 10%;
+   flex-grow: 1;
+  }
+
+
+  .searchingresponsive{
+    display: none;
+    margin-bottom: 70% !important;
+    margin-top: 10%;
+  }
+
+    input#term{
+  width: 60% !important;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-radius: 10px;
+  flex-grow: 1;
+  border: 1px solid #ad2c10 !important;
+}
+
+input[type="submit"]{
+width: 40% !important;
+height: 48px;
+background-color: #AD2C10;
+border-radius: 10px;
+flex-grow: 1;
+}
+
+
   .searchresulttwo{
    display:none;
   }
@@ -85,6 +124,11 @@
 
   .searchresult img{
     height:100px;
+  }
+
+  .searchresult{
+    margin-top: -14%;
+
   }
 
 
