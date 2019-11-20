@@ -1,12 +1,23 @@
 <%= render "shared/navbar" %>
 
 <input type="hidden" id="subcat" value="women"/>
+
 <div class="container-fluid categorybar text-center">
    <%= link_to 'Todo', women_path %>&nbsp;
    <% Category.where(display_in_women: true).each do |cat| %>
    <%= link_to cat.name, women_path(category: cat.name)%>
    <% end %>
 </div>
+
+<!-- responsive category bar -->
+<div class="container-fluid categorybarphone text-center">
+   <%= link_to 'Todo', women_path %>&nbsp;
+   <% Category.where(display_in_women: true).each do |cat| %>
+   <%= link_to cat.name, women_path(category: cat.name)%>
+   <% end %>
+</div>
+<!-- end -->
+
 <div class="container-fluid bannerproducts">
    <%= image_tag "tester1.png" %>
 </div>
