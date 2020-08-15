@@ -3527,11 +3527,11 @@ img.mfp-img {
 	color: black;
 }
 .hero-text button {
-  border: none;
-  margin-top: 61px;
+	border: none;
+	margin-top: 80px;
 	outline: 0;
 	display: inline-block;
-  padding: 18px 39px;
+	padding: 18px 39px;
 	color: #c11111;
 	font-weight: bold;
 	background-color: white;
@@ -3539,8 +3539,16 @@ img.mfp-img {
 	cursor: pointer;
 }
 
+.hero-text button a {
+	padding: 15px;
+	text-decoration: none;
+  color: #c11111;
+  font-weight: bolder;
+  font-size: 24px;
+}
+
 .hero-text button:hover {
-	background-color: #555;
+	background-color: whitesmoke;
 	color: white;
 }
 
