@@ -2,13 +2,15 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # ruby '2.4.4'
-ruby '2.5.1'
+ruby '2.5.3'
 
 gem 'rails', '~> 5.2.3'
 
 gem 'mini_magick'
 
 gem 'pg', '>= 0.18', '< 2.0'
+
+gem 'activeadmin'
 
 gem 'pg_search' #<- Full text search.
 
@@ -40,7 +42,6 @@ gem 'turbolinks', '~> 5'
 
 gem 'toastr-rails'
 
-gem 'activeadmin', github: 'activeadmin/activeadmin'
 
 gem 'devise', '~> 4.6.2'
 
